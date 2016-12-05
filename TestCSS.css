@@ -1,0 +1,196 @@
+html {
+	overflow: scroll;
+}
+
+input {
+	text-align: center;
+	border: 3px solid rgb(240,240,240);
+	margin-top: 100px;
+	margin-bottom: 100px;
+	margin-left: 25%;
+	width: 20%;
+}
+
+body {
+	padding: 0px 0px 0px 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	background-color: rgb(180,180,180);
+	color: white;
+	position: relative;
+	overflow: hidden;
+	left: 0;
+}
+
+.icon-menu-contents {
+	margin-top: 0px;
+	background-color: rgb(90,90,90);
+	color: white;
+	height: 100%;
+	left: -13.3%;
+	position:fixed;
+	width: 13.3%;
+	padding: 0px 0px 0px 0px;
+}
+
+.icon-menu-closebtn {
+	font-family: 'Open Sans', sans-serif;
+/* 	border: 1px solid white;
+ */	width: 12%;
+	height: 12%;
+	margin-left: 5%;
+	margin-top: 5%;
+	margin-right: 0px;
+	cursor: pointer;
+	font-size: 0.75em;
+}
+
+.icon-menu-contents ul {
+  border-top: 1px solid #636366;
+  list-style: none;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  text-align: center;
+}
+
+.icon-menu-contents li {
+  border-bottom: 1px solid #636366;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 45px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  padding-top: 3px;
+  position: relative; 
+  left: -10%;
+}
+
+.icon-menu-home {
+	background-color: rgb(217,61,4);
+}
+
+.icon-menu-history {
+	background-color: rgb(242,116,5)
+}
+
+.icon-menu-profile {
+	background-color: rgb(133,198,169)
+}
+
+.icon-menu-settings {
+	background-color: rgb(105,210,231)
+}
+
+.icon-menu-contents a {
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.icon-menu {
+	color:white;
+	cursor: pointer;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	padding-bottom: 25px;
+	padding-top: 25px;
+	padding-left: 25px;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+.inner-page {
+	background-color: white;
+	margin: 0px 100px 200px 150px; 
+	padding: 0px 0px 0px 0px;
+	display: inline-block;
+	width: 75%;
+}
+
+#input-container {
+	display: block;
+	background-color: white;
+}
+
+#time-input {
+	margin-left: 25%;
+}
+
+#description-input {
+	margin-left: 10%;
+	left: 75%;	
+} 
+
+.post-button {
+	width: 60px;
+	height: 60px;
+	color: rgb(90,90,90);
+	margin: 0px 0px 0px 5%;
+	padding: 0px 0px 0px 0px;
+	display: inline-block;
+	margin-left: 5%;
+	margin-right: auto;
+	position: relative;
+}
+
+.post-button p{
+	border: 1px solid rgb(240,240,240);
+	width: 50%;
+	color: rgb(90,90,90);
+	margin: 0px 0px 0px 5%;
+	padding: 0px 0px 0px 0px;
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	text-align: center;
+	cursor: pointer;
+}
+
+.log-header {
+	text-align:center;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 2em;
+	color: rgb(90,90,90);
+	border-bottom: 1px solid #636366;
+	left: 50%;
+}
+
+.log-header-container {
+	position: relative;
+	background-color: white;
+	width: 25%;
+	left: 40%;
+}
+
+.log-list-container {	
+	background-color: white;
+	height: 500px;
+	padding: 0px 0px 0px 0px;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.log-list-container-full {
+	background-color: white;
+	height: 500px;
+	padding: 0px 0px 0px 0px;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: scroll;
+}
+
+.log-list {
+	color: black;
+ 	text-align: center;
+	list-style: none; 
+	/* width: 50%;
+	margin-left: auto;
+	margin-right: auto;  */
+}
+
+.log-list-not-empty {
+ 	border: 1px solid rgb(0, 0, 150);
+}

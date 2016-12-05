@@ -1,0 +1,63 @@
+body {
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+}
+
+#webpageName {
+	color: white;
+	font-family: monospace;
+	display: inline-block;
+	margin-left: 35%
+}
+
+.square {
+	border-style:solid;
+	border-color: white;
+	border-width: 0px;
+	width: 25%;
+	height: 200px;
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+}
+
+#square1 {
+	background-color: rgb(217,61,4);
+	position: relative;
+	top: -170px;
+}
+
+.redsquare-p {
+	display: inline-block; 
+}
+
+#square2 {
+	background-color: rgb(242,116,5)
+}
+
+#square3 {
+	background-color: rgb(133,198,169)
+}
+
+#square4 {
+	background-color: rgb(105,210,231)
+}
+
+#banner {
+	height: 50px;
+	width: 100%;
+	background-color: gray;
+	padding: 20px 10px 10px 10px;
+	display: inline-block;
+}
+
+.input[type=text] {
+    width: 10%;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+    width: 30%;
+}
