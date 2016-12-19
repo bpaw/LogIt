@@ -66,18 +66,22 @@ body {
 
 .icon-menu-home {
 	background-color: rgb(217,61,4);
+	cursor: pointer;
 }
 
 .icon-menu-history {
-	background-color: rgb(242,116,5)
+	background-color: rgb(242,116,5);
+	cursor: pointer;
 }
 
 .icon-menu-profile {
-	background-color: rgb(133,198,169)
+	background-color: rgb(133,198,169);
+	cursor: pointer;
 }
 
 .icon-menu-settings {
-	background-color: rgb(105,210,231)
+	background-color: rgb(105,210,231);
+	cursor: pointer;
 }
 
 .icon-menu-contents a {

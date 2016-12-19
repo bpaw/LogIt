@@ -21,14 +21,13 @@ body {
 	padding: 0px;
 }
 
-#square1 {
-	background-color: rgb(217,61,4);
-	position: relative;
-	top: -170px;
+
+.square-hover {
+	cursor: pointer;
 }
 
-.redsquare-p {
-	display: inline-block; 
+#square1 {
+	background-color: rgb(217,61,4);
 }
 
 #square2 {
