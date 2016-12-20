@@ -1,5 +1,6 @@
 var main = function() {
-     $('.icon-menu').click(function() {
+
+ 	$('.icon-menu').click(function() {
 	
         $('.icon-menu-contents').animate({left: '0'});
             
@@ -70,25 +71,47 @@ var main = function() {
 	var descriptionPlaceholder = "description of activity";
 	var timePlaceholder = "_:_ _ - _:_ _";
 	
-	var logTime = $('.log-time').val();
+	var startTime = $('#start-time').val();
+	var endTime = $('#end-time').val();
 	var logDescription = $('.log-description').val();
 	
-	var condition1 = logTime.length > 0 && logDescription.length > 0;
-	var condition2 = logTime != timePlaceholder && logDescription != descriptionPlaceholder;
+	var condition1 = startTime.length > 0 && endTime.length > 0 && logDescription.length > 0;
+	var condition2 = logDescription != descriptionPlaceholder;
 	
+	console.log(startTime);
 	if (condition1 && condition2) {
-		var logItem = logTime + ": " + logDescription; 
-		$('.log-time').val("_:_ _ - _:_ _");
-		$('.log-description').val("description of activity");
-		$('<li>').text(logItem).appendTo('.log-list');
+
+		var startHour = startTime.substring(0, 2);
+		var endHour = endTime.substring(0, 2);
+		var NOON = 12; 
+		// converting start time to meridian format
+		if (startHour > NOON) {
+			startHour = startHour - NOON;
+			startTime = startHour + startTime.substring(2) + " PM";
+		}
+		else {
+			startTime = startTime + " AM";
+		}
+		// converting end time to meridian format
+		if (endHour > NOON) {
+			endHour = endHour - NOON;
+			endTime = endHour + endTime.substring(2) + " PM";
+		}
+		else {
+			endTime = endTime + " AM";
+		}
+
+		var logItem = startTime + " - " + endTime + ": " + logDescription; 
+		$('.log-description').val("");
+		$('<li>').text(logItem).addClass('log-list-style').appendTo('.log-list');
 		$('.log-list').addClass('log-list-not-empty');
 	}	
 	}); 
-	
+
+
 	/* var sizeCondition =;
 	if (sizeCondition) {
 		$('.log-list-container').addClass('.log-list-container-full');
 	} */
 };
-
 $(document).ready(main);

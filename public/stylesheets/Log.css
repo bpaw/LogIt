@@ -116,13 +116,19 @@ body {
 	background-color: white;
 }
 
-#time-input {
-	margin-left: 25%;
+#start-time {
+	margin-left: 10%;
+	width: 10%;
+}
+
+#end-time {
+	margin-left: 5%;
+	width: 10%;
 }
 
 #description-input {
-	margin-left: 10%;
-	left: 75%;	
+	margin-left: 20%;
+	left: 65%;	
 } 
 
 .post-button {
@@ -196,5 +202,15 @@ body {
 }
 
 .log-list-not-empty {
- 	border: 1px solid rgb(0, 0, 150);
+ 	/* border: 1px solid rgb(0, 0, 150); */
+ 	padding-top: 1dp;
+ 	padding-bottom: 1dp; 
+ 	width: 50%;
+ 	margin-left: auto;
+	margin-right: auto;
+}
+
+.log-list-style {
+	border-bottom: 1px solid rgb(150, 150, 150);
+	font-family: 'Helvetica Neue', 'Helvetica', 'Avenir', 'Arial', sans-serif;
 }
