@@ -70,7 +70,8 @@ var main = function() {
 	$('.post-button').click(function() {
 	var descriptionPlaceholder = "description of activity";
 	var timePlaceholder = "_:_ _ - _:_ _";
-	
+
+	// getting values from the input boxes	
 	var startTime = $('#start-time').val();
 	var endTime = $('#end-time').val();
 	var logDescription = $('.log-description').val();
@@ -78,12 +79,15 @@ var main = function() {
 	var condition1 = startTime.length > 0 && endTime.length > 0 && logDescription.length > 0;
 	var condition2 = logDescription != descriptionPlaceholder;
 	
-	console.log(startTime);
+	// testing conditions to see if the input boxes were filled
 	if (condition1 && condition2) {
 
+		// variables to get first two numbers in the start and end time
 		var startHour = startTime.substring(0, 2);
 		var endHour = endTime.substring(0, 2);
-		var NOON = 12; 
+
+		var NOON = 12; 			// var to refer to NOON for readability
+
 		// converting start time to meridian format
 		if (startHour > NOON) {
 			startHour = startHour - NOON;
@@ -92,6 +96,7 @@ var main = function() {
 		else {
 			startTime = startTime + " AM";
 		}
+
 		// converting end time to meridian format
 		if (endHour > NOON) {
 			endHour = endHour - NOON;
@@ -101,10 +106,16 @@ var main = function() {
 			endTime = endTime + " AM";
 		}
 
+		// creating log body 
 		var logItem = startTime + " - " + endTime + ": " + logDescription; 
+		// setting to null so placeholder comes back in 
 		$('.log-description').val("");
 		$('<li>').text(logItem).addClass('log-list-style').appendTo('.log-list');
 		$('.log-list').addClass('log-list-not-empty');
+		var jsonFile = 'data.json';
+		var file = new file(jsonFile);
+		file.open("w");
+		file.write("yoooo we wrote");
 	}	
 	}); 
 
@@ -114,4 +125,5 @@ var main = function() {
 		$('.log-list-container').addClass('.log-list-container-full');
 	} */
 };
+
 $(document).ready(main);

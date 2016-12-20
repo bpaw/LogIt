@@ -39,6 +39,9 @@
 		
 			<div class="log-list-container">
 				<ul class="log-list">
+					<% app_data.logs.forEach(function(item) { %>
+						<li class="log-list-style"> <%= item.start + " - " + item.end + ": " + item.description %> </li>
+					<% }); %>
 				</ul>
 			</div>
 		</div>

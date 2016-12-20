@@ -8,6 +8,10 @@ var index = require('./routes/index');
 
 var app = express();
 
+// variable referring to the json file containing the log history
+app.locals.app_data = require('./data.json');
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

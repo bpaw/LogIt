@@ -1,34 +1,52 @@
 {
-  "logs": [
-    {
+  "logs": [{
       "year": "2016",
       "month": "December",
       "date": "December 20, 2016",
-      "type": "Work",
-      "start": "6:43 PM",
-      "end": "7:00 PM",
-      "description": "Eating Dinner",
-      "productive": "min: 27"
-    },
-    {
-      "year": "2016",
-      "month": "December",
-      "date": "December 20, 2016",
-      "type": "Eating",
-      "start": "7:00 PM",
-      "end": "7:30 PM",
-      "description": "Eating Dinner",
-      "productive": "min: 0"
-    },
-    {
-      "year": "2016",
-      "month": "December",
-      "date": "December 20, 2016",
-      "type": "Work",
-      "start": "7:30 PM",
-      "end": "9:00 PM",
-      "description": "Eating Dinner",
+      "type": "Morning routine",
+      "start": "11:30 AM",
+      "end": "1:00 PM",
+      "description": "Woke up, watched TV, got ready",
       "productive": "hour: 1.5"
-    }
-  ]
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 20, 2016",
+      "type": "Work",
+      "start": "1:00 PM",
+      "end": "1:40 PM",
+      "description": "Worked on LogIt while eating lunch",
+      "productive": "min: 40"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 20, 2016",
+      "type": "Leisure",
+      "start": "1:40 PM",
+      "end": "2:08 PM",
+      "description": "Took a break - TV",
+      "productive": "min: 32"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 20, 2016",
+      "type": "Work",
+      "start": "2:08 PM",
+      "end": "2:58 PM",
+      "description": "Worked on LogIt",
+      "productive": "min: 50"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 20, 2016",
+      "type": "Work",
+      "start": "3:02 PM",
+      "end": "?:?? PM",
+      "description": "Break - TV",
+      "productive": "min: 50"
+    }]
 }

@@ -211,6 +211,6 @@ body {
 }
 
 .log-list-style {
-	border-bottom: 1px solid rgb(150, 150, 150);
+	/*border-bottom: 1px solid rgb(150, 150, 150); */
 	font-family: 'Helvetica Neue', 'Helvetica', 'Avenir', 'Arial', sans-serif;
 }
