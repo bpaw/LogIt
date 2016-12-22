@@ -1,5 +1,8 @@
 var main = function() {
 
+
+	/////////////// JavaScript for the Hamburger Menu ////////////////////
+
  	$('.icon-menu').click(function() {
 	
         $('.icon-menu-contents').animate({left: '0'});
@@ -14,6 +17,10 @@ var main = function() {
 				
  		$('body').animate( {left: '0'});
  	});
+
+
+
+	/////////////// JavaScript for the Hamburger Menu items ////////////////////	
 	
 	/* set of javascript events for home option in the hamburger menu */
 	$('#icon-menu-home').mouseenter(function() {
@@ -28,6 +35,7 @@ var main = function() {
 		$('#icon-menu-home').removeClass('icon-menu-home');
 	});
 	
+	
 	/* set of javascript events for history option in the hamburger menu */
 	$('#icon-menu-history').mouseenter(function() {
 		$('#icon-menu-history').addClass('icon-menu-history');
@@ -41,6 +49,7 @@ var main = function() {
 		$('#icon-menu-history').removeClass('icon-menu-history');
 	});
 
+	
 	/* set of javascript events for profile option in the hamburger menu */
 	$('#icon-menu-profile').mouseenter(function() {
 		$('#icon-menu-profile').addClass('icon-menu-profile');
@@ -54,6 +63,7 @@ var main = function() {
 		$('#icon-menu-profile').removeClass('icon-menu-profile');
 	});
 
+	
 	/* set of javascript events for settings option in the hamburger menu */	
 	$('#icon-menu-settings').mouseenter(function() {
 		$('#icon-menu-settings').addClass('icon-menu-settings');
@@ -66,7 +76,11 @@ var main = function() {
 	$('#icon-menu-settings').mouseleave(function() {
 		$('#icon-menu-settings').removeClass('icon-menu-settings');
 	});
+
+
+	/////////////// JavaScript for the Posting Log entries ////////////////////
  
+
 	$('.post-button').click(function() {
 	var descriptionPlaceholder = "description of activity";
 	var timePlaceholder = "_:_ _ - _:_ _";
@@ -87,7 +101,6 @@ var main = function() {
 		var endHour = endTime.substring(0, 2);
 
 		var NOON = 12; 			// var to refer to NOON for readability
-
 		// converting start time to meridian format
 		if (startHour > NOON) {
 			startHour = startHour - NOON;
@@ -112,14 +125,56 @@ var main = function() {
 		$('.log-description').val("");
 		$('<li>').text(logItem).addClass('log-list-style').appendTo('.log-list');
 		$('.log-list').addClass('log-list-not-empty');
-		var jsonFile = 'data.json';
-		var file = new file(jsonFile);
-		file.open("w");
-		file.write("yoooo we wrote");
+		
+		// Date object so we can access Date methods
+		var date = new Date();
+		// variable to get data in the json file 
+		//var jsonFile = JSON.parse('../data.json');
+		//alert(jsonFile);
+
+		// getting values to use as Log object field values 
+		var Logyear = date.getFullYear()
+		var monthList = ["January", "February","March","April","May","June","July","August","September","October","November", "December"];
+		var Logmonth = date.getMonth();
+		Logmonth = monthList[parseInt(Logmonth)];
+		var Logday = date.getUTCDate() - 1;
+		var Logdate = Logmonth + " " + Logday + ", " + Logyear;
+		// var elapsedTime = Number(startTime) - endTime;
+
+		// creating a new log entry to push to data.json
+		var newLog = {
+			year: Logyear.toString(),
+      		month: Logmonth,
+      		date: Logdate,
+      		type: "Work",
+      		start: startTime,
+      		end: endTime,
+      		description: logDescription,
+      		productive: "0"
+		}
+
+		var newData = JSON.stringify(newLog);
+
+		$.ajax({
+        type: "POST",
+        url: "/addNewLog",
+        contentType: "application/json; charset=utf-8",
+        dataType: "text",
+        data: newData,
+        async: true,
+        success: function(res) {
+          // ga('send', 'event', 'View', 'changed', 'Exit add-post: success');
+          location.href="./Log";
+        },
+        error: function(err) {
+          //Materialize.toast("Error while submitting post!", 5000);
+          console.log(err);
+        }
+      	}); 
 	}	
 	}); 
 
-
+	// block of code to make sure that handles page overflow 
 	/* var sizeCondition =;
 	if (sizeCondition) {
 		$('.log-list-container').addClass('.log-list-container-full');

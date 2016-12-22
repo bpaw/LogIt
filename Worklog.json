@@ -1,0 +1,4 @@
+December 21, 2016: 
+	- changed the aesthetic of the site
+	- got basic write to file capability finished
+		- however, changes require entire server restart to load; need to fix this bug

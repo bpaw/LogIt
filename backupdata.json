@@ -1,7 +1,5 @@
 {
-  "date": "December 21, 2016",
-  "logs": [
-    {
+  "logs": [{
       "year": "2016",
       "month": "December",
       "date": "December 20, 2016",
@@ -120,36 +118,5 @@
       "end": "11:28 PM",
       "description": "Working on LogIt",
       "productive": "hour: 1"
-    },
-    {
-      "year": "2016",
-      "month": "December",
-      "date": "December 21, 2016",
-      "type": "Work",
-      "start": "1:30 PM",
-      "end": "4:00 PM",
-      "description": "Working on LogIt at Starbucks",
-      "productive": "0"
-    },
-    {
-      "year": "2016",
-      "month": "December",
-      "date": "December 21, 2016",
-      "type": "Work",
-      "start": "1:30 PM",
-      "end": "4:00 PM",
-      "description": "Working on LogIt at Starbucks",
-      "productive": "0"
-    },
-    {
-      "year": "2016",
-      "month": "December",
-      "date": "December 21, 2016",
-      "type": "Work",
-      "start": "4:00 PM",
-      "end": "4:07 PM",
-      "description": "Working on LogIt at Starbucks",
-      "productive": "0"
-    }
-  ]
+    }]
 }

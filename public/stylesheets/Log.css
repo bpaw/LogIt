@@ -108,7 +108,7 @@ body {
 	margin: 0px 100px 200px 150px; 
 	padding: 0px 0px 0px 0px;
 	display: inline-block;
-	width: 75%;
+	width: 75%;	
 }
 
 #input-container {
@@ -157,29 +157,44 @@ body {
 	cursor: pointer;
 }
 
+.li-time {
+	width: 30%;
+	display: inline-block;
+	margin-right: 30%;
+}
+
+.li-description {
+	width: 35%;
+	display: inline-block;
+	right: 0;
+}
+
 .log-header {
-	text-align:center;
-	font-family: 'Open Sans', sans-serif;
-	font-size: 2em;
+	text-align: left;
+	font-family: 'Helvetica Neue', 'Helvetica', 'Avenir', 'Arial', sans-serif;
+	font-size: 1.25em;
+	color: black;
+	padding-bottom: .2em;
+}
+
+.log-subheader {
 	color: rgb(90,90,90);
-	border-bottom: 1px solid #636366;
-	left: 50%;
+	font-size: .5em;
+	font-family: 'Helvetica Neue', 'Helvetica', 'Avenir', 'Arial', sans-serif;
 }
 
 .log-header-container {
 	position: relative;
 	background-color: white;
 	width: 25%;
-	left: 40%;
+	left: 10%;
 }
 
 .log-list-container {	
 	background-color: white;
-	height: 500px;
+	height: 100%;
 	padding: 0px 0px 0px 0px;
-	width: 50%;
-	margin-left: auto;
-	margin-right: auto;
+	width: 100%;
 }
 
 .log-list-container-full {
@@ -194,23 +209,19 @@ body {
 
 .log-list {
 	color: black;
- 	text-align: center;
 	list-style: none; 
-	/* width: 50%;
-	margin-left: auto;
-	margin-right: auto;  */
 }
 
 .log-list-not-empty {
- 	/* border: 1px solid rgb(0, 0, 150); */
- 	padding-top: 1dp;
- 	padding-bottom: 1dp; 
- 	width: 50%;
  	margin-left: auto;
 	margin-right: auto;
 }
 
 .log-list-style {
-	/*border-bottom: 1px solid rgb(150, 150, 150); */
 	font-family: 'Helvetica Neue', 'Helvetica', 'Avenir', 'Arial', sans-serif;
+	margin-bottom: 1em; 
+	padding-bottom: 1em;
+	margin-left: 3.5em;
+	border-bottom: .01em dotted gray;
+	width: 85%;
 }

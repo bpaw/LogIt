@@ -14,12 +14,12 @@
 				<li id="icon-menu-profile"><a href="#">Profile</a></li>
 				<li id="icon-menu-settings"><a href="#">Settings</a></li>
 			</ul>
-		</div> 
+		</div> <!-- icon menu contents  -->
 		
 		<div class="icon-menu">
 			<i class="fa fa-bars"></i>
 			Menu
-		</div>
+		</div> <!-- icon menu  -->
 		
 		<div class="inner-page"> 
 			<div id="input-container">
@@ -30,21 +30,31 @@
 					<p>
 						Log
 					</p>
-				</div>
-			</div>
+				</div> <!-- post button -->
+			</div> <!-- input container  -->
 		
 			<div class="log-header-container">
-				<p class="log-header"> Today's Log</p>
-			</div>
+				<div class="log-header"> 
+					Today's Log
+					<p class="log-subheader"> <%= app_data.date %> </p>
+				</div> <!-- log header  -->
+			</div> <!-- log header container  -->
 		
 			<div class="log-list-container">
 				<ul class="log-list">
 					<% app_data.logs.forEach(function(item) { %>
-						<li class="log-list-style"> <%= item.start + " - " + item.end + ": " + item.description %> </li>
+						<li class="log-list-style"> 
+							<div class="li-time">
+								<%= item.start + " - " + item.end %> 
+							</div> <!-- li time  -->
+							<div class="li-description">
+								<%= item.description %>
+							</div> <!-- li description  -->
+						</li>
 					<% }); %>
 				</ul>
-			</div>
-		</div>
+			</div> <!-- log list container  -->
+		</div> <!-- inner page  -->
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 		<script src="/javascripts/Log.js"></script>
