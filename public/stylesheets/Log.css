@@ -1,5 +1,5 @@
 html {
-	overflow: scroll;
+	overflow-y: scroll;
 }
 
 input {
@@ -109,10 +109,15 @@ body {
 
 .inner-page {
 	background-color: white;
-	margin: 0px 100px 200px 150px; 
+	margin: 0px 100px .5em 150px; 
 	padding: 0px 0px 0px 0px;
 	display: inline-block;
 	width: 75%;	
+	height: 100%;
+	border-radius: .1em;
+	border-left: .025em solid gray;
+	border-right: .025em solid gray;
+	border-bottom: .1em solid gray;
 }
 
 #input-container {
@@ -166,7 +171,7 @@ body {
 }
 
 .post-button p{
-	background-color: #26a69a;
+	background-color: #ef5350;
 	border: 1px solid rgb(240,240,240);
 	border-radius: .2em;
 	color: white;
@@ -231,7 +236,7 @@ body {
 	overflow: scroll;
 }
 
-.log-list {
+#log-list {
 	color: black;
 	list-style: none; 
 }
@@ -249,4 +254,5 @@ body {
 	margin-left: 3.5em;
 	border-bottom: .01em dotted gray;
 	width: 85%;
+	color: black;
 }

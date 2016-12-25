@@ -1,0 +1,17 @@
+body {
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+}
+
+h1 {
+	padding-top: 40vh;
+}
+
+.fold {
+	background-color: gray;
+	color: white;
+	text-align: center;
+	height: 100vh;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}

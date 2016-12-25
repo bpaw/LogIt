@@ -134,21 +134,31 @@
     {
       "year": "2016",
       "month": "December",
-      "date": "December 21, 2016",
+      "date": "December 24, 2016",
       "type": "Work",
-      "start": "1:30 PM",
-      "end": "4:00 PM",
-      "description": "Working on LogIt at Starbucks",
+      "start": "6:00 PM",
+      "end": "7:27 PM",
+      "description": "Dinner and coding",
       "productive": "0"
     },
     {
       "year": "2016",
       "month": "December",
-      "date": "December 21, 2016",
+      "date": "December 24, 2016",
       "type": "Work",
-      "start": "4:00 PM",
-      "end": "4:07 PM",
-      "description": "Working on LogIt at Starbucks",
+      "start": "7:27 PM",
+      "end": "7:33 PM",
+      "description": "Last tough ups to LogIt before presents",
+      "productive": "0"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 24, 2016",
+      "type": "Work",
+      "start": "7:33 PM",
+      "end": "8:00 PM",
+      "description": "presents",
       "productive": "0"
     }
   ]

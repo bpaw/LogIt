@@ -118,19 +118,36 @@ var main = function() {
 		else {
 			endTime = endTime + " AM";
 		}
-
-		// creating log body 
-		var logItem = startTime + " - " + endTime + ": " + logDescription; 
+		
 		// setting to null so placeholder comes back in 
 		$('.log-description').val("");
-		$('<li>').text(logItem).addClass('log-list-style').appendTo('.log-list');
-		$('.log-list').addClass('log-list-not-empty');
-		
+
+		// creating/finding elements to add to/modify in front end
+		var ul = document.getElementById("log-list");
+		var li = document.createElement("li");
+		var time_div = document.createElement("div");
+		var description_div = document.createElement("div");
+		var time_content = document.createTextNode(startTime + ' - ' + endTime);
+		var description_content = document.createTextNode(logDescription);
+
+		// adding text content to newly created divs
+		time_div.appendChild(time_content);
+		description_div.appendChild(description_content);
+
+		// adding divs to the newly created li
+		li.appendChild(time_div);
+		li.appendChild(description_div);
+
+		// add classes to the divs and li
+		time_div.className = "li-time";
+		description_div.className = "li-description";
+		li.className = "log-list-style";
+
+		// adding the newly created li to the ul 
+		ul.appendChild(li);
+
 		// Date object so we can access Date methods
 		var date = new Date();
-		// variable to get data in the json file 
-		//var jsonFile = JSON.parse('../data.json');
-		//alert(jsonFile);
 
 		// getting values to use as Log object field values 
 		var Logyear = date.getFullYear()
@@ -171,6 +188,12 @@ var main = function() {
           console.log(err);
         }
       	}); 
+
+      	$.ajax({
+      		type: "POST",
+      		url: "/readUpdate",
+      		async: true
+      	});
 	}	
 	}); 
 

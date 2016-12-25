@@ -7,15 +7,15 @@ body {
 	color: white;
 	font-family: monospace;
 	display: inline-block;
-	margin-left: 35%
+	margin-left: 47.5%;
 }
 
 .square {
-	border-style:solid;
+	border-style: solid;
 	border-color: white;
 	border-width: 0px;
 	width: 25%;
-	height: 200px;
+	height: 30vh;
 	display: inline-block;
 	margin: 0px;
 	padding: 0px;
@@ -43,17 +43,27 @@ body {
 }
 
 #banner {
-	height: 50px;
+	height: 10vh;
 	width: 100%;
 	background-color: gray;
-	padding: 20px 10px 10px 10px;
+	padding: 20px 0 10px 0;
 	display: inline-block;
 }
 
-.input[type=text] {
-    width: 10%;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
+.Greeting-container {
+	height: 55vh;
+	margin: 0; 
+}
+
+.Greeting {
+	border: .1em solid gray;
+	font-family: "Helvetica Nueu", "Avenir", "Helvetica", "Arial", sans-serif;
+	font-size: 1em;
+	height: 10em;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	width: 95%;
 }
 
 /* When the input field gets focus, change its width to 100% */

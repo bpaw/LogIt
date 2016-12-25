@@ -12,7 +12,7 @@ var app = express();
 var DATA_JSON = './data.json';
 
 // variables for using the data.json file 
-app.locals.app_data = require('./data.json');
+app.locals.app_data = JSON.parse(fs.readFileSync(DATA_JSON));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -32,7 +32,6 @@ app.use('/', index);
 
 app.post('/addNewLog', function(req, res) {
 
-  console.error("Found new log route");
   // read the posts file and save the text in a variable
   var logsFile = fs.readFileSync(DATA_JSON);
 
@@ -47,9 +46,16 @@ app.post('/addNewLog', function(req, res) {
 
   // write the text back into the file
   fs.writeFileSync(DATA_JSON, logsFile);
+});
 
-  // send a success to the frontend
-  res.status(200).send("success");
+app.post('/readUpdate', function() {
+  
+  var updatedJSON = fs.readFileSync(DATA_JSON);
+
+  var logArray = JSON.parse(updatedJSON).logs;
+
+
+  app.locals.app_data = JSON.parse(updatedJSON);
 });
 
 // catch 404 and forward to error handler
