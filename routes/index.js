@@ -22,6 +22,11 @@ router.get('/Log', function(req, res, next) {
   res.render('Log', { title: 'Log' });
 });
 
+/* GET statistics page */
+router.get('/statistics', function(req, res, next) {
+	res.render('statistics', { title: 'statistics' });
+});
+
 /* GET placeholder page */
 router.get('/placeholder', function(req, res, next) {
 	res.render('placeholder', { title: 'placeholder'});

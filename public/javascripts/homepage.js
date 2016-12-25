@@ -15,7 +15,7 @@ var main = function() {
 
 	/* action for clicking on the Orange squre (aka logging page) */
 	$("#square2").click(function() {
-		location.href = "/placeholder";
+		location.href = "/statistics";
 	});
 
 	/* action for clicking on the Teal squre (aka logging page) */

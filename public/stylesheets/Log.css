@@ -11,10 +11,24 @@ input {
 	width: 20%;
 }
 
+#banner {
+	height: 10vh;
+	width: 100%;
+	background-color: #e84d39;
+	padding: 20px 0 10px 0;
+	display: inline-block;
+	text-align: center;
+}
+
+#webpageName {
+	color: white;
+	font-family: monospace;
+	display: inline-block;
+}
+
 body {
 	padding: 0px 0px 0px 0px;
-	margin-top: 0px;
-	margin-bottom: 0px;
+	margin: 0px 0px 0px 0px;
 	background-color: rgb(180,180,180);
 	color: white;
 	position: relative;
@@ -170,7 +184,7 @@ body {
 	position: relative;
 }
 
-.post-button p{
+.post-button p {
 	background-color: #ef5350;
 	border: 1px solid rgb(240,240,240);
 	border-radius: .2em;

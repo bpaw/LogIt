@@ -1,0 +1,40 @@
+body {
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+}
+
+#banner {
+	height: 10vh;
+	width: 100%;
+	background-color: rgba(242,116,5,1);
+	padding: 20px 0 10px 0;
+	display: inline-block;
+	text-align: center;
+}
+
+.graph-container {
+	width: 40vw;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 2.5em;	
+	margin-bottom: 2.5em;
+	border-left: 1px solid gray;
+	border-right: 1px solid gray;
+	padding-left: 5vw;
+	padding-right: 5vw;
+	padding-bottom: 2.5vh;
+	padding-top: 2.5vh;
+}
+
+.line-container {
+	margin-bottom: 5vh;
+}
+
+.bar-container {
+}
+
+#webpageName {
+	color: white;
+	font-family: monospace;
+	display: inline-block;
+}

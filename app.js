@@ -14,6 +14,11 @@ var DATA_JSON = './data.json';
 // variables for using the data.json file 
 app.locals.app_data = JSON.parse(fs.readFileSync(DATA_JSON));
 
+// global variables that will hold the dates of the week, productivity of each day, and log types
+app.locals.week = [0, 0, 0, 0, 0, 0, 0];
+app.locals.weekProductivity = [0, 0, 0, 0, 0, 0, 0];
+app.locals.logtype = ["Work", "Leisure", "Daily Routine", "Sleep", "Transportation", "Exercise"]
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
