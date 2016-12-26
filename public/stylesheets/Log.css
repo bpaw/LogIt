@@ -182,7 +182,7 @@ body {
 } 
 
 .buttons {
-	border-top: .05em solid gray;
+	border-top: .01em solid gray;
 	color: rgb(90,90,90);
 	height: 8vh;
 	margin: 4vh 0px 0px 0px;

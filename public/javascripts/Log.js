@@ -89,6 +89,8 @@ var main = function() {
 	var startTime = $('#start-time').val();
 	var endTime = $('#end-time').val();
 	var logDescription = $('.log-description').val();
+	var startTimeNoMeridian;
+	var endTimeNoMeridian; 
 	
 	var condition1 = startTime.length > 0 && endTime.length > 0 && logDescription.length > 0;
 	var condition2 = logDescription != descriptionPlaceholder;
@@ -104,21 +106,35 @@ var main = function() {
 		// converting start time to meridian format
 		if (startHour > NOON) {
 			startHour = startHour - NOON;
+			startTimeNoMeridian = (startHour + NOON) + startTime.substring(2);
 			startTime = startHour + startTime.substring(2) + " PM";
+			startTimeNoMeridian = startTimeNoMeridian + ':00';
 		}
 		else {
+			if (startHour == 0) {
+				startHour = 12;
+				startTime = startHour + startTime.substring(2);
+			}
+			startTimeNoMeridian = startTime + ':00';
 			startTime = startTime + " AM";
 		}
 
 		// converting end time to meridian format
 		if (endHour > NOON) {
 			endHour = endHour - NOON;
+			endTimeNoMeridian = (endHour + NOON) + endTime.substring(2);
 			endTime = endHour + endTime.substring(2) + " PM";
+			endTimeNoMeridian = endTimeNoMeridian + ':00';
 		}
 		else {
+			if (endHour == 0) {
+				endHour = 12;
+				endTime = endHour + endTime.substring(2);
+			}
+			endTimeNoMeridian = endTime + ':00';
 			endTime = endTime + " AM";
 		}
-		
+
 		// setting to null so placeholder comes back in 
 		$('.log-description').val("");
 
@@ -158,6 +174,18 @@ var main = function() {
 		var Logdate = Logmonth + " " + Logday + ", " + Logyear;
 		// var elapsedTime = Number(startTime) - endTime;
 
+		var elapsedTime = new Date();
+		var T1 = new Date(Logdate + " " + startTimeNoMeridian);
+		var T2 = new Date(Logdate + " " + endTimeNoMeridian);
+		diffHour = T2.getHours() - T1.getHours();
+		diffMin = T2.getMinutes() - T1.getMinutes();
+		
+		if (diffMin < 10) {
+			diffMin = "0" + diffMin;
+		}
+
+		elapsedTime = diffHour + ":" + diffMin;
+
 		// creating a new log entry to push to data.json
 		var newLog = {
 			year: Logyear.toString(),
@@ -167,7 +195,7 @@ var main = function() {
       		start: startTime,
       		end: endTime,
       		description: logDescription,
-      		productive: "0"
+      		elapsed: elapsedTime
 		}
 
 		var newData = JSON.stringify(newLog);
