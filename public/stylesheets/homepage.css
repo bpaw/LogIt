@@ -3,6 +3,22 @@ body {
 	margin: 0px 0px 0px 0px;
 }
 
+.footer-div {
+	border-top: .1em solid gray;
+	color: #95979a;
+	height: 10vh;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 1em;
+	width: 90%;
+}
+
+.footer-anchor {
+	color: #95979a;
+	text-decoration: none;
+	margin-right: 3em;
+}
+
 #webpageName {
 	color: white;
 	font-family: monospace;

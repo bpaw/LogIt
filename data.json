@@ -1,5 +1,5 @@
 {
-  "date": "December 21, 2016",
+  "date": "December 25, 2016",
   "logs": [
     {
       "year": "2016",
@@ -159,6 +159,86 @@
       "start": "7:33 PM",
       "end": "8:00 PM",
       "description": "presents",
+      "productive": "0"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 25, 2016",
+      "type": "Work",
+      "start": "12:00 AM",
+      "end": "1:00 PM",
+      "description": "Eating vegan waffles for breakfast",
+      "productive": "0"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 25, 2016",
+      "type": "Work",
+      "start": "1:00 PM",
+      "end": "1:30 PM",
+      "description": "Dealing with computer issues and buying Rent tickets",
+      "productive": "0"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 25, 2016",
+      "type": "Leisure",
+      "start": "1:30 PM",
+      "end": "4:37 PM",
+      "description": "Not doing work - Netflix",
+      "productive": "0"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 25, 2016",
+      "type": "Work",
+      "start": "4:37 PM",
+      "end": "6:12 PM",
+      "description": "Working on LogIt - Log.ejs style and loading only today's logs",
+      "productive": "0"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 25, 2016",
+      "type": "Work",
+      "start": "4:37 PM",
+      "end": "6:12 PM",
+      "description": "Working on LogIt - Log.ejs style and loading only today's logs",
+      "productive": "0"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 25, 2016",
+      "type": "Work",
+      "start": "6:13 PM",
+      "end": "6:46 PM",
+      "description": "Eating Dinner",
+      "productive": "0"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 25, 2016",
+      "type": "Work",
+      "start": "6:13 PM",
+      "end": "6:46 PM",
+      "description": "Eating Dinner",
+      "productive": "0"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 25, 2016",
+      "type": "Work",
+      "start": "6:46 PM",
+      "end": "7:05 PM",
+      "description": "Working on LogIt (before & during dessert time)",
       "productive": "0"
     }
   ]

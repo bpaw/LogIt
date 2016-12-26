@@ -13,6 +13,7 @@
 			<h1 id="webpageName"> LogIt </h1>
 		</div>
 		
+		<!--
 		<div class="icon-menu-contents">
 			<ul><div class="icon-menu-closebtn">X</div>
 				<li id="icon-menu-home"><a href="#">Home</a></li>
@@ -20,50 +21,68 @@
 				<li id="icon-menu-profile"><a href="#">Profile</a></li>
 				<li id="icon-menu-settings"><a href="#">Settings</a></li>
 			</ul>
-		</div> <!-- icon menu contents  -->
+		</div>  icon menu contents  
 		
 		<div class="icon-menu">
 			<i class="fa fa-bars"></i>
 			Menu
-		</div> <!-- icon menu  -->
-		
+		</div>  icon menu  
+		-->
+
 		<div class="inner-page"> 
+			
 			<div id="input-container">
+				
 				<div class='start-container'>
 					start: <input type="time" name="start-time" id="start-time" class="time-input"/>
-				</div>
+				</div> <!-- start container -->
+				
 				<div class='end-container'>
 					end: <input type="time" name="end-time" id="end-time"/>
-				</div>
-				<input id="description-input" type="text" name="log-activity" placeholder="description of activity" class="log-description"/>
+				</div> <!-- end container -->
+				
+				<div class='description-container'>
+					<input id="description-input" type="text" name="log-activity" placeholder="description of activity" class="log-description"/>
+				</div> <!-- description container -->
+				
 				<div class="post-button">
 					<p>
 						Log
 					</p>
 				</div> <!-- post button -->
+				
 			</div> <!-- input container  -->
 		
-			<div class="log-header-container">
-				<div class="log-header"> 
-					Today's Log
-					<p class="log-subheader"> <%= app_data.date %> </p>
-				</div> <!-- log header  -->
-			</div> <!-- log header container  -->
-		
-			<div class="log-list-container">
-				<ul id="log-list">
-					<% app_data.logs.forEach(function(item) { %>
-						<li class="log-list-style"> 
-							<div class="li-time">
-								<%= item.start + " - " + item.end %> 
-							</div> <!-- li time  -->
-							<div class="li-description">
-								<%= item.description %>
-							</div> <!-- li description  -->
-						</li>
-					<% }); %>
-				</ul>
-			</div> <!-- log list container  -->
+			<div class="view-container">
+
+				<div class="log-header-container">
+					<div class="log-header"> 
+						Today's Log
+						<p class="log-subheader"> <%= app_data.date %> </p>
+					</div> <!-- log header  -->
+				
+
+				</div> <!-- log header container  -->
+			
+				<div class="log-list-container">
+					<ul id="log-list">
+						<% app_data.logs.forEach(function(item) { %>
+							<% if (app_data.date == item.date) { %>
+								<li class="log-list-style"> 
+									<div class="li-time">
+										<%= item.start + " - " + item.end %> 
+									</div> <!-- li time  -->
+									<div class="li-description">
+										<%= item.description %>
+									</div> <!-- li description  -->
+								</li>
+							<% } %>
+						<% }); %>
+					</ul>
+				</div> <!-- log list container  -->
+
+			</div> <!-- view container  -->
+
 		</div> <!-- inner page  -->
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

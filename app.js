@@ -14,6 +14,35 @@ var DATA_JSON = './data.json';
 // variables for using the data.json file 
 app.locals.app_data = JSON.parse(fs.readFileSync(DATA_JSON));
 
+// creating Date object and arrays that store the days of the week and months of the year
+var daysArray = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+var monthList = ["January", "February","March","April","May","June","July","August","September","October","November", "December"];
+var date = new Date();
+
+// global variables for current date settings
+app.locals.currDay = date.getDate();
+app.locals.currMonth = monthList[date.getMonth()];
+app.locals.currYear = date.getFullYear();
+app.locals.currDate = app.locals.currMonth + " " + app.locals.currDay + ", " + app.locals.currYear;
+
+// checks to make sure that the data.json file has the correct date
+if (app.locals.app_data.date != app.locals.currDate) {
+
+  // get data from file
+  var origFile = fs.readFileSync(DATA_JSON); 
+  var origData = JSON.parse(origFile);
+
+  // update the read file that is in memory
+  origData.date = app.locals.currDate;
+  origFile = JSON.stringify(origData, null, 2);
+
+  // write updated read file from memory to the actual file
+  fs.writeFileSync(DATA_JSON, origFile);
+
+  // update global variable
+  app.locals.app_data = JSON.parse(fs.readFileSync(DATA_JSON));
+} 
+
 // global variables that will hold the dates of the week, productivity of each day, and log types
 app.locals.week = [0, 0, 0, 0, 0, 0, 0];
 app.locals.weekProductivity = [0, 0, 0, 0, 0, 0, 0];
@@ -58,7 +87,6 @@ app.post('/readUpdate', function() {
   var updatedJSON = fs.readFileSync(DATA_JSON);
 
   var logArray = JSON.parse(updatedJSON).logs;
-
 
   app.locals.app_data = JSON.parse(updatedJSON);
 });

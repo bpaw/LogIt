@@ -154,7 +154,7 @@ var main = function() {
 		var monthList = ["January", "February","March","April","May","June","July","August","September","October","November", "December"];
 		var Logmonth = date.getMonth();
 		Logmonth = monthList[parseInt(Logmonth)];
-		var Logday = date.getUTCDate() - 1;
+		var Logday = date.getDate();
 		var Logdate = Logmonth + " " + Logday + ", " + Logyear;
 		// var elapsedTime = Number(startTime) - endTime;
 
