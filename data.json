@@ -206,26 +206,6 @@
       "month": "December",
       "date": "December 25, 2016",
       "type": "Work",
-      "start": "4:37 PM",
-      "end": "6:12 PM",
-      "description": "Working on LogIt - Log.ejs style and loading only today's logs",
-      "productive": "0"
-    },
-    {
-      "year": "2016",
-      "month": "December",
-      "date": "December 25, 2016",
-      "type": "Work",
-      "start": "6:13 PM",
-      "end": "6:46 PM",
-      "description": "Eating Dinner",
-      "productive": "0"
-    },
-    {
-      "year": "2016",
-      "month": "December",
-      "date": "December 25, 2016",
-      "type": "Work",
       "start": "6:13 PM",
       "end": "6:46 PM",
       "description": "Eating Dinner",
@@ -237,8 +217,18 @@
       "date": "December 25, 2016",
       "type": "Work",
       "start": "6:46 PM",
-      "end": "7:05 PM",
+      "end": "7:15 PM",
       "description": "Working on LogIt (before & during dessert time)",
+      "productive": "0"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 25, 2016",
+      "type": "Work",
+      "start": "7:15 PM",
+      "end": "7:48 PM",
+      "description": "Working on LogIt",
       "productive": "0"
     }
   ]
