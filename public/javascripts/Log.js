@@ -78,9 +78,18 @@ var main = function() {
 	});
 
 
-	/////////////// JavaScript for the Posting Log entries ////////////////////
- 
 
+	/////////////// JavaScript for the Posting Log entries ////////////////////
+
+	/* event listener for clicking on cancel button */
+	$('.cancel-button').click(function() {
+		$('.log-description').val("");
+		$('#start-time').val("");
+		$('#end-time').val("");
+		$('#type-selection').val("");		
+	}); 
+
+	/* even listener for clicking on post button */
 	$('.post-button').click(function() {
 	var descriptionPlaceholder = "description of activity";
 	var timePlaceholder = "_:_ _ - _:_ _";
@@ -89,14 +98,16 @@ var main = function() {
 	var startTime = $('#start-time').val();
 	var endTime = $('#end-time').val();
 	var logDescription = $('.log-description').val();
+	var log_type = $('#type-selection').val();
 	var startTimeNoMeridian;
 	var endTimeNoMeridian; 
 	
 	var condition1 = startTime.length > 0 && endTime.length > 0 && logDescription.length > 0;
 	var condition2 = logDescription != descriptionPlaceholder;
+	var condition3 = log_type != "";
 	
 	// testing conditions to see if the input boxes were filled
-	if (condition1 && condition2) {
+	if (condition1 && condition2 && condition3) {
 
 		// variables to get first two numbers in the start and end time
 		var startHour = startTime.substring(0, 2);
@@ -135,8 +146,11 @@ var main = function() {
 			endTime = endTime + " AM";
 		}
 
-		// setting to null so placeholder comes back in 
+		// setting to null so placeholders comes back in 
 		$('.log-description').val("");
+		$('#start-time').val("");
+		$('#end-time').val("");
+		$('#type-selection').val("");
 
 		// creating/finding elements to add to/modify in front end
 		var ul = document.getElementById("log-list");
@@ -191,7 +205,7 @@ var main = function() {
 			year: Logyear.toString(),
       		month: Logmonth,
       		date: Logdate,
-      		type: "Work",
+      		type: log_type,
       		start: startTime,
       		end: endTime,
       		description: logDescription,
