@@ -213,7 +213,7 @@ var main = function() {
 		}
 
 		var newData = JSON.stringify(newLog);
-
+		
 		$.ajax({
         type: "POST",
         url: "/addNewLog",

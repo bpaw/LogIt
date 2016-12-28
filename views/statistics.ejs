@@ -8,19 +8,23 @@
 		
 		<!-- banner for the page  -->
 		<div id="banner">
-			<!-- <input type="text" name="search" placeholder="Search.."> -->
 			<h1 id="webpageName"> LogIt - Statistics</h1>
 		</div>
 		
-		<div class="graph-container">
-			<div class="line-container">
-				<canvas id="lineChart"> </canvas>
-			</div>
-			<div class="bar-container">
-				<canvas id="barChart"></canvas>
-			</div>
-		</div>
+		<div class="inner-page">
+			<div class="graph-container">
+				
+				<div class="line-container">
+					<canvas id="lineChart"> </canvas>
+				</div> <!-- line-container -->
+				
+				<div class="bar-container">
+					<canvas id="barChart"></canvas>
+				</div> <!-- bar container-->
+			</div> <!-- graph container-->
+		</div> <!-- inner page -->
 		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 		<script src="/javascripts/statistics.js"></script>
 	</body>

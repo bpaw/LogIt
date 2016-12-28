@@ -10,9 +10,11 @@ var index = require('./routes/index');
 
 var app = express();
 var DATA_JSON = './data.json';
+var STATS_JSON = './stats.json';
 
 // variables for using the data.json file 
 app.locals.app_data = JSON.parse(fs.readFileSync(DATA_JSON));
+// app.locals.app_stats = JSON.parse(fs.readFileSync(STATS_JSON));
 
 // creating Date object and arrays that store the days of the week and months of the year
 var daysArray = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
@@ -46,7 +48,7 @@ if (app.locals.app_data.date != app.locals.currDate) {
 // global variables that will hold the dates of the week, productivity of each day, and log types
 app.locals.week = [0, 0, 0, 0, 0, 0, 0];
 app.locals.weekProductivity = [0, 0, 0, 0, 0, 0, 0];
-app.locals.logtype = ["Work", "Leisure", "Daily Routine", "Sleep", "Transportation", "Exercise"]
+app.locals.logtype = ["Work", "Leisure", "Daily Routines", "Sleep", "Eating", "Transportation", "Exercise"]
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -89,6 +91,17 @@ app.post('/readUpdate', function() {
   var logArray = JSON.parse(updatedJSON).logs;
 
   app.locals.app_data = JSON.parse(updatedJSON);
+});
+
+app.post('/readStats', function(req, res) {
+
+  console.error("readStats route found");
+
+  var stats_file = fs.readFileSync(STATS_JSON);
+
+  var stats_data = JSON.parse(stats_file);
+
+  res.status(200).send(stats_data);
 });
 
 // catch 404 and forward to error handler

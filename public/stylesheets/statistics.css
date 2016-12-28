@@ -1,6 +1,7 @@
 body {
 	padding: 0px 0px 0px 0px;
 	margin: 0px 0px 0px 0px;
+	background-color: #e9eaea;
 }
 
 #banner {
@@ -13,17 +14,25 @@ body {
 }
 
 .graph-container {
+	background-color: white;
 	width: 40vw;
 	margin-right: auto;
 	margin-left: auto;
 	margin-top: 2.5em;	
 	margin-bottom: 2.5em;
-	border-left: 1px solid gray;
-	border-right: 1px solid gray;
+	border: 1px solid gray;
 	padding-left: 5vw;
 	padding-right: 5vw;
 	padding-bottom: 2.5vh;
 	padding-top: 2.5vh;
+}
+
+.inner-page {
+	margin: 2em auto 2em auto;
+	padding: 0px 0px 0px 0px;
+	width: 75%;	
+	height: 100%;
+	border-radius: .1em;
 }
 
 .line-container {

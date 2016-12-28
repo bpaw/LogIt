@@ -1,0 +1,9 @@
+{
+	"lineLabels": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+	"lineDefault": "upToCurrentDate",
+	"lineProductive": [2.5, 4, 2.5, 0, 1.5, 3.5, 0],
+	"lineUnproductive": [13.5, 12, 13.5, 16, 14.5, 12.5, 16],
+	"barDefault": "week",
+	"barHours": [19, 99, 10, 56, 23, 21, 78],
+	"barTypes": ["Work", "Leisure", "Daily Routines", "Sleep", "Eating", "Transportation", "Exercise"]
+}
