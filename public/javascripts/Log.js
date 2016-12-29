@@ -194,6 +194,21 @@ var main = function() {
 		diffHour = T2.getHours() - T1.getHours();
 		diffMin = T2.getMinutes() - T1.getMinutes();
 		
+		// edge cases - 1) crossing over midnight & 2) startTime's min > endTime's
+		if (T1.getHours() > T2.getHours()) {
+			alert("Crossing over midnight");
+			diffHour = (24 - T1.getHours()) + T2.getHours();
+		}
+		if (T1.getMinutes() > T2.getMinutes()) {
+			alert("Start time minutes > end time minutes");
+			diffMin = (60 - T1.getMinutes()) + T2.getMinutes();
+			diffHour -= 1;
+		}
+
+		// final padding so all values have 2 digits minimum
+		if (diffHour < 10) {
+			diffHour = "0" + diffHour;
+		}
 		if (diffMin < 10) {
 			diffMin = "0" + diffMin;
 		}
@@ -222,11 +237,9 @@ var main = function() {
         data: newData,
         async: true,
         success: function(res) {
-          // ga('send', 'event', 'View', 'changed', 'Exit add-post: success');
           location.href="./Log";
         },
         error: function(err) {
-          //Materialize.toast("Error while submitting post!", 5000);
           console.log(err);
         }
       	}); 

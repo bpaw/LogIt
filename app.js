@@ -20,6 +20,13 @@ app.locals.app_data = JSON.parse(fs.readFileSync(DATA_JSON));
 var daysArray = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 var monthList = ["January", "February","March","April","May","June","July","August","September","October","November", "December"];
 var date = new Date();
+var Work = 0;
+var Leisure = 1;
+var Daily_Routines = 2;
+var Sleep = 3;
+var Eating = 4;
+var Transportation = 5;
+var Exercise = 6;
 
 // global variables for current date settings
 app.locals.currDay = date.getDate();
@@ -70,18 +77,41 @@ app.post('/addNewLog', function(req, res) {
 
   // read the posts file and save the text in a variable
   var logsFile = fs.readFileSync(DATA_JSON);
+  var statsFile = fs.readFileSync(STATS_JSON);
 
   // convert the text to JSON
   var logsArry = JSON.parse(logsFile);
+  var statsObjs = JSON.parse(statsFile);
 
-  // add the new data to the JSON
+  // writing the log to the 
   logsArry.logs.push(req.body);
 
-  // convert the JSON back into text
-  logsFile = JSON.stringify(logsArry, null, 2);
+  // finding data based on type of log sent over
+  var iterator = 0;
+  while (iterator < statsObjs.barTypes.length) {
 
-  // write the text back into the file
+    if (req.body.type == statsObjs.barTypes[iterator]) {
+
+      // variables to get information from the data being sent over
+      var logHours = parseInt(req.body.elapsed.substring(0,2));
+      var logMin = parseInt(req.body.elapsed.substring(3));
+      var update = logHours + (logMin/60);
+
+      // updating value in statsObjs
+      statsObjs.barHours[iterator] += update;
+
+      break;
+    }
+    iterator++;
+  }
+
+  // convert the JSON back into respective text
+  logsFile = JSON.stringify(logsArry, null, 2);
+  statsFile = JSON.stringify(statsObjs, null, 1);
+
+  // write the text back into the respective file
   fs.writeFileSync(DATA_JSON, logsFile);
+  fs.writeFileSync(STATS_JSON, statsFile);
 });
 
 app.post('/readUpdate', function() {

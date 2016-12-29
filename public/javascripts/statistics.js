@@ -1,6 +1,7 @@
 var main = function () {
 
     function drawCharts() {
+        
         var jsonData = $.ajax({
             url: '/readStats',
             type: "POST",

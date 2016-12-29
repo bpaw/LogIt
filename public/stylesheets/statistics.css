@@ -15,6 +15,8 @@ body {
 
 .graph-container {
 	background-color: white;
+	font-family: "Helvetica Neue", "Helvetica", "Avenir", "Arial", sans-serif;
+	font-family: .8em;
 	width: 40vw;
 	margin-right: auto;
 	margin-left: auto;
@@ -37,6 +39,14 @@ body {
 
 .line-container {
 	margin-bottom: 5vh;
+}
+
+.line-text-container {
+	font-family: "Helvetica Neue", "Helvetica", "Avenir", "Arial", sans-serif;
+	font-size: .8em;
+	margin-bottom: 1em;
+	margin-top: 1em;
+	width: 60%;
 }
 
 .bar-container {
