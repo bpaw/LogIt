@@ -1,6 +1,5 @@
 var main = function() {
 
-
 	/////////////// JavaScript for the Hamburger Menu ////////////////////
 
  	$('.icon-menu').click(function() {

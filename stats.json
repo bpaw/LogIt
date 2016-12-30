@@ -1,47 +1,47 @@
 {
  "lineLabels": [
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-  "Sunday"
+  "Dec 24",
+  "Dec 25",
+  "Dec 26",
+  "Dec 27",
+  "Dec 28",
+  "Dec 29",
+  "Dec 30"
  ],
- "lineDefault": "Mon-Sun",
+ "lineDefault": "Up to Today",
  "lineProductive": [
-  2.5,
-  4,
-  2.5,
+  1.55,
+  4.083333333333334,
+  1.0166666666666666,
   0,
-  1.5,
-  3.5,
+  1.55,
+  1.2833333333333332,
   0
  ],
  "lineUnproductive": [
-  13.5,
-  12,
-  13.5,
-  16,
-  14.5,
-  12.5,
-  16
+  0.45,
+  5.583333333333334,
+  6.5,
+  4,
+  8.833333333333334,
+  1.5,
+  0
  ],
  "barDefault": "week",
  "barHours": [
-  22.26666666666667,
-  99,
-  10,
-  56,
-  23,
-  21,
-  78
+  9.483333333333333,
+  26.866666666666664,
+  5,
+  8.383333333333333,
+  8.45,
+  0,
+  0
  ],
  "barTypes": [
   "Work",
   "Leisure",
   "Daily Routines",
-  "Sleep",
+  "Sleeping",
   "Eating",
   "Transportation",
   "Exercise"

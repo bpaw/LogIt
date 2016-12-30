@@ -19,6 +19,7 @@ app.locals.app_data = JSON.parse(fs.readFileSync(DATA_JSON));
 // creating Date object and arrays that store the days of the week and months of the year
 var daysArray = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 var monthList = ["January", "February","March","April","May","June","July","August","September","October","November", "December"];
+var daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 var date = new Date();
 var Work = 0;
 var Leisure = 1;
@@ -34,23 +35,7 @@ app.locals.currMonth = monthList[date.getMonth()];
 app.locals.currYear = date.getFullYear();
 app.locals.currDate = app.locals.currMonth + " " + app.locals.currDay + ", " + app.locals.currYear;
 
-// checks to make sure that the data.json file has the correct date
-if (app.locals.app_data.date != app.locals.currDate) {
-
-  // get data from file
-  var origFile = fs.readFileSync(DATA_JSON); 
-  var origData = JSON.parse(origFile);
-
-  // update the read file that is in memory
-  origData.date = app.locals.currDate;
-  origFile = JSON.stringify(origData, null, 2);
-
-  // write updated read file from memory to the actual file
-  fs.writeFileSync(DATA_JSON, origFile);
-
-  // update global variable
-  app.locals.app_data = JSON.parse(fs.readFileSync(DATA_JSON));
-} 
+daily_update();
 
 // global variables that will hold the dates of the week, productivity of each day, and log types
 app.locals.week = [0, 0, 0, 0, 0, 0, 0];
@@ -155,3 +140,195 @@ app.use(function(err, req, res, next) {
 console.log("Listening on port 3000");
 
 module.exports = app;
+
+function daily_update() {
+
+
+  // checks to make sure that the data.json file has the correct date
+  //if (app.locals.app_data.date != app.locals.currDate) {
+  if (1) {
+    // get data from files
+    var logFile = fs.readFileSync(DATA_JSON);
+    var statFile = fs.readFileSync(STATS_JSON); 
+
+    // parse files for data
+    var logData = JSON.parse(logFile);
+    var statData = JSON.parse(statFile);
+
+    // update the read file that is in memory
+    logData.date = app.locals.currDate;
+    logFile = JSON.stringify(logData, null, 2);
+
+    // write updated read file from memory to the actual file
+    fs.writeFileSync(DATA_JSON, logFile);
+    
+    // useful variables
+    var fullWeek = 7;
+    var dayNum = date.getDay();
+    var restOfWeek = 6;
+    var monthIndex = Number(fullWeek - 1);
+
+    // loop through stats.json and update the label
+    for (var counter = app.locals.currDay; counter >= parseInt(app.locals.currDay - restOfWeek); counter--) {
+
+        // variables to create the label
+        var labelDay = counter;
+        var labelMonth;
+        var label; 
+
+        // if the week has days between two months
+        if (labelDay < 1) {
+          // move one index backwards in monthList[] 
+          if (app.locals.currMonth != "January") {
+            labelMonth = monthList[date.getMonth() - 1];
+          }
+          // but if January, loop back around to end 
+          else {
+            labelMonth = "December"
+          }
+
+          // make it nice and pify 
+          labelMonth.substring(0,3);
+        }
+        else {
+
+          // make it nice and pify 
+          labelMonth = app.locals.currMonth.substring(0, 3); 
+        }
+            
+        // construct the label
+        label = labelMonth + " " + labelDay;
+        
+        // update data
+        statData.lineLabels[monthIndex] = String(label); 
+
+        monthIndex--;
+      }
+
+
+    // resetting bar graph's info in stats.json
+    for (var i = 0; i < statData.barHours.length; i++) {
+      statData.barHours[i] = 0;
+    }
+    // resetting line graph's info in stats.json
+    for (var i2 = 0; i2 < statData.lineProductive.length; i2++) {
+      statData.lineProductive[i2] = 0;
+      statData.lineUnproductive[i2] = 0;
+    }
+
+    // updating the info in stats.json
+    for (var i = 0; i < logData.logs.length; i++) {
+      
+      var afterMonth = 8; // # of characters preceeding the month in the data
+      var afterDay = 6;   // # of characters preceedin the day in the date
+            
+      // moving eight spaces from end: 4 - YYYY, 1 - ',', 1 - ' ', 2 - DD
+      var lowerBound = logData.logs[i].date.length - afterMonth;
+            
+      // stopping before DD section  
+      var upperBound = logData.logs[i].date.length - afterDay;
+
+      var logDay = logData.logs[i].date.substring(lowerBound, upperBound);
+
+      if (logDay >= (app.locals.currDay - restOfWeek)) {
+
+        console.error(logDay);
+        var logType = logData.logs[i].type;
+        var logHours = parseInt(logData.logs[i].elapsed.substring(0,2));
+        var logMin = parseInt(logData.logs[i].elapsed.substring(3));
+        var update = logHours + (logMin/60);
+
+        switch (logDay) {
+          case String(app.locals.currDay - restOfWeek):
+            if (logData.logs[i].type == "Work") {
+              statData.lineProductive[0] += update;
+            } 
+            if (logData.logs[i].type == "Leisure") {
+              statData.lineUnproductive[0] += update;
+            }
+            break;
+          case String(app.locals.currDay - 5): 
+            if (logData.logs[i].type == "Work") {
+              statData.lineProductive[1] += update;
+            } 
+            if (logData.logs[i].type == "Leisure") {
+              statData.lineUnproductive[1] += update;
+            }
+            break;
+          case String(app.locals.currDay - 4):
+            if (logData.logs[i].type == "Work") {
+              statData.lineProductive[2] += update;
+            } 
+            if (logData.logs[i].type == "Leisure") {
+              statData.lineUnproductive[2] += update;
+            } 
+            break;
+          case String(app.locals.currDay - 3): 
+            if (logData.logs[i].type == "Work") {
+              statData.lineProductive[3] += update;
+            } 
+            if (logData.logs[i].type == "Leisure") {
+              statData.lineUnproductive[3] += update;
+            }
+            break;
+          case String(app.locals.currDay - 2): 
+            if (logData.logs[i].type == "Work") {
+              statData.lineProductive[4] += update;
+            } 
+            if (logData.logs[i].type == "Leisure") {
+              statData.lineUnproductive[4] += update;
+            }
+            break;
+          case String(app.locals.currDay - 1): 
+            if (logData.logs[i].type == "Work") {
+              statData.lineProductive[5] += update;
+            } 
+            if (logData.logs[i].type == "Leisure") {
+              statData.lineUnproductive[5] += update;
+            }
+            break;
+          case String(app.locals.currDay): 
+            if (logData.logs[i].type == "Work") {
+              statData.lineProductive[6] += update;
+            } 
+            if (logData.logs[i].type == "Leisure") {
+              statData.lineUnproductive[6] += update;
+            }
+            break;
+        }
+
+        switch (logType) {
+          case "Work":
+            statData.barHours[Work] += update;
+            break;
+          case "Leisure":
+            statData.barHours[Leisure] += update;
+            break;
+          case "Daily Routines":
+            statData.barHours[Daily_Routines] += update;
+            break;
+          case "Sleeping":
+            statData.barHours[Sleep] += update;
+            break;
+          case "Eating":
+            statData.barHours[Eating] += update;
+            break;
+          case "Transportation":
+            statData.barHours[Transportation] += update;
+            break;
+          case "Exercise":
+            statData.barHours[Exercise] += update;
+            break;
+        }
+      }
+    }
+
+    // updating statistics json file
+    statFile = JSON.stringify(statData, null, 2);
+    fs.writeFileSync(STATS_JSON, statFile);
+
+    // update global variable
+    app.locals.app_data = JSON.parse(fs.readFileSync(DATA_JSON));
+  } 
+}
+
