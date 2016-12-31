@@ -1,17 +1,9 @@
 var main = function () {
 
-    var today = new Date();
-
-    var stats_date = $('.date').text();
-
-    // Add an ajax call to check if the day changed
-    
-    if (stats_date != today.getDate()) {
-        $.ajax({
-            type: "POST",
-            url: "/daily_update"
-        });
-    }
+    $.ajax({
+        type: "POST",
+        url: "/updateStats"
+    });
 
     function drawCharts() {
         

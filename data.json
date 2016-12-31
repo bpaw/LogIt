@@ -610,6 +610,86 @@
       "end": "10:30 AM",
       "description": "Sleeping",
       "elapsed": "08:00"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Work",
+      "start": "3:00 PM",
+      "end": "4:15 PM",
+      "description": "Working on LogIt",
+      "elapsed": "01:15"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Work",
+      "start": "4:15 PM",
+      "end": "4:26 PM",
+      "description": "Debugging the bugs I added to LogIt",
+      "elapsed": "00:11"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Work",
+      "start": "4:26 PM",
+      "end": "4:30 PM",
+      "description": "logit",
+      "elapsed": "00:04"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Leisure",
+      "start": "4:30 PM",
+      "end": "6:00 PM",
+      "description": "Not doing work ",
+      "elapsed": "01:30"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Work",
+      "start": "6:00 PM",
+      "end": "6:34 PM",
+      "description": "Working on LogIt - Debugging daily_update",
+      "elapsed": "00:34"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Work",
+      "start": "6:34 PM",
+      "end": "6:45 PM",
+      "description": "Working on LogIt more",
+      "elapsed": "00:11"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Work",
+      "start": "6:45 PM",
+      "end": "7:05 PM",
+      "description": "Working on LogIt",
+      "elapsed": "00:20"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Eating",
+      "start": "7:05 PM",
+      "end": "7:45 PM",
+      "description": "Dinner",
+      "elapsed": "00:40"
     }
   ]
 }
