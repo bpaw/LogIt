@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> LogIt - Statistics </title>
+		<link rel="stylesheet" href="/stylesheets/calendar.css">
+	</head>
+	<body>
+
+		<div id="banner">
+			<h1 id="webpageName"> LogIt - Statistics</h1>
+		</div> <!-- banner -->
+		
+		<div class="inner-page">
+
+			<div class="calendar-container">
+				
+				<div class="calendar-banner"> LogIt - Calendar 
+				</div> <!-- calendar banner -->
+
+				<div class="col-left">
+					<h1 class="col-left-month"> <%= app_stats.lineLabels[0].substring(0, 3) %> </h1>
+					<p class="col-left-year"> <%= app_data.date.substring(app_data.date.length - 4) %> </p>
+				</div>  <!-- left column -->
+
+				<div class="col-right">
+					
+					<div class="day-labels">
+					</div> <!-- day labels -->
+
+					<div class="day-grid">
+					</div> <!-- day grid -->
+
+				</div>  <!-- right column -->
+
+			</div>  <!-- calendar container -->
+
+		</div> <!-- inner page -->
+
+	</body>
+</html>

@@ -13,6 +13,12 @@ body {
 	text-align: center;
 }
 
+.date {
+	font-family: "Arial", sans-serif;
+	color: gray;
+	margin-left: 10%;
+}
+
 .doughnut-container {
 	width: 80%;
 	margin-bottom: 1em;

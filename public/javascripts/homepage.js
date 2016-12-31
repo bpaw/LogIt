@@ -20,7 +20,7 @@ var main = function() {
 
 	/* action for clicking on the Teal squre (aka logging page) */
 	$("#square3").click(function() {
-		location.href = "/placeholder";
+		location.href = "/calendar";
 	});
 
 	/* action for clicking on the Last squre (aka logging page) */

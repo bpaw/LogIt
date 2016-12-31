@@ -14,7 +14,7 @@ var STATS_JSON = './stats.json';
 
 // variables for using the data.json file 
 app.locals.app_data = JSON.parse(fs.readFileSync(DATA_JSON));
-// app.locals.app_stats = JSON.parse(fs.readFileSync(STATS_JSON));
+app.locals.app_stats = JSON.parse(fs.readFileSync(STATS_JSON));
 
 // creating Date object and arrays that store the days of the week and months of the year
 var daysArray = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
@@ -55,8 +55,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-// app.get('/', index.homepage);
-// app.get('/Log', index.Log);
+
+app.post('/daily_update', function(req, res) {
+
+  daily_update();
+
+  res.status(200);
+});
 
 app.post('/addNewLog', function(req, res) {
 
@@ -110,8 +115,6 @@ app.post('/readUpdate', function() {
 
 app.post('/readStats', function(req, res) {
 
-  console.error("readStats route found");
-
   var stats_file = fs.readFileSync(STATS_JSON);
 
   var stats_data = JSON.parse(stats_file);
@@ -143,10 +146,8 @@ module.exports = app;
 
 function daily_update() {
 
-
   // checks to make sure that the data.json file has the correct date
-  //if (app.locals.app_data.date != app.locals.currDate) {
-  if (1) {
+  if (app.locals.app_data.date != app.locals.currDate) {
     // get data from files
     var logFile = fs.readFileSync(DATA_JSON);
     var statFile = fs.readFileSync(STATS_JSON); 
@@ -222,17 +223,16 @@ function daily_update() {
       var afterMonth = 8; // # of characters preceeding the month in the data
       var afterDay = 6;   // # of characters preceedin the day in the date
             
-      // moving eight spaces from end: 4 - YYYY, 1 - ',', 1 - ' ', 2 - DD
+      // range so we can get the day digits only
       var lowerBound = logData.logs[i].date.length - afterMonth;
-            
-      // stopping before DD section  
       var upperBound = logData.logs[i].date.length - afterDay;
 
       var logDay = logData.logs[i].date.substring(lowerBound, upperBound);
+      var startOfWeek = app.locals.currDay - restOfWeek;
 
+      // replace with startOfWeek and test later
       if (logDay >= (app.locals.currDay - restOfWeek)) {
 
-        console.error(logDay);
         var logType = logData.logs[i].type;
         var logHours = parseInt(logData.logs[i].elapsed.substring(0,2));
         var logMin = parseInt(logData.logs[i].elapsed.substring(3));

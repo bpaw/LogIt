@@ -1,49 +1,49 @@
 {
- "lineLabels": [
-  "Dec 24",
-  "Dec 25",
-  "Dec 26",
-  "Dec 27",
-  "Dec 28",
-  "Dec 29",
-  "Dec 30"
- ],
- "lineDefault": "Up to Today",
- "lineProductive": [
-  1.55,
-  4.083333333333334,
-  1.0166666666666666,
-  0,
-  1.55,
-  1.2833333333333332,
-  0
- ],
- "lineUnproductive": [
-  0.45,
-  5.583333333333334,
-  6.5,
-  4,
-  8.833333333333334,
-  1.5,
-  0
- ],
- "barDefault": "week",
- "barHours": [
-  9.483333333333333,
-  26.866666666666664,
-  5,
-  8.383333333333333,
-  8.45,
-  0,
-  0
- ],
- "barTypes": [
-  "Work",
-  "Leisure",
-  "Daily Routines",
-  "Sleeping",
-  "Eating",
-  "Transportation",
-  "Exercise"
- ]
+  "lineLabels": [
+    "Dec 24",
+    "Dec 25",
+    "Dec 26",
+    "Dec 27",
+    "Dec 28",
+    "Dec 29",
+    "Dec 30"
+  ],
+  "lineDefault": "Up to Today",
+  "lineProductive": [
+    1.55,
+    4.083333333333334,
+    1.0166666666666666,
+    0,
+    1.55,
+    1.2833333333333332,
+    0
+  ],
+  "lineUnproductive": [
+    0.45,
+    5.583333333333334,
+    6.5,
+    4,
+    8.833333333333334,
+    1.5,
+    2.05
+  ],
+  "barDefault": "week",
+  "barHours": [
+    9.483333333333333,
+    28.916666666666664,
+    5,
+    8.383333333333333,
+    8.45,
+    0,
+    0
+  ],
+  "barTypes": [
+    "Work",
+    "Leisure",
+    "Daily Routines",
+    "Sleeping",
+    "Eating",
+    "Transportation",
+    "Exercise"
+  ]
 }

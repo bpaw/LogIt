@@ -2,16 +2,6 @@ var fs = require('fs')
 var express = require('express');
 var router = express.Router();
 
-/*
-exports.homepage = function(req, res) {
-	res.render('webpage', { title: 'LogIt'});
-};
-
-exports.Log = function(req, res) {
-	res.render('Log', { title: 'Log' });
-}
-*/
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('webpage', { title: 'LogIt' });
@@ -25,6 +15,11 @@ router.get('/Log', function(req, res, next) {
 /* GET statistics page */
 router.get('/statistics', function(req, res, next) {
 	res.render('statistics', { title: 'statistics' });
+});
+
+/* GET calendar page */
+router.get('/calendar', function(req, res, next) {
+	res.render('calendar', { title: 'calendar' });
 });
 
 /* GET placeholder page */
