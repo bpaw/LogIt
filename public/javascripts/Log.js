@@ -78,9 +78,9 @@ var main = function() {
 
 
 
-	/////////////// JavaScript for the Posting Log entries ////////////////////
+	/////////////// JavaScript for the Log entries ////////////////////
 
-	/* event listener for clicking on cancel button */
+	/* event listener for clicking on CANCEL BUTTON */
 	$('.cancel-button').click(function() {
 		$('.log-description').val("");
 		$('#start-time').val("");
@@ -88,7 +88,7 @@ var main = function() {
 		$('#type-selection').val("");		
 	}); 
 
-	/* even listener for clicking on post button */
+	/* even listener for clicking on POST BUTTON */
 	$('.post-button').click(function() {
 	var descriptionPlaceholder = "description of activity";
 	var timePlaceholder = "_:_ _ - _:_ _";
@@ -113,35 +113,51 @@ var main = function() {
 		var endHour = endTime.substring(0, 2);
 
 		var NOON = 12; 			// var to refer to NOON for readability
+		var MIDNIGHT = 12;
 		// converting start time to meridian format
-		if (startHour > NOON) {
-			startHour = startHour - NOON;
-			startTimeNoMeridian = (startHour + NOON) + startTime.substring(2);
-			startTime = startHour + startTime.substring(2) + " PM";
-			startTimeNoMeridian = startTimeNoMeridian + ':00';
+		if (startHour >= NOON) {
+			if (startHour != NOON) {
+				startHour = startHour - NOON;
+				startTimeNoMeridian = (startHour + NOON) + startTime.substring(2);
+				startTime = startHour + startTime.substring(2) + " PM";
+				startTimeNoMeridian = startTimeNoMeridian + ':00';
+			}
+			else {
+				startTimeNoMeridian = NOON + startTime.substring(2) + ':00'; 
+				startTime = startHour + startTime.substring(2) + " PM";
+			}
 		}
 		else {
 			if (startHour == 0) {
-				startHour = 12;
+				startHour = NOON;
 				startTime = startHour + startTime.substring(2);
+				startHour *= 0;
 			}
-			startTimeNoMeridian = startTime + ':00';
+			startTimeNoMeridian = startHour + startTime.substring(2) + ':00';
 			startTime = startTime + " AM";
 		}
 
 		// converting end time to meridian format
-		if (endHour > NOON) {
-			endHour = endHour - NOON;
-			endTimeNoMeridian = (endHour + NOON) + endTime.substring(2);
-			endTime = endHour + endTime.substring(2) + " PM";
-			endTimeNoMeridian = endTimeNoMeridian + ':00';
+		if (endHour >= NOON) {
+			if (endHour != NOON) {
+				endHour = endHour - NOON;
+				endTimeNoMeridian = (endHour + NOON) + endTime.substring(2);
+				endTime = endHour + endTime.substring(2) + " PM";
+				endTimeNoMeridian = endTimeNoMeridian + ':00';
+			}
+			else {
+				endTimeNoMeridian = NOON + endTime.substring(2) + ':00';
+				endTime = endHour + endTime.substring(2) + " PM";
+				
+			}
 		}
 		else {
 			if (endHour == 0) {
-				endHour = 12;
+				endHour = NOON;
 				endTime = endHour + endTime.substring(2);
+				endHour *= 0;
 			}
-			endTimeNoMeridian = endTime + ':00';
+			endTimeNoMeridian = endHour + endTime.substring(2) + ':00';
 			endTime = endTime + " AM";
 		}
 
@@ -150,31 +166,7 @@ var main = function() {
 		$('#start-time').val("");
 		$('#end-time').val("");
 		$('#type-selection').val("");
-
-		// creating/finding elements to add to/modify in front end
-		var ul = document.getElementById("log-list");
-		var li = document.createElement("li");
-		var time_div = document.createElement("div");
-		var description_div = document.createElement("div");
-		var time_content = document.createTextNode(startTime + ' - ' + endTime);
-		var description_content = document.createTextNode(logDescription);
-
-		// adding text content to newly created divs
-		time_div.appendChild(time_content);
-		description_div.appendChild(description_content);
-
-		// adding divs to the newly created li
-		li.appendChild(time_div);
-		li.appendChild(description_div);
-
-		// add classes to the divs and li
-		time_div.className = "li-time";
-		description_div.className = "li-description";
-		li.className = "log-list-style";
-
-		// adding the newly created li to the ul 
-		ul.appendChild(li);
-
+		
 		// Date object so we can access Date methods
 		var date = new Date();
 
@@ -192,16 +184,20 @@ var main = function() {
 		var T2 = new Date(Logdate + " " + endTimeNoMeridian);
 		diffHour = T2.getHours() - T1.getHours();
 		diffMin = T2.getMinutes() - T1.getMinutes();
-		
+		alert(T1.getHours());
+		alert(T2.getHours());
+		alert(endTimeNoMeridian);
 		// edge cases - 1) crossing over midnight & 2) startTime's min > endTime's
 		if (T1.getHours() > T2.getHours()) {
-			alert("Crossing over midnight");
+			alert("T1.getHours() > T2.getHours()");
 			diffHour = (24 - T1.getHours()) + T2.getHours();
+			alert("diffHour (before diffMin computation)- " + diffHour);
 		}
 		if (T1.getMinutes() > T2.getMinutes()) {
-			alert("Start time minutes > end time minutes");
+			alert("T1.getMinutes() > T2.getMinutes()");
 			diffMin = (60 - T1.getMinutes()) + T2.getMinutes();
 			diffHour -= 1;
+			alert(diffHour + ":" + diffMin);
 		}
 
 		// final padding so all values have 2 digits minimum
@@ -235,18 +231,21 @@ var main = function() {
         dataType: "text",
         data: newData,
         async: true,
-        success: function(res) {
-          location.href="./Log";
-        },
-        error: function(err) {
-          console.log(err);
+        success: function(message) {
+        	console.error(message);
         }
       	}); 
 
       	$.ajax({
       		type: "POST",
       		url: "/readUpdate",
-      		async: true
+      		async: true,
+      		success: function(reloadroute) {
+	          location.href=reloadroute;
+	        },
+	        error: function(err) {
+	          console.log(err);
+	        }
       	});
 	}	
 	}); 
@@ -259,3 +258,34 @@ var main = function() {
 };
 
 $(document).ready(main);
+
+
+// Archives // 
+
+// CODE FOR CREATING FAKE HTML ELEMENTS PRIOR TO RELOAD
+/*
+		// creating/finding elements to add to/modify in front end
+		var ul = document.getElementById("log-list");
+		var li = document.createElement("li");
+		var time_div = document.createElement("div");
+		var description_div = document.createElement("div");
+		var time_content = document.createTextNode(startTime + ' - ' + endTime);
+		var description_content = document.createTextNode(logDescription);
+
+		// adding text content to newly created divs
+		time_div.appendChild(time_content);
+		description_div.appendChild(description_content);
+
+		// adding divs to the newly created li
+		li.appendChild(time_div);
+		li.appendChild(description_div);
+
+		// add classes to the divs and li
+		time_div.className = "li-time";
+		description_div.className = "li-description";
+		li.className = "log-list-style";
+
+		// adding the newly created li to the ul 
+		ul.appendChild(li);
+		*/
+//

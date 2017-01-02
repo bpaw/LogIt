@@ -76,19 +76,22 @@ app.use(express.static(path.join(__dirname, 'public')));
 // contains GET routes 
 app.use('/', index);
 
-
 // POST to update stats.json
 app.post('/updateStats', function(req, res) {
 
+  console.error("updateStats route");
   var updated_date = new Date();
   if (app.locals.currDay != updated_date.getDate()) {
+    console.error("daily_update() called from app.post route");
     daily_update();
   }
   
-  update_stats();
+  update_bar_and_doughnut();
+  update_line();
 
-  console.error("sending http code");
-  res.status(200);
+  var message = "updateStats route finished";
+
+  res.status(200).send(message);
 });
 
 // POST to add new log to data.json
@@ -131,16 +134,24 @@ app.post('/addNewLog', function(req, res) {
   // write the text back into the respective file
   fs.writeFileSync(DATA_JSON, logsFile);
   fs.writeFileSync(STATS_JSON, statsFile);
+  
+  var message = "addNewLog route finished";
+
+  res.status(200).send(message);
 });
 
 // POST to update info from data.json for templates
-app.post('/readUpdate', function() {
+app.post('/readUpdate', function(req, res) {
   
   var updatedJSON = fs.readFileSync(DATA_JSON);
 
   var logArray = JSON.parse(updatedJSON).logs;
 
   app.locals.app_data = JSON.parse(updatedJSON);
+
+  var reload_route = "./Log";
+
+  res.status(200).send();
 });
 
 // POST to send stats.json data to statistics template 
@@ -152,6 +163,15 @@ app.post('/readStats', function(req, res) {
 
   res.status(200).send(stats_data);
 });
+
+app.post('/get_date', function(req, res) {
+
+  var stats_file = fs.readFileSync(STATS_JSON);
+
+  var stats_data = JSON.parse(stats_file)
+
+  res.status(200).send(stats_data.date);
+}); 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -196,11 +216,9 @@ function decimal_cut(number) {
 function is_full_number(number) {
 
   if (number % 1 == 0) {
-    console.error("whole number");
     return true;
   }
   else {
-    console.error("Not whole number");
     return false;
   }
 }
@@ -208,7 +226,26 @@ function is_full_number(number) {
 // daily_update method used to update time sensitive labels 
 function daily_update() {
 
+  console.error("Calling daily update");
+  // get data from files
+  var statFile = fs.readFileSync(STATS_JSON); 
+  var logFile = fs.readFileSync(DATA_JSON);
+
+  // parse files for data
+  var statData = JSON.parse(statFile); 
+  var logData = JSON.parse(logFile);
+
+  // update the read file that is in memory
+  logData.date = app.locals.currDate;
+  app.locals.currDay = date.getDate();
+  logFile = JSON.stringify(logData, null, 2);
+
+  // write updated read file from memory to the actual file
+  fs.writeFileSync(DATA_JSON, logFile);
+
   if (app.locals.app_data.date != app.locals.currDate) {
+
+    console.error("Changing labels");
 
     // useful variables
     var fullWeek = 7;
@@ -218,6 +255,9 @@ function daily_update() {
 
     // loop through stats.json and update the label
     for (var counter = app.locals.currDay; counter >= parseInt(app.locals.currDay - restOfWeek); counter--) {
+
+      var logData = JSON.parse(logFile);
+
 
       // variables to create the label
       var labelDay = counter;
@@ -229,10 +269,12 @@ function daily_update() {
         // move one index backwards in monthList[] 
         if (app.locals.currMonth != "January") {
           labelMonth = monthList[date.getMonth() - 1];
+          labelDay += daysInMonth[date.getMonth() - 1];
         }
         // but if January, loop back around to end 
         else {
-          labelMonth = "December"
+          labelMonth = "December";
+          labelDay += daysInMonth[11];
         }
         // make it nice and pify 
         labelMonth.substring(0,3);
@@ -249,36 +291,28 @@ function daily_update() {
       monthIndex--;
     }
   }
+  statFile = JSON.stringify(statData, null, 2);
+  fs.writeFileSync(STATS_JSON, statFile);
 }
 
 // updates charts based on the stats.json 
-function update_stats() {
+function update_bar_and_doughnut() {
+
+  console.error("calling update_bar_and_doughnut()");
 
   // get data from files
-  var logFile = fs.readFileSync(DATA_JSON);
   var statFile = fs.readFileSync(STATS_JSON); 
+  var logFile = fs.readFileSync(DATA_JSON);
 
   // parse files for data
-  var logData = JSON.parse(logFile);
   var statData = JSON.parse(statFile);
+  var logData = JSON.parse(logFile);
 
-  // update the read file that is in memory
-  logData.date = app.locals.currDate;
-  logFile = JSON.stringify(logData, null, 2);
-
-  // write updated read file from memory to the actual file
-  fs.writeFileSync(DATA_JSON, logFile);
-  
   var restOfWeek = 6;
 
   // resetting bar graph's info in stats.json
   for (var i = 0; i < statData.barHours.length; i++) {
     statData.barHours[i] = 0;
-  }
-  // resetting line graph's info in stats.json
-  for (var i2 = 0; i2 < statData.lineProductive.length; i2++) {
-    statData.lineProductive[i2] = 0;
-    statData.lineUnproductive[i2] = 0;
   }
 
   // updating the info in stats.json
@@ -304,93 +338,38 @@ function update_stats() {
       var update = logHours + (logMin/60);
 
       if (!is_full_number(update)) {
-        console.error("update is not full number");
         update = decimal_cut(update);
-        console.error(update);
       }
-
-      // updating the productive and unproductive line chart values 
-      switch (logDay) {
-        case String(app.locals.currDay - restOfWeek):
-          if (logData.logs[i].type == "Work") {
-            statData.lineProductive[Day1] += update;
-          } 
-          if (logData.logs[i].type == "Leisure") {
-            statData.lineUnproductive[Day1] += update;
-          }
-          break;
-        case String(app.locals.currDay - Day6): 
-          if (logData.logs[i].type == "Work") {
-            statData.lineProductive[Day2] += update;
-          } 
-          if (logData.logs[i].type == "Leisure") {
-            statData.lineUnproductive[Day2] += update;
-          }
-          break;
-        case String(app.locals.currDay - Day5):
-          if (logData.logs[i].type == "Work") {
-            statData.lineProductive[Day3] += update;
-          } 
-          if (logData.logs[i].type == "Leisure") {
-            statData.lineUnproductive[Day3] += update;
-          } 
-          break;
-        case String(app.locals.currDay - Day4): 
-          if (logData.logs[i].type == "Work") {
-            statData.lineProductive[Day4] += update;
-          } 
-          if (logData.logs[i].type == "Leisure") {
-            statData.lineUnproductive[Day4] += update;
-          }
-          break;
-        case String(app.locals.currDay - Day3): 
-          if (logData.logs[i].type == "Work") {
-            statData.lineProductive[Day5] += update;
-          } 
-          if (logData.logs[i].type == "Leisure") {
-            statData.lineUnproductive[Day5] += update;
-          }
-          break;
-        case String(app.locals.currDay - Day2): 
-          if (logData.logs[i].type == "Work") {
-            statData.lineProductive[Day6] += update;
-          } 
-          if (logData.logs[i].type == "Leisure") {
-            statData.lineUnproductive[Day6] += update;
-          }
-          break;
-        case String(app.locals.currDay): 
-          if (logData.logs[i].type == "Work") {
-            statData.lineProductive[Day7] += update;
-          } 
-          if (logData.logs[i].type == "Leisure") {
-            statData.lineUnproductive[Day7] += update;
-          }
-          break;
-      }
-
+      
       // updating the bar chart values 
       switch (logType) {
         case "Work":
           statData.barHours[Work] += update;
+          statData.barHours[Work] = Number(statData.barHours[Work].toFixed(3));
           break;
         case "Leisure":
           statData.barHours[Leisure] += update;
+          statData.barHours[Leisure] = Number(statData.barHours[Leisure].toFixed(3));
           break;
         case "Daily Routines":
           statData.barHours[Daily_Routines] += update;
+          statData.barHours[Daily_Routines] = Number(statData.barHours[Daily_Routines].toFixed(3));
           break;
         case "Sleeping":
           statData.barHours[Sleep] += update;
+          statData.barHours[Sleep] = Number(statData.barHours[Sleep].toFixed(3));
           break;
         case "Eating":
           statData.barHours[Eating] += update;
+          statData.barHours[Eating] = Number(statData.barHours[Eating].toFixed(3));
           break;
         case "Transportation":
           statData.barHours[Transportation] += update;
+          statData.barHours[Transportation] = Number(statData.barHours[Transportation].toFixed(3));
           break;
         case "Exercise":
           statData.barHours[Exercise] += update;
+          statData.barHours[Exercise] = Number(statData.barHours[Exercise].toFixed(3));
           break;
       }
     }
@@ -400,7 +379,336 @@ function update_stats() {
   statFile = JSON.stringify(statData, null, 2);
   fs.writeFileSync(STATS_JSON, statFile);
 
+  console.error("update_bar_and_doughnut() is over; app_data was updated");
   // update global variable
   app.locals.app_data = JSON.parse(fs.readFileSync(DATA_JSON));
 }
 
+function update_line() {
+
+  console.error("calling update_line()");
+  var label = []; 
+
+  // get data from files
+  var statFile = fs.readFileSync(STATS_JSON); 
+  var logFile = fs.readFileSync(DATA_JSON);
+
+  // parse files for data
+  var statData = JSON.parse(statFile);
+  var logData = JSON.parse(logFile);
+
+  var restOfWeek = 6;
+
+  // resetting line graph's info in stats.json
+  for (var i2 = 0; i2 < statData.lineProductive.length; i2++) {
+    statData.lineProductive[i2] = 0;
+    statData.lineUnproductive[i2] = 0;
+  }
+
+  var day = 6;
+  for (var counter = app.locals.currDay; counter >= parseInt(app.locals.currDay - restOfWeek); counter--) {
+
+    // variables to create the label
+    var labelDay = counter;
+    var labelMonth = monthList[date.getMonth()];
+    // if the week has days between two months
+    if (labelDay < 1) {
+      // move one index backwards in monthList[] 
+      if (app.locals.currMonth != "January") {
+        labelDay += daysInMonth[date.getMonth() - 1];
+        labelMonth = monthList[date.getMonth() - 1];
+      }
+      // but if January, loop back around to end 
+      else {
+        labelMonth = "December";
+        labelDay += daysInMonth[11];
+      }
+    }
+           
+    // construct the label
+    statData.lineLabels[day] = labelMonth.substring(0,3) + " " + labelDay;
+    console.error(statData.lineLabels[day]);
+    label[day] = labelDay;
+    day--;    
+    // update data
+  }
+
+  var currDay = date.getDate();
+  var currMonth = monthList[date.getMonth()];
+  if (date.getMonth() == 0) {
+    prevMonth = monthList[11]
+  }
+  else {
+    prevMonth = monthList[date.getMonth() - 2];
+  }
+
+  for (var i = 0; i < logData.logs.length; i++) {
+    
+    var afterMonth = 8; // # of characters preceeding the month in the data
+    var afterDay = 6;   // # of characters preceedin the day in the date
+          
+    // range so we can get the day digits only
+    var lowerBound = logData.logs[i].date.length - afterMonth;
+    var upperBound = logData.logs[i].date.length - afterDay;
+
+    var logDay = Number(logData.logs[i].date.substring(lowerBound, upperBound));
+    var bool = logDay <= label[6] || logDay >= label[0];
+    // label[0] = 26
+    // label[6] = 1
+    var logMonth = logData.logs[i].month;
+    var startOfWeek = app.locals.currDay - restOfWeek;
+    if (bool && (logMonth == currMonth || logMonth == prevMonth)) {
+      console.error(logDay);
+      // console.log(logData.logs[i]);
+      var logType = logData.logs[i].type;
+      var logHours = parseInt(logData.logs[i].elapsed.substring(0,2));
+      var logMin = parseInt(logData.logs[i].elapsed.substring(3));
+      var update = logHours + (logMin/60);
+
+      switch (logDay) {
+        case label[0]:
+          if (logType == "Work") {
+            statData.lineProductive[Day1] += update;
+            statData.lineProductive[Day1] = Number(statData.lineProductive[Day1].toFixed(3));
+          } 
+          if (logType == "Leisure") {
+            statData.lineUnproductive[Day1] += update;
+            statData.lineUnproductive[Day1] = Number(statData.lineUnproductive[Day1].toFixed(3));
+          }
+          break;
+
+        case label[1]: 
+          if (logType == "Work") {
+            statData.lineProductive[Day2] += update;
+            statData.lineProductive[Day2] = Number(statData.lineProductive[Day2].toFixed(3));
+          } 
+          if (logType == "Leisure") {
+            statData.lineUnproductive[Day2] += update;
+            statData.lineUnproductive[Day2] = Number(statData.lineUnproductive[Day2].toFixed(3));
+          }
+          break;
+
+        case label[2]:
+          if (logType == "Work") {
+            statData.lineProductive[Day3] += update;
+            statData.lineProductive[Day3] = Number(statData.lineProductive[Day3].toFixed(3));
+          } 
+          if (logType == "Leisure") {
+            statData.lineUnproductive[Day3] += update;
+            statData.lineUnproductive[Day3] = Number(statData.lineUnproductive[Day3].toFixed(3));
+          } 
+          break;
+
+        case label[3]: 
+          if (logType == "Work") {
+            statData.lineProductive[Day4] += update;
+            statData.lineProductive[Day4] = Number(statData.lineProductive[Day4].toFixed(3));
+          } 
+          if (logType == "Leisure") {
+            statData.lineUnproductive[Day4] += update;
+            statData.lineUnproductive[Day4] = Number(statData.lineUnproductive[Day4].toFixed(3));
+          }
+          break;
+
+        case label[4]: 
+          if (logType == "Work") {
+            statData.lineProductive[Day5] += update;
+            statData.lineProductive[Day5] = Number(statData.lineProductive[Day5].toFixed(3));
+          } 
+          if (logType == "Leisure") {
+            statData.lineUnproductive[Day5] += update;
+            statData.lineUnproductive[Day5] = Number(statData.lineUnproductive[Day5].toFixed(3));
+          }
+          break;
+
+        case label[5]: 
+          if (logType == "Work") {
+            statData.lineProductive[Day6] += update;
+            statData.lineProductive[Day6] = Number(statData.lineProductive[Day6].toFixed(3));
+          } 
+          if (logType == "Leisure") {
+            statData.lineUnproductive[Day6] += update;
+            statData.lineUnproductive[Day6] = Number(statData.lineUnproductive[Day6].toFixed(3));
+          }
+          break;
+
+        case label[6]: 
+          if (logType == "Work") {
+            statData.lineProductive[Day7] += update;
+            statData.lineProductive[Day7] = Number(statData.lineProductive[Day7].toFixed(3));
+          } 
+          if (logType == "Leisure") {
+            statData.lineUnproductive[Day7] += update;
+            statData.lineUnproductive[Day7] = Number(statData.lineUnproductive[Day7].toFixed(3));
+          }
+          break;
+      }
+    }
+  }
+  console.error(statData.lineProductive);
+  console.error(statData.lineUnproductive);
+  // updating statistics json file
+
+  statFile = JSON.stringify(statData, null, 2);
+  fs.writeFileSync(STATS_JSON, statFile);
+
+  console.error("update_line() is over; app_data was updated");
+  // update global variable
+  app.locals.app_data = JSON.parse(fs.readFileSync(DATA_JSON));
+}
+// ARCHIVES //
+/*
+function update_line() {
+
+  console.error("calling update_line()");
+
+  // get data from files
+  var statFile = fs.readFileSync(STATS_JSON); 
+  var logFile = fs.readFileSync(DATA_JSON);
+
+  // parse files for data
+  var statData = JSON.parse(statFile);
+  var logData = JSON.parse(logFile);
+
+  // resetting line graph's info in stats.json
+  for (var i2 = 0; i2 < statData.lineProductive.length; i2++) {
+    statData.lineProductive[i2] = 0;
+    statData.lineUnproductive[i2] = 0;
+  }
+
+  var day = 7;
+  for (var counter = app.locals.currDay; counter >= parseInt(app.locals.currDay - restOfWeek); counter--) {
+
+    // variables to create the label
+    var labelDay = counter;
+    var label = []; 
+
+    // if the week has days between two months
+    if (labelDay < 1) {
+      // move one index backwards in monthList[] 
+      if (app.locals.currMonth != "January") {
+        labelDay += daysInMonth[date.getMonth() - 1];
+      }
+      // but if January, loop back around to end 
+      else {
+        labelDay += daysInMonth[11];
+      }
+    }
+           
+    // construct the label
+    label[day] = labelDay;
+    day--;    
+    // update data
+  }
+  var currMonth = monthList[date.getMonth() - 1];
+  var prevMonth = monthList[date.getMonth() - 2];
+  for (var i = 0; i < logData.logs.length; i++) {
+    
+    var afterMonth = 8; // # of characters preceeding the month in the data
+    var afterDay = 6;   // # of characters preceedin the day in the date
+          
+    // range so we can get the day digits only
+    var lowerBound = logData.logs[i].date.length - afterMonth;
+    var upperBound = logData.logs[i].date.length - afterDay;
+
+    var logDay = logData.logs[i].date.substring(lowerBound, upperBound);
+    var logMonth = logData.logs[i].month;
+    var startOfWeek = app.locals.currDay - restOfWeek;
+
+    if (logMonth = currMonth || logMonth == prevMonth) {
+
+      var logType = logData.logs[i].type;
+      var logHours = parseInt(logData.logs[i].elapsed.substring(0,2));
+      var logMin = parseInt(logData.logs[i].elapsed.substring(3));
+      var update = logHours + (logMin/60);
+
+      switch (logDay) {
+        case label[0]:
+          if (logType == "Work") {
+            var pro = Number((statData.lineProductive[Day1] + update).toFixed(3));
+            statData.lineProductive[Day1] = pro;
+          } 
+          if (logType == "Leisure") {
+            var upro = Number((statData.lineUnproductive[Day1] + update).toFixed(3));
+            statData.lineUnproductive[Day1] = upro;
+          }
+          break;
+
+        case label[1]: 
+          if (logType == "Work") {
+            var pro = Number((statData.lineProductive[Day2] + update).toFixed(3));
+            statData.lineProductive[Day2] = pro;
+          } 
+          if (logType == "Leisure") {
+            var upro = Number((statData.lineUnproductive[Day2] + update).toFixed(3));
+            statData.lineUnproductive[Day2] = upro;
+          }
+          break;
+
+        case label[2]:
+          if (logType == "Work") {
+            var pro = Number((statData.lineProductive[Day3] + update).toFixed(3));
+            statData.lineProductive[Day3] = pro;
+          } 
+          if (logType == "Leisure") {
+            var upro = Number((statData.lineUnproductive[Day3] + update).toFixed(3));
+            statData.lineUnproductive[Day3] = upro;
+          } 
+          break;
+
+        case label[3]: 
+          if (logType == "Work") {
+            var pro = Number((statData.lineProductive[Day4] + update).toFixed(3));
+            statData.lineProductive[Day4] = pro;
+          } 
+          if (logType == "Leisure") {
+            var upro = Number((statData.lineUnproductive[Day4] + update).toFixed(3));
+            statData.lineUnproductive[Day4] = upro;
+          }
+          break;
+
+        case label[4]: 
+          if (logType == "Work") {
+            var pro = Number((statData.lineProductive[Day5] + update).toFixed(3));
+            statData.lineProductive[Day5] = pro;
+          } 
+          if (logType == "Leisure") {
+            var upro = Number((statData.lineUnproductive[Day5] + update).toFixed(3));
+            statData.lineUnproductive[Day5] = upro;
+          }
+          break;
+
+        case label[5]: 
+          if (logType == "Work") {
+            var pro = Number((statData.lineProductive[Day6] + update).toFixed(3));
+            statData.lineProductive[Day6] = pro;
+          } 
+          if (logType == "Leisure") {
+            var upro = Number((statData.lineUnproductive[Day6] + update).toFixed(3));
+            statData.lineUnproductive[Day6] = upro;
+          }
+          break;
+
+        case label[6]: 
+          if (logType == "Work") {
+            var pro = Number((statData.lineProductive[Day7] + update).toFixed(3));
+            statData.lineProductive[Day7] = pro;
+          } 
+          if (logType == "Leisure") {
+            var upro = Number((statData.lineUnproductive[Day7] + update).toFixed(3));
+            statData.lineUnproductive[Day7] = upro;
+          }
+          break;
+      }
+    }
+  }
+
+  // updating statistics json file
+  statFile = JSON.stringify(statData, null, 2);
+  fs.writeFileSync(STATS_JSON, statFile);
+
+  console.error("update_line() is over; app_data was updated");
+  // update global variable
+  app.locals.app_data = JSON.parse(fs.readFileSync(DATA_JSON));
+}
+*/

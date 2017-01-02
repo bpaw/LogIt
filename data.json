@@ -1,5 +1,5 @@
 {
-  "date": "December 30, 2016",
+  "date": "January 1, 2017",
   "logs": [
     {
       "year": "2016",
@@ -690,6 +690,366 @@
       "end": "7:45 PM",
       "description": "Dinner",
       "elapsed": "00:40"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Work",
+      "start": "7:45 PM",
+      "end": "8:18 PM",
+      "description": "Working on LogIt",
+      "elapsed": "00:33"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Work",
+      "start": "8:18 PM",
+      "end": "9:03 PM",
+      "description": "Working on LogIt",
+      "elapsed": "00:45"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Leisure",
+      "start": "9:03 PM",
+      "end": "9:52 PM",
+      "description": "Playing SWBII",
+      "elapsed": "00:49"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Daily Routines",
+      "start": "9:52 PM",
+      "end": "10:10 PM",
+      "description": "Showering",
+      "elapsed": "00:18"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Work",
+      "start": "10:10 PM",
+      "end": "10:30 PM",
+      "description": "Working on LogIt",
+      "elapsed": "00:20"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Daily Routines",
+      "start": "10:30 PM",
+      "end": "10:45 PM",
+      "description": "Smoothie Time",
+      "elapsed": "00:15"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Work",
+      "start": "10:45 PM",
+      "end": "11:56 PM",
+      "description": "Working on LogIt - Calendar JS file",
+      "elapsed": "01:11"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Exercise",
+      "start": "11:56 PM",
+      "end": "12:01 AM",
+      "description": "Set of pushups",
+      "elapsed": "00:05"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Work",
+      "start": "12:01 AM",
+      "end": "12:35 AM",
+      "description": "Working on LogIt - more daily update bugs to fix",
+      "elapsed": "00:34"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Leisure",
+      "start": "12:35 AM",
+      "end": "02:51 AM",
+      "description": "Netflix - 3%",
+      "elapsed": "02:16"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Sleep",
+      "start": "02:51 AM",
+      "end": "10:30 AM",
+      "description": "Sleeping",
+      "elapsed": "07:39"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Daily Routines",
+      "start": "10:30 AM",
+      "end": "11:14 AM",
+      "description": "Getting up",
+      "elapsed": "00:44"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Leisure",
+      "start": "11:14 AM",
+      "end": "12:27 PM",
+      "description": "Netflix - 3%",
+      "elapsed": "01:13"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Eating",
+      "start": "12:27 PM",
+      "end": "12:39 PM",
+      "description": "Lunch",
+      "elapsed": "00:12"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Work",
+      "start": "12:39 PM",
+      "end": "1:20 PM",
+      "description": "LogIt - debugging elapsed time bug",
+      "elapsed": "00:41"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Leisure",
+      "start": "1:20 PM",
+      "end": "1:49 PM",
+      "description": "Netflix - 3%",
+      "elapsed": "00:29"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Leisure",
+      "start": "1:49 PM",
+      "end": "3:37 PM",
+      "description": "Thrift shopping with Miki",
+      "elapsed": "01:48"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Work",
+      "start": "3:37 PM",
+      "end": "6:40 PM",
+      "description": "Khan Academy HackerRank preparation",
+      "elapsed": "03:03"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Eating",
+      "start": "6:40 PM",
+      "end": "7:12 PM",
+      "description": "Dinner",
+      "elapsed": "00:32"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Transportation",
+      "start": "7:12 PM",
+      "end": "7:40 PM",
+      "description": "Driving to Spence's New Years Party",
+      "elapsed": "00:28"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Leisure",
+      "start": "7:40 PM",
+      "end": "10:04 PM",
+      "description": "Hangin' at Spence's New Years Party",
+      "elapsed": "02:24"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Transportation",
+      "start": "10:04 PM",
+      "end": "10:30 PM",
+      "description": "Driving home from Spence's New Years Party",
+      "elapsed": "00:26"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Leisure",
+      "start": "10:30 PM",
+      "end": "10:49 PM",
+      "description": "Chatting with Miki",
+      "elapsed": "00:19"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Leisure",
+      "start": "10:30 PM",
+      "end": "10:49 PM",
+      "description": "Chatting with Miki",
+      "elapsed": "00:19"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Work",
+      "start": "10:49 PM",
+      "end": "12:21 AM",
+      "description": "Preparing for Khan Academy HackerRank",
+      "elapsed": "1:32"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Work",
+      "start": "12:21 AM",
+      "end": "02:00 AM",
+      "description": "Preparing for Khan Academy HackerRank",
+      "elapsed": "01:39"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Leisure",
+      "start": "02:00 AM",
+      "end": "04:00 AM",
+      "description": "Watching Netflix - 3%",
+      "elapsed": "02:00"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Sleep",
+      "start": "04:00 AM",
+      "end": "08:00 AM",
+      "description": "Sleeping",
+      "elapsed": "04:00"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Daily Routines",
+      "start": "08:00 AM",
+      "end": "08:30 AM",
+      "description": "Packing",
+      "elapsed": "00:30"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Work",
+      "start": "08:30 AM",
+      "end": "09:40 AM",
+      "description": "Preparing for Khan Academy HackerRank",
+      "elapsed": "01:10"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Sleep",
+      "start": "09:50 AM",
+      "end": "10:50 AM",
+      "description": "Sleeping in the car",
+      "elapsed": "01:00"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Eating",
+      "start": "10:50 AM",
+      "end": "11:30 AM",
+      "description": "Eating Panda Express vegies",
+      "elapsed": "00:40"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Work",
+      "start": "11:30 AM",
+      "end": "1:19 PM",
+      "description": "Working on LogIt & logging day",
+      "elapsed": "01:49"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Work",
+      "start": "1:19 PM",
+      "end": "2:33 PM",
+      "description": "Working on LogIt",
+      "elapsed": "01:14"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Work",
+      "start": "2:33 PM",
+      "end": "3:06 PM",
+      "description": "Working on LogIt bug - line chart for data that crosses months",
+      "elapsed": "00:33"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Exercise",
+      "start": "3:06 PM",
+      "end": "4:31 PM",
+      "description": "Family walk around Vegas malls",
+      "elapsed": "01:25"
     }
   ]
 }
