@@ -84,7 +84,29 @@
 					<ul id="log-list">
 						<% app_data.logs.forEach(function(item) { %>
 							<% if (app_data.date == item.date) { %>
+
 								<li class="log-list-style"> 
+									<% if (item.type == "Work") { %>
+										<div class="type-rec-work"> <%= item.elapsed %> </div>
+									<% } %>
+									<% if (item.type == "Leisure") { %>
+										<div class="type-rec-leisure"> <%= item.elapsed %> </div>
+									<% } %>
+									<% if (item.type == "Daily Routines") { %>
+										<div class="type-rec-daily"> <%= item.elapsed %> </div>
+									<% } %>
+									<% if (item.type == "Sleep") { %>
+										<div class="type-rec-sleep"> <%= item.elapsed %> </div>
+									<% } %>
+									<% if (item.type == "Eating") { %>
+										<div class="type-rec-eat"> <%= item.elapsed %> </div>
+									<% } %>
+									<% if (item.type == "Transportation") { %>
+										<div class="type-rec-transp"> <%= item.elapsed %> </div>
+									<% } %>
+									<% if (item.type == "Exercise") { %>
+										<div class="type-rec-exercise"> <%= item.elapsed %> </div>
+									<% } %>
 									<div class="li-time">
 										<%= item.start + " - " + item.end %> 
 									</div> <!-- li time  -->

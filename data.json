@@ -1,5 +1,5 @@
 {
-  "date": "January 1, 2017",
+  "date": "January 2, 2017",
   "logs": [
     {
       "year": "2016",
@@ -939,7 +939,7 @@
       "start": "10:49 PM",
       "end": "12:21 AM",
       "description": "Preparing for Khan Academy HackerRank",
-      "elapsed": "1:32"
+      "elapsed": "01:32"
     },
     {
       "year": "2017",
@@ -1050,6 +1050,76 @@
       "end": "4:31 PM",
       "description": "Family walk around Vegas malls",
       "elapsed": "01:25"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Work",
+      "start": "4:31 PM",
+      "end": "5:10 PM",
+      "description": "Debugging LogIt line chart",
+      "elapsed": "00:39"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Work",
+      "start": "5:10 PM",
+      "end": "5:22 PM",
+      "description": "Studying HackerRank solution",
+      "elapsed": "00:12"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Work",
+      "start": "5:27 PM",
+      "end": "5:56 PM",
+      "description": "Working on LogIt Logging page front end",
+      "elapsed": "00:29"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Transportation",
+      "start": "6:00 PM",
+      "end": "6:50 PM",
+      "description": "Walking to Nobu's",
+      "elapsed": "00:50"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Eating",
+      "start": "6:50 PM",
+      "end": "9:30 PM",
+      "description": "Feasting at Nobu's",
+      "elapsed": "02:40"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Transportation",
+      "start": "9:30 PM",
+      "end": "10:30 PM",
+      "description": "Walking back to Vdara from Nobu's",
+      "elapsed": "01:00"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Work",
+      "start": "10:30 PM",
+      "end": "12:00 AM",
+      "description": "Preparing for Khan Academy HackerRank",
+      "elapsed": "01:30"
     }
   ]
 }

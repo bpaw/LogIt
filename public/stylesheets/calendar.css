@@ -25,20 +25,50 @@ body {
 }
 
 .calendar-container {
+	background-color: white;
 	border: .1em solid gray;
+	height: 40vh;
 	margin-left: auto;
 	margin-right: auto;
-	width: 80%;
+	width: 40vw;
+}
+
+.calendar-header-day {
+	padding: .5em;
+	padding-bottom: .75em;
+}
+
+.calendar-day {
+	text-align: center;
+}
+
+.calendar-day-hover {
+	background-color: rgba(133,198,169,.4);
+	color: gray;
+	cursor: pointer;
+}
+
+.calendar-table {
+	font-family: "Helvetica Neue", "Helvetica", "Avenir", "Arial", sans-serif;
+	font-size: .75em;
 }
 
 .col-left {
 	display: inline-block;
-	height: 20vh;
-	text-align: center;
+	height: 40vh;
 	width: 49%;
+	vertical-align: top;
+}
+
+
+.col-left-date {
+	width: 50%;
+	margin: 0px auto 0px auto;
 }
 
 .col-left-month {
+	font-weight: bolder;
+	margin-top: 0;
 	margin-bottom: 0;
 }
 
@@ -48,7 +78,7 @@ body {
 
 .col-right {
 	display: inline-block;
-	height: 20vh;
+	height: 40vh;
 	width: 49%;
 }
 
@@ -63,8 +93,6 @@ body {
 }
 
 .inner-page {
-	background-color: white;
-	/*border: 1px solid gray;*/
 	border-radius: .1em;
 	margin: 2em auto 2em auto;
 	padding: 1em 0px 1em 0px;

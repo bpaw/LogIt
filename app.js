@@ -79,7 +79,7 @@ app.use('/', index);
 // POST to update stats.json
 app.post('/updateStats', function(req, res) {
 
-  console.error("updateStats route");
+  // console.error("updateStats route");
   var updated_date = new Date();
   if (app.locals.currDay != updated_date.getDate()) {
     console.error("daily_update() called from app.post route");
@@ -226,7 +226,7 @@ function is_full_number(number) {
 // daily_update method used to update time sensitive labels 
 function daily_update() {
 
-  console.error("Calling daily update");
+  //console.error("Calling daily update");
   // get data from files
   var statFile = fs.readFileSync(STATS_JSON); 
   var logFile = fs.readFileSync(DATA_JSON);
@@ -295,10 +295,12 @@ function daily_update() {
   fs.writeFileSync(STATS_JSON, statFile);
 }
 
+// FIX : right now the bar and doughnut graphs aren't showing week, just logs with a day 
+// value larger than it - look to the update_line() solution
 // updates charts based on the stats.json 
 function update_bar_and_doughnut() {
 
-  console.error("calling update_bar_and_doughnut()");
+  // console.error("calling update_bar_and_doughnut()");
 
   // get data from files
   var statFile = fs.readFileSync(STATS_JSON); 
@@ -379,14 +381,14 @@ function update_bar_and_doughnut() {
   statFile = JSON.stringify(statData, null, 2);
   fs.writeFileSync(STATS_JSON, statFile);
 
-  console.error("update_bar_and_doughnut() is over; app_data was updated");
+  // console.error("update_bar_and_doughnut() is over; app_data was updated");
   // update global variable
   app.locals.app_data = JSON.parse(fs.readFileSync(DATA_JSON));
 }
 
 function update_line() {
 
-  console.error("calling update_line()");
+  // console.error("calling update_line()");
   var label = []; 
 
   // get data from files
@@ -427,7 +429,7 @@ function update_line() {
            
     // construct the label
     statData.lineLabels[day] = labelMonth.substring(0,3) + " " + labelDay;
-    console.error(statData.lineLabels[day]);
+    // console.error(statData.lineLabels[day]);
     label[day] = labelDay;
     day--;    
     // update data
@@ -458,7 +460,7 @@ function update_line() {
     var logMonth = logData.logs[i].month;
     var startOfWeek = app.locals.currDay - restOfWeek;
     if (bool && (logMonth == currMonth || logMonth == prevMonth)) {
-      console.error(logDay);
+      // console.error(logDay);
       // console.log(logData.logs[i]);
       var logType = logData.logs[i].type;
       var logHours = parseInt(logData.logs[i].elapsed.substring(0,2));
@@ -545,14 +547,14 @@ function update_line() {
       }
     }
   }
-  console.error(statData.lineProductive);
-  console.error(statData.lineUnproductive);
+  // console.error(statData.lineProductive);
+  //console.error(statData.lineUnproductive);
   // updating statistics json file
 
   statFile = JSON.stringify(statData, null, 2);
   fs.writeFileSync(STATS_JSON, statFile);
 
-  console.error("update_line() is over; app_data was updated");
+  //console.error("update_line() is over; app_data was updated");
   // update global variable
   app.locals.app_data = JSON.parse(fs.readFileSync(DATA_JSON));
 }

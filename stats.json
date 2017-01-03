@@ -1,45 +1,45 @@
 {
   "date": {
     "Year": 2016,
-    "Month": "December",
-    "Day": "30"
+    "Month": "January",
+    "Day": "2"
   },
   "lineLabels": [
-    "Dec 26",
     "Dec 27",
     "Dec 28",
     "Dec 29",
     "Dec 30",
     "Dec 31",
-    "Jan 1"
+    "Jan 1",
+    "Jan 2"
   ],
   "lineDefault": "Up to Today",
   "lineProductive": [
-    1.016,
     0,
     1.551,
     1.283,
     5.399,
     4.3,
-    7.45
+    10.783,
+    0
   ],
   "lineUnproductive": [
-    6.499,
     4,
     8.833,
     1.5,
     4.367,
     8.801,
-    2
+    2,
+    0
   ],
   "barDefault": "week",
   "barHours": [
-    33.122,
+    36.455,
     47.558,
     6.781,
     8.383,
-    10.513,
-    0.899,
+    13.179,
+    2.732,
     1.499
   ],
   "barTypes": [

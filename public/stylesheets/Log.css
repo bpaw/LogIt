@@ -241,7 +241,7 @@ body {
 .li-time {
 	width: 30%;
 	display: inline-block;
-	margin-right: 30%;
+	margin-right: 20%;
 }
 
 .li-description {
@@ -303,7 +303,7 @@ body {
 	font-size: .8em;
 	margin-bottom: 1em; 
 	padding-bottom: 1em;
-	margin-left: 3.5em;
+	margin-left: 1em;
 	border-bottom: .01em dotted gray;
 	width: 85%;
 	color: black;
@@ -315,4 +315,84 @@ body {
 	border: .05em solid gray;
 	padding-top: 2em;
 	padding-bottom: 2em;
+}
+
+.type-rec-work {
+	background-color: rgba(75,192,192,1);
+	border: .05em solid rgba(75,192,192,1);
+	border-radius: .25em;
+	color: white;
+	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	font-size: .75em;
+	display: inline-block;
+	margin: 0px 0px 0px 0px;
+	padding: .4em;
+}
+
+.type-rec-leisure {
+	background-color: rgba(239,83,80,1);
+	border: .05em solid rgba(239,83,80,1);
+	border-radius: .25em;
+	color: white;
+	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	font-size: .75em;
+	display: inline-block;
+	margin: 0px 0px 0px 0px;
+	padding: .4em;
+}
+
+.type-rec-daily {
+	background-color: rgba(255, 99, 132, 1);
+	border: .05em solid rgba(255, 99, 132, 1);
+	border-radius: .25em;
+	color: white;
+	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	font-size: .75em;
+	display: inline-block;
+	margin: 0px 0px 0px 0px;
+	padding: .4em;
+}
+.type-rec-sleep {
+	background-color: rgba(54, 162, 235, 1);
+	border: .05em solid rgba(54, 162, 235, 1);
+	border-radius: .25em;
+	color: white;
+	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	font-size: .75em;
+	display: inline-block;
+	margin: 0px 0px 0px 0px;
+	padding: .4em;
+}
+.type-rec-eat {
+	background-color: rgba(255, 206, 86, 1);
+	border: .05em solid rgba(255, 206, 86, 1);
+	border-radius: .25em;
+	color: white;
+	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	font-size: .75em;
+	display: inline-block;
+	margin: 0px 0px 0px 0px;
+	padding: .4em;
+}
+.type-rec-transp {
+	background-color: rgba(242, 116, 5, 1);
+	border: .05em solid rgba(242, 116, 5, 1);
+	border-radius: .25em;
+	color: white;
+	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	font-size: .75em;
+	display: inline-block;
+	margin: 0px 0px 0px 0px;
+	padding: .4em;
+}
+.type-rec-exercise {
+	background-color: rgba(153, 102, 255, 1);
+	border: .05em solid rgba(153, 102, 255, 1);
+	border-radius: .25em;
+	color: white;
+	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	font-size: .75em;
+	display: inline-block;
+	margin: 0px 0px 0px 0px;
+	padding: .4em;
 }
