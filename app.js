@@ -79,14 +79,16 @@ app.use('/', index);
 // POST to update stats.json for statistics view
 app.post('/updateStats', function(req, res) {
 
+  console.error(req.body.option);
   // console.error("updateStats route");
   var updated_date = new Date();
+
   if (app.locals.currDay != updated_date.getDate()) {
     console.error("daily_update() called from app.post route");
     daily_update();
   }
   
-  update_bar_and_doughnut();
+  update_bar_and_doughnut(req.body.option);
   update_line();
 
   var message = "updateStats route finished";
@@ -299,7 +301,6 @@ function daily_update() {
 
       var logData = JSON.parse(logFile);
 
-
       // variables to create the label
       var labelDay = counter;
       var labelMonth;
@@ -339,9 +340,10 @@ function daily_update() {
 // FIX : right now the bar and doughnut graphs aren't showing week, just logs with a day 
 // value larger than it - look to the update_line() solution
 // updates charts based on the stats.json 
-function update_bar_and_doughnut() {
+function update_bar_and_doughnut(option) {
 
   // console.error("calling update_bar_and_doughnut()");
+  console.error(option + "From update_bar_and_doughnut");
 
   // get data from files
   var statFile = fs.readFileSync(STATS_JSON); 
@@ -358,9 +360,35 @@ function update_bar_and_doughnut() {
     statData.barHours[i] = 0;
   }
 
-  // updating the info in stats.json
+  // call the method to update the bar and doughnut graphs based on option
+  // from statistics page 
+  if (option == "Week") {
+    console.error("In the week option");
+    update_bar_and_doughnut_week(logData, statData);
+  }
+  else if (option == "Month") {    
+    console.error("In the month option");
+    update_bar_and_doughnut_month(logData, statData);
+  }
+  else if (option == "Year") {
+    console.error("In the year option");
+    update_bar_and_doughnut_year(logData, statData);
+  }
+
+  // updating statistics json file
+  statFile = JSON.stringify(statData, null, 2);
+  fs.writeFileSync(STATS_JSON, statFile);
+
+  // console.error("update_bar_and_doughnut() is over; app_data was updated");
+  // update global variable
+  app.locals.app_data = JSON.parse(fs.readFileSync(DATA_JSON));
+}
+
+function update_bar_and_doughnut_week(logData, statData) {
+  
+  var restOfWeek = 6;
+
   for (var i = 0; i < logData.logs.length; i++) {
-    
     var afterMonth = 8; // # of characters preceeding the month in the data
     var afterDay = 6;   // # of characters preceedin the day in the date
           
@@ -373,28 +401,29 @@ function update_bar_and_doughnut() {
     var logYear = logData.logs[i].year;
 
     var startOfWeek = app.locals.currDay - restOfWeek;
-
+    var monthIndex = date.getMonth() - 1;
     // SPECIAL CONDITION - logs that were made at end of month if currday is less than 7
     if (startOfWeek < 1) {
       // move one index backwards in monthList[] 
       if (app.locals.currMonth != "January") {
-        logDay += daysInMonth[date.getMonth() - 1];
-        logMonth = monthList[date.getMonth() - 1];
+        logDay += daysInMonth[monthIndex];
+        logMonth = monthList[monthIndex];
       }
       // but if January, loop back around to end 
       else {
         logMonth = "December";
-        logDay += daysInMonth[11];
+        monthIndex = 11;
+        logDay += daysInMonth[monthIndex];
       }
     }
 
     var condition1 = logDay >= startOfWeek;
     var condition2 = logMonth == app.locals.currMonth; 
     var condition3 = Number(logYear) == app.locals.currYear;
-    var condition4 = logDay == ;
+    var condition4 = logDay == daysInMonth[monthIndex];
     // filter out logs that aren't relevant 
     // replace with startOfWeek and test later
-    if (condition1 && condition2 && condition3) {
+    if (condition1 && condition2 && condition3 || condition4) {
 
       var logType = logData.logs[i].type;
       var logHours = parseInt(logData.logs[i].elapsed.substring(0,2));
@@ -436,26 +465,115 @@ function update_bar_and_doughnut() {
           statData.barHours[Exercise] = Number(statData.barHours[Exercise].toFixed(3));
           break;
       }
-    }
+    } 
   }
-
-  // updating statistics json file
-  statFile = JSON.stringify(statData, null, 2);
-  fs.writeFileSync(STATS_JSON, statFile);
-
-  // console.error("update_bar_and_doughnut() is over; app_data was updated");
-  // update global variable
-  app.locals.app_data = JSON.parse(fs.readFileSync(DATA_JSON));
 }
 
 // TODO: make bar and doughnut have ability to get month data
-function update_bar_and_doughnut_month() {
+function update_bar_and_doughnut_month(logData, statData) {
+  
+  for (var i = 0; i < logData.logs.length; i++) {
 
+    // information from the current log
+    var logMonth = logData.logs[i].month;
+    var logYear = logData.logs[i].year;
+
+    // if the log is in the current year and month
+    if (logMonth == app.locals.currMonth && Number(logYear) == app.locals.currYear) {
+      console.error(logData.logs[i].date);
+      console.error(logType);
+
+      var logType = logData.logs[i].type;
+      var logHours = parseInt(logData.logs[i].elapsed.substring(0,2));
+      var logMin = parseInt(logData.logs[i].elapsed.substring(3));
+      var update = logHours + (logMin/60);
+
+      switch(logType) {
+
+        case "Work":
+          statData.barHours[Work] += update;
+          statData.barHours[Work] = Number(statData.barHours[Work].toFixed(3));
+          break;
+        case "Leisure":
+          statData.barHours[Leisure] += update;
+          statData.barHours[Leisure] = Number(statData.barHours[Leisure].toFixed(3));
+          break;
+        case "Daily Routines":
+          statData.barHours[Daily_Routines] += update;
+          statData.barHours[Daily_Routines] = Number(statData.barHours[Daily_Routines].toFixed(3));
+          break;
+        case "Sleeping":
+          statData.barHours[Sleep] += update;
+          statData.barHours[Sleep] = Number(statData.barHours[Sleep].toFixed(3));
+          break;
+        case "Eating":
+          statData.barHours[Eating] += update;
+          statData.barHours[Eating] = Number(statData.barHours[Eating].toFixed(3));
+          break;
+        case "Transportation":
+          statData.barHours[Transportation] += update;
+          statData.barHours[Transportation] = Number(statData.barHours[Transportation].toFixed(3));
+          break;
+        case "Exercise":
+          statData.barHours[Exercise] += update;
+          statData.barHours[Exercise] = Number(statData.barHours[Exercise].toFixed(3));
+          break;
+      }
+    }
+  }
 }
 
 // TODO: make bar and doughnut have ability to get year data
-function update_bar_and_doughnut_year() {
-  
+function update_bar_and_doughnut_year(logData, statData) {
+  for (var i = 0; i < logData.logs.length; i++) {
+
+    // information from the current log
+    var logMonth = logData.logs[i].month;
+    var logYear = logData.logs[i].year;
+
+    // if the log is in the current year and month
+    if (Number(logYear) == app.locals.currYear) {
+      console.error(logData.logs[i].date);
+      console.error(logType);
+
+      var logType = logData.logs[i].type;
+      var logHours = parseInt(logData.logs[i].elapsed.substring(0,2));
+      var logMin = parseInt(logData.logs[i].elapsed.substring(3));
+      var update = logHours + (logMin/60);
+
+      switch(logType) {
+
+        case "Work":
+          statData.barHours[Work] += update;
+          statData.barHours[Work] = Number(statData.barHours[Work].toFixed(3));
+          break;
+        case "Leisure":
+          statData.barHours[Leisure] += update;
+          statData.barHours[Leisure] = Number(statData.barHours[Leisure].toFixed(3));
+          break;
+        case "Daily Routines":
+          statData.barHours[Daily_Routines] += update;
+          statData.barHours[Daily_Routines] = Number(statData.barHours[Daily_Routines].toFixed(3));
+          break;
+        case "Sleeping":
+          statData.barHours[Sleep] += update;
+          statData.barHours[Sleep] = Number(statData.barHours[Sleep].toFixed(3));
+          break;
+        case "Eating":
+          statData.barHours[Eating] += update;
+          statData.barHours[Eating] = Number(statData.barHours[Eating].toFixed(3));
+          break;
+        case "Transportation":
+          statData.barHours[Transportation] += update;
+          statData.barHours[Transportation] = Number(statData.barHours[Transportation].toFixed(3));
+          break;
+        case "Exercise":
+          statData.barHours[Exercise] += update;
+          statData.barHours[Exercise] = Number(statData.barHours[Exercise].toFixed(3));
+          break;
+      }
+    }
+  }
 }
 
 

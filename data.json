@@ -1,5 +1,5 @@
 {
-  "date": "January 6, 2017",
+  "date": "January 8, 2017",
   "logs": [
     {
       "year": "2016",
@@ -1210,6 +1210,26 @@
       "end": "3:01 PM",
       "description": "Fake sleep",
       "elapsed": "01:01"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 8, 2017",
+      "type": "Leisure",
+      "start": "10:00 AM",
+      "end": "11:00 AM",
+      "description": "Watching clone wars",
+      "elapsed": "01:00"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 8, 2017",
+      "type": "Work",
+      "start": "11:00 AM",
+      "end": "11:25 AM",
+      "description": "Working",
+      "elapsed": "00:25"
     }
   ]
 }

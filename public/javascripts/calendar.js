@@ -20,7 +20,7 @@ var cal_flag = 0; // var that tells if any data has been loaded
 var curr_date = new Date();
 
 var default_date = new Date(curr_date.getFullYear(), curr_date.getMonth(), 1);
-var fake_date = new Date(2016, 11, 1);
+// var fake_date = new Date(2016, 11, 1);
 
 var starting_day = default_date.getDay();
 

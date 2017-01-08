@@ -1,8 +1,14 @@
 var main = function () {
 
+    var value = $('.bar-options').val();
+    var optionObj = {
+        option: value
+    }
+
     $.ajax({
         type: "POST",
-        url: "/updateStats"
+        url: "/updateStats",
+        data: optionObj
     }).done(function (result) {
         console.error(result);
     });
@@ -130,6 +136,33 @@ var main = function () {
     }
 
     drawCharts();
+
+
+    /////////////// JavaScript for the Event listeners ////////////////////
+    $('.bar-options').change(function () {
+
+        $('#barChart').remove();
+        $('.bar-container').append('<canvas id="barChart"></canvas>');
+
+        var field = $(this).children(":selected").text();
+        
+        field = field.replace(" ", "");
+        field = field.replace(" ", "");
+
+        var optionObj = {
+            option: field
+        }
+
+        $.ajax({
+            data: optionObj,
+            url: "/updateStats",
+            type: "POST"
+        }).done(function(result) {
+            drawCharts(); 
+        });
+
+    });
+
 }
 
 $(document).ready(main);
