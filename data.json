@@ -1,5 +1,5 @@
 {
-  "date": "January 2, 2017",
+  "date": "January 6, 2017",
   "logs": [
     {
       "year": "2016",
@@ -1120,6 +1120,96 @@
       "end": "12:00 AM",
       "description": "Preparing for Khan Academy HackerRank",
       "elapsed": "01:30"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 2, 2017",
+      "type": "Work",
+      "start": "10:30 AM",
+      "end": "12:00 PM",
+      "description": "Fake data",
+      "elapsed": "01:30"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 2, 2017",
+      "type": "Work",
+      "start": "12:30 PM",
+      "end": "02:00 PM",
+      "description": "Fake data",
+      "elapsed": "01:30"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 4, 2017",
+      "type": "Eating",
+      "start": "08:00 AM",
+      "end": "09:00 AM",
+      "description": "fake breakfast",
+      "elapsed": "01:00"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 4, 2017",
+      "type": "Daily Routines",
+      "start": "09:00 AM",
+      "end": "09:20 AM",
+      "description": "Fake getting ready",
+      "elapsed": "00:20"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 4, 2017",
+      "type": "Transportation",
+      "start": "09:20 AM",
+      "end": "10:00 AM",
+      "description": "Fake walking",
+      "elapsed": "00:40"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 4, 2017",
+      "type": "Eating",
+      "start": "10:00 AM",
+      "end": "12:00 PM",
+      "description": "Fake lunch",
+      "elapsed": "02:00"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 4, 2017",
+      "type": "Work",
+      "start": "11:45 AM",
+      "end": "1:30 PM",
+      "description": "Fake work",
+      "elapsed": "01:45"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 4, 2017",
+      "type": "Leisure",
+      "start": "1:30 PM",
+      "end": "2:00 PM",
+      "description": "fake leisure",
+      "elapsed": "00:30"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 4, 2017",
+      "type": "Sleep",
+      "start": "2:00 PM",
+      "end": "3:01 PM",
+      "description": "Fake sleep",
+      "elapsed": "01:01"
     }
   ]
 }

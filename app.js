@@ -76,7 +76,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // contains GET routes 
 app.use('/', index);
 
-// POST to update stats.json
+// POST to update stats.json for statistics view
 app.post('/updateStats', function(req, res) {
 
   // console.error("updateStats route");
@@ -94,7 +94,7 @@ app.post('/updateStats', function(req, res) {
   res.status(200).send(message);
 });
 
-// POST to add new log to data.json
+// POST to add new log from log view to data.jsonge
 app.post('/addNewLog', function(req, res) {
 
   // read the posts file and save the text in a variable
@@ -154,7 +154,7 @@ app.post('/readUpdate', function(req, res) {
   res.status(200).send();
 });
 
-// POST to send stats.json data to statistics template 
+// POST to send stats.json data to statistics view 
 app.post('/readStats', function(req, res) {
 
   var stats_file = fs.readFileSync(STATS_JSON);
@@ -164,6 +164,7 @@ app.post('/readStats', function(req, res) {
   res.status(200).send(stats_data);
 });
 
+// POST to get current date 
 app.post('/get_date', function(req, res) {
 
   var stats_file = fs.readFileSync(STATS_JSON);
@@ -172,6 +173,46 @@ app.post('/get_date', function(req, res) {
 
   res.status(200).send(stats_data.date);
 }); 
+
+// POST - gets a specific day's information for calendary view
+app.post('/getSpecificInfo', function(req, res) {
+
+  var logFile = fs.readFileSync(DATA_JSON);
+  var statFile = fs.readFileSync(STATS_JSON);
+
+  var logData = JSON.parse(logFile);
+  var statData = JSON.parse(statFile);
+
+  console.error(req.body);
+
+  validLogs = [];
+  for (var i = 0; i < logData.logs.length; i++) {
+
+    var afterMonth = 8; // # of characters preceeding the month in the data
+    var afterDay = 6;   // # of characters preceedin the day in the date
+          
+    // range so we can get the day digits only
+    var lowerBound = logData.logs[i].date.length - afterMonth;
+    var upperBound = logData.logs[i].date.length - afterDay;
+
+    var logDay = Number(logData.logs[i].date.substring(lowerBound, upperBound));
+    var logMonth = logData.logs[i].month;
+    var logYear = logData.logs[i].year;
+    
+    var condition1 = logDay == Number(req.body.day);
+    var condition2 = logMonth == monthList[Number(req.body.month)];
+    var condition3 = logYear == Number(req.body.year);
+
+    if (condition1 && condition2 && condition3) {
+      validLogs.push(logData.logs[i]);
+    }
+  }
+
+  console.error(validLogs);
+
+  var message = req.body.day + " was received";
+  res.status(200).send(validLogs);
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -328,11 +369,32 @@ function update_bar_and_doughnut() {
     var upperBound = logData.logs[i].date.length - afterDay;
 
     var logDay = logData.logs[i].date.substring(lowerBound, upperBound);
+    var logMonth = logData.logs[i].month;
+    var logYear = logData.logs[i].year;
+
     var startOfWeek = app.locals.currDay - restOfWeek;
 
+    // SPECIAL CONDITION - logs that were made at end of month if currday is less than 7
+    if (startOfWeek < 1) {
+      // move one index backwards in monthList[] 
+      if (app.locals.currMonth != "January") {
+        logDay += daysInMonth[date.getMonth() - 1];
+        logMonth = monthList[date.getMonth() - 1];
+      }
+      // but if January, loop back around to end 
+      else {
+        logMonth = "December";
+        logDay += daysInMonth[11];
+      }
+    }
+
+    var condition1 = logDay >= startOfWeek;
+    var condition2 = logMonth == app.locals.currMonth; 
+    var condition3 = Number(logYear) == app.locals.currYear;
+    var condition4 = logDay == ;
     // filter out logs that aren't relevant 
     // replace with startOfWeek and test later
-    if (logDay >= (app.locals.currDay - restOfWeek)) {
+    if (condition1 && condition2 && condition3) {
 
       var logType = logData.logs[i].type;
       var logHours = parseInt(logData.logs[i].elapsed.substring(0,2));
@@ -385,6 +447,17 @@ function update_bar_and_doughnut() {
   // update global variable
   app.locals.app_data = JSON.parse(fs.readFileSync(DATA_JSON));
 }
+
+// TODO: make bar and doughnut have ability to get month data
+function update_bar_and_doughnut_month() {
+
+}
+
+// TODO: make bar and doughnut have ability to get year data
+function update_bar_and_doughnut_year() {
+  
+}
+
 
 function update_line() {
 
@@ -558,159 +631,3 @@ function update_line() {
   // update global variable
   app.locals.app_data = JSON.parse(fs.readFileSync(DATA_JSON));
 }
-// ARCHIVES //
-/*
-function update_line() {
-
-  console.error("calling update_line()");
-
-  // get data from files
-  var statFile = fs.readFileSync(STATS_JSON); 
-  var logFile = fs.readFileSync(DATA_JSON);
-
-  // parse files for data
-  var statData = JSON.parse(statFile);
-  var logData = JSON.parse(logFile);
-
-  // resetting line graph's info in stats.json
-  for (var i2 = 0; i2 < statData.lineProductive.length; i2++) {
-    statData.lineProductive[i2] = 0;
-    statData.lineUnproductive[i2] = 0;
-  }
-
-  var day = 7;
-  for (var counter = app.locals.currDay; counter >= parseInt(app.locals.currDay - restOfWeek); counter--) {
-
-    // variables to create the label
-    var labelDay = counter;
-    var label = []; 
-
-    // if the week has days between two months
-    if (labelDay < 1) {
-      // move one index backwards in monthList[] 
-      if (app.locals.currMonth != "January") {
-        labelDay += daysInMonth[date.getMonth() - 1];
-      }
-      // but if January, loop back around to end 
-      else {
-        labelDay += daysInMonth[11];
-      }
-    }
-           
-    // construct the label
-    label[day] = labelDay;
-    day--;    
-    // update data
-  }
-  var currMonth = monthList[date.getMonth() - 1];
-  var prevMonth = monthList[date.getMonth() - 2];
-  for (var i = 0; i < logData.logs.length; i++) {
-    
-    var afterMonth = 8; // # of characters preceeding the month in the data
-    var afterDay = 6;   // # of characters preceedin the day in the date
-          
-    // range so we can get the day digits only
-    var lowerBound = logData.logs[i].date.length - afterMonth;
-    var upperBound = logData.logs[i].date.length - afterDay;
-
-    var logDay = logData.logs[i].date.substring(lowerBound, upperBound);
-    var logMonth = logData.logs[i].month;
-    var startOfWeek = app.locals.currDay - restOfWeek;
-
-    if (logMonth = currMonth || logMonth == prevMonth) {
-
-      var logType = logData.logs[i].type;
-      var logHours = parseInt(logData.logs[i].elapsed.substring(0,2));
-      var logMin = parseInt(logData.logs[i].elapsed.substring(3));
-      var update = logHours + (logMin/60);
-
-      switch (logDay) {
-        case label[0]:
-          if (logType == "Work") {
-            var pro = Number((statData.lineProductive[Day1] + update).toFixed(3));
-            statData.lineProductive[Day1] = pro;
-          } 
-          if (logType == "Leisure") {
-            var upro = Number((statData.lineUnproductive[Day1] + update).toFixed(3));
-            statData.lineUnproductive[Day1] = upro;
-          }
-          break;
-
-        case label[1]: 
-          if (logType == "Work") {
-            var pro = Number((statData.lineProductive[Day2] + update).toFixed(3));
-            statData.lineProductive[Day2] = pro;
-          } 
-          if (logType == "Leisure") {
-            var upro = Number((statData.lineUnproductive[Day2] + update).toFixed(3));
-            statData.lineUnproductive[Day2] = upro;
-          }
-          break;
-
-        case label[2]:
-          if (logType == "Work") {
-            var pro = Number((statData.lineProductive[Day3] + update).toFixed(3));
-            statData.lineProductive[Day3] = pro;
-          } 
-          if (logType == "Leisure") {
-            var upro = Number((statData.lineUnproductive[Day3] + update).toFixed(3));
-            statData.lineUnproductive[Day3] = upro;
-          } 
-          break;
-
-        case label[3]: 
-          if (logType == "Work") {
-            var pro = Number((statData.lineProductive[Day4] + update).toFixed(3));
-            statData.lineProductive[Day4] = pro;
-          } 
-          if (logType == "Leisure") {
-            var upro = Number((statData.lineUnproductive[Day4] + update).toFixed(3));
-            statData.lineUnproductive[Day4] = upro;
-          }
-          break;
-
-        case label[4]: 
-          if (logType == "Work") {
-            var pro = Number((statData.lineProductive[Day5] + update).toFixed(3));
-            statData.lineProductive[Day5] = pro;
-          } 
-          if (logType == "Leisure") {
-            var upro = Number((statData.lineUnproductive[Day5] + update).toFixed(3));
-            statData.lineUnproductive[Day5] = upro;
-          }
-          break;
-
-        case label[5]: 
-          if (logType == "Work") {
-            var pro = Number((statData.lineProductive[Day6] + update).toFixed(3));
-            statData.lineProductive[Day6] = pro;
-          } 
-          if (logType == "Leisure") {
-            var upro = Number((statData.lineUnproductive[Day6] + update).toFixed(3));
-            statData.lineUnproductive[Day6] = upro;
-          }
-          break;
-
-        case label[6]: 
-          if (logType == "Work") {
-            var pro = Number((statData.lineProductive[Day7] + update).toFixed(3));
-            statData.lineProductive[Day7] = pro;
-          } 
-          if (logType == "Leisure") {
-            var upro = Number((statData.lineUnproductive[Day7] + update).toFixed(3));
-            statData.lineUnproductive[Day7] = upro;
-          }
-          break;
-      }
-    }
-  }
-
-  // updating statistics json file
-  statFile = JSON.stringify(statData, null, 2);
-  fs.writeFileSync(STATS_JSON, statFile);
-
-  console.error("update_line() is over; app_data was updated");
-  // update global variable
-  app.locals.app_data = JSON.parse(fs.readFileSync(DATA_JSON));
-}
-*/

@@ -1,3 +1,7 @@
+html {
+	overflow-y: scroll;
+}
+
 body {
 	font-family: "Helvetica Neue", "Helvetica", "Avenir", "Arial", sans-serif;
 	padding: 0px 0px 0px 0px;
@@ -14,9 +18,16 @@ body {
 	text-align: center;
 }
 
+.bar-container {
+	margin-right: auto;
+	margin-left: auto;
+	width: 40vw;
+}
+
 .calendar-banner {
 	background-color: gray;
 	color: white;
+	display: inline-block;
 	font-size: 1.5em;
 	height: 10vh;
 	padding-top: 1em;
@@ -24,13 +35,53 @@ body {
 	width: 100%;
 }
 
+.calendar-banner-left {
+	background-color: gray;
+	color: white;
+	cursor: pointer;
+	display: inline-block;
+	height: 10vh;
+	text-align: center;
+	vertical-align: top;
+	left: 0%;
+	position: relative;
+	width: 5%;
+}
+
+.calendar-banner-right {
+	background-color: gray;
+	color: white;
+	cursor: pointer;
+	display: inline-block;
+	height: 10vh;
+	text-align: center;
+	vertical-align: top;
+	right: 0%;
+	position: relative;
+	width: 5%;
+}
+
+.calendar-banner-title {
+	display: inline-block;
+	padding: 0px 1vw;
+	width: 50%;
+}
+
 .calendar-container {
 	background-color: white;
 	border: .1em solid gray;
 	height: 40vh;
+	margin-bottom: 1.5em;
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 1.5em;
 	width: 40vw;
+}
+
+.calendar-container-container {
+	background-color: white;
+	border: .05em solid gray;
+	margin: 2em 0px;
 }
 
 .calendar-header-day {
@@ -64,6 +115,8 @@ body {
 .col-left-date {
 	width: 50%;
 	margin: 0px auto 0px auto;
+	text-align: center;
+	padding: 1em;
 }
 
 .col-left-month {
@@ -92,12 +145,119 @@ body {
 	width: 80%;
 }
 
+.footer {
+	color: #95979a;
+	height: 10vh;
+	margin-bottom: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 1em;
+	width: 75%;
+}
+
+.footer-anchor {
+	color: #254459;
+	text-decoration: none;
+	margin-left: 3em;
+}
+
+.graph-container {
+	background-color: white;
+	font-family: "Helvetica Neue", "Helvetica", "Avenir", "Arial", sans-serif;
+	font-family: .8em;
+	width: 100%;
+	margin-top: 2.5em;	
+	margin-bottom: 2.5em;
+}
+
 .inner-page {
 	border-radius: .1em;
 	margin: 2em auto 2em auto;
-	padding: 1em 0px 1em 0px;
+	padding: 0px 0px 0px 0px;
 	width: 75%;	
 	height: 100%;
+}
+
+.li-time {
+	width: 30%;
+	display: inline-block;
+	margin-right: 20%;
+}
+
+.li-description {
+	width: 35%;
+	display: inline-block;
+	right: 0;
+}
+
+.log-list-container {	
+	background-color: white;
+	height: 100%;
+	padding: 0px 0px 0px 0px;
+	width: 100%;
+}
+
+.log-list-container-full {
+	background-color: white;
+	height: 500px;
+	padding: 0px 0px 0px 0px;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: scroll;
+}
+
+.log-list {
+	color: black;
+	list-style: none; 
+}
+
+.log-header {
+	text-align: left;
+	font-family: 'Helvetica Neue', 'Helvetica', 'Avenir', 'Arial', sans-serif;
+	font-size: 1.2em;
+	color: black;
+	padding-bottom: .2em;
+}
+
+.log-subheader {
+	color: rgb(90,90,90);
+	font-size: .75em;
+	font-family: 'Helvetica Neue', 'Helvetica', 'Avenir', 'Arial', sans-serif;
+}
+
+.log-header-container {
+	position: relative;
+	background-color: white;
+	width: 25%;
+	left: 10%;
+}
+
+.log-list-style {
+	font-family: 'Helvetica Neue', 'Helvetica', 'Avenir', 'Arial', sans-serif;
+	font-size: .8em;
+	margin-bottom: 1em; 
+	padding-bottom: 1em;
+	margin-left: 1em;
+	border-bottom: .01em dotted gray;
+	width: 85%;
+	color: black;
+}
+
+.past-log-header {
+	margin-bottom: 2em;
+}
+
+.statistics-header {
+	margin-top: 2em;
+}
+
+.view-container {
+	background-color: white;
+	border: .05em solid gray;
+	width: 100%;
+	padding-top: 2em;
+	padding-bottom: 2em;
 }
 
 #webpageName {

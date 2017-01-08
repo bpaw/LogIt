@@ -1,86 +1,26 @@
 var main = function() {
 
-	/////////////// JavaScript for the Hamburger Menu ////////////////////
-
- 	$('.icon-menu').click(function() {
+	/////////////// JavaScript for the banner items ////////////////////	
 	
-        $('.icon-menu-contents').animate({left: '0'});
-            
-         $('body').animate({left: '13.3%'});
- 		
-    });
-	
-	 $('.icon-menu-closebtn').click(function() {
-			
-		$('.icon-menu-contents').animate( {left: '-13.3%'});
-				
- 		$('body').animate( {left: '0'});
- 	});
-
-
-
-	/////////////// JavaScript for the Hamburger Menu items ////////////////////	
-	
-	/* set of javascript events for home option in the hamburger menu */
-	$('#icon-menu-home').mouseenter(function() {
-		$('#icon-menu-home').addClass('icon-menu-home');
-	});
-
 	$('#icon-menu-home').click(function() {
 		location.href = "/";
 	});
-	
-	$('#icon-menu-home').mouseleave(function() {
-		$('#icon-menu-home').removeClass('icon-menu-home');
-	});
-	
-	
-	/* set of javascript events for history option in the hamburger menu */
-	$('#icon-menu-history').mouseenter(function() {
-		$('#icon-menu-history').addClass('icon-menu-history');
-	});
 
 	$('#icon-menu-history').click(function() {
-		location.href = "/placeholder";
-	});
-
-	$('#icon-menu-history').mouseleave(function() {
-		$('#icon-menu-history').removeClass('icon-menu-history');
-	});
-
-	
-	/* set of javascript events for profile option in the hamburger menu */
-	$('#icon-menu-profile').mouseenter(function() {
-		$('#icon-menu-profile').addClass('icon-menu-profile');
+		location.href = "/statistics";
 	});
 
 	$('#icon-menu-profile').click(function() {
-		location.href = "/placeholder";
-	});
-
-	$('#icon-menu-profile').mouseleave(function() {
-		$('#icon-menu-profile').removeClass('icon-menu-profile');
-	});
-
-	
-	/* set of javascript events for settings option in the hamburger menu */	
-	$('#icon-menu-settings').mouseenter(function() {
-		$('#icon-menu-settings').addClass('icon-menu-settings');
+		location.href = "/calendar";
 	});
 
 	$('#icon-menu-settings').click(function() {
 		location.href = "/placeholder";
 	});
 	
-	$('#icon-menu-settings').mouseleave(function() {
-		$('#icon-menu-settings').removeClass('icon-menu-settings');
-	});
-
-
-
 	/////////////// JavaScript for the Log entries ////////////////////
 
-	/* event listener for clicking on CANCEL BUTTON */
+	/* Event listener for clicking on CANCEL BUTTON */
 	$('.cancel-button').click(function() {
 		$('.log-description').val("");
 		$('#start-time').val("");
@@ -88,7 +28,7 @@ var main = function() {
 		$('#type-selection').val("");		
 	}); 
 
-	/* even listener for clicking on POST BUTTON */
+	/* Event listener for clicking on POST BUTTON */
 	$('.post-button').click(function() {
 	var descriptionPlaceholder = "description of activity";
 	var timePlaceholder = "_:_ _ - _:_ _";
@@ -250,11 +190,15 @@ var main = function() {
 	}	
 	}); 
 
-	// block of code to make sure that handles page overflow 
-	/* var sizeCondition =;
-	if (sizeCondition) {
-		$('.log-list-container').addClass('.log-list-container-full');
-	} */
+	/* Event listener for hovering over a log item - show x option */
+	$('.log-list-style').mouseenter(function() {
+		$(this).children('.x-button').text('x');
+	}); 
+
+	/* Event listener for the mouse leaving a log item - get rid of x option */
+	$('.log-list-style').mouseleave(function() {
+		$(this).children('.x-button').text('');
+	}); 
 };
 
 $(document).ready(main);

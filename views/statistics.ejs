@@ -14,11 +14,12 @@
 		<div class="inner-page">
 
 			<h5 class='date' id='stats_date'> <%= app_data.date %> </h5>
+
 			<div class="graph-container">
 				
 				The line chart provides a comparison between productive and unproductive logged times
 				throughout the week.	
-				<div class="line-text-container">
+				<div class="text-container">
 					<div class="line-options-container">
 						
 						View options - 
@@ -35,12 +36,12 @@
 					<canvas id="lineChart"> </canvas>
 				</div> <!-- line-container -->
 				
-				<div class="line-text-container">
+				<div class="text-container">
 					<div class="line-options-container">
 						
 						View options - 
 
-						<select class='line-options'>
+						<select class='bar-options'>
 							<option> Week </option>
 							<option> Month </option>
 							<option> Year </option>
@@ -52,12 +53,12 @@
 					<canvas id="barChart"></canvas>
 				</div> <!-- bar container-->
 
-				<div class="line-text-container">
+				<div class="text-container">
 					<div class="line-options-container">
 						
 						View options - 
 
-						<select class='line-options'>
+						<select class='doughnut-options'>
 							<option> Week </option>
 							<option> Month </option>
 							<option> Year </option>

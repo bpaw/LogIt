@@ -12,26 +12,92 @@
 		
 		<div class="inner-page">
 
-			<div class="calendar-container">
+			<div class="calendar-container-container">
 
-				<div class="calendar-banner"> LogIt - Calendar 
-				</div> <!-- calendar banner -->
+				<div class="calendar-container">
 
-				<div class="col-left">
-					<div class="col-left-date">
-						<h1 class="col-left-month"> <%= app_stats.lineLabels[6].substring(0, 3) %> </h1>
-						<p class="col-left-year"> <%= app_data.date.substring(app_data.date.length - 4) %> </p>
+					<div class="calendar-banner"> 
+						
+						<div class="calendar-banner-left"> <
+						</div> <!-- calendar banner go to prev month -->
+						
+						<div class="calendar-banner-title">
+						LogIt - Calendar 
+						</div>
+
+						<div class="calendar-banner-right"> >
+						</div> <!-- calendar banner go to next month -->
+
+					</div> <!-- calendar banner -->
+
+					
+
+					<div class="col-left">
+						<div class="col-left-date">
+							<h1 class="col-left-month"></h1>
+							<p class="col-left-year"></p>
+						</div>
+					</div>  <!-- left column -->
+
+					<div class="col-right">
+					</div>  <!-- right column -->
+
+				</div>  <!-- calendar container -->
+
+			</div> <!-- calendar-container's container -->
+
+			<div class="view-container">
+
+				<div class="log-header-container">
+					<div class="log-header"> 
+						Click on a date
+					</div> <!-- log header  -->
+
+					<div class="log-subheader">
+						<%= app_data.date %>
 					</div>
-				</div>  <!-- left column -->
 
-				<div class="col-right">
-				</div>  <!-- right column -->
+				</div> <!-- log header container  -->
 
-			</div>  <!-- calendar container -->
+				<div class="log-header-container">
+					<div class="statistics-header">
+						Statistics:
+					</div>
+				</div>
+
+				<div class="graph-container">
+					<div class="bar-container">
+						<canvas id="barChart"></canvas>
+					</div> <!-- bar container-->
+				</div> <!-- graph container-->
+
+				<div class="log-header-container">
+					<div class="past-log-header">
+						Past Logs:
+					</div>
+				</div>
+
+				<div class="log-list-container">
+					<ul class="log-list">
+					</ul>
+				</div>
+
+			</div> <!-- view-container -->
 
 		</div> <!-- inner page -->
 
+
+		<div class="footer">
+			<em> Developer Contact </em>
+			<br><br>
+			<a href='https://github.com/bpaw' class="footer-anchor"> github </a>
+			<br><br>
+			<a href='https://www.linkedin.com/in/brandonpaw' class="footer-anchor"> linkedin </a>
+			<br><br>
+		</div>
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 		<script src="/javascripts/calendar.js"></script>
 	</body>
 </html>

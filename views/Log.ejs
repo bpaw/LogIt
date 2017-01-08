@@ -107,12 +107,17 @@
 									<% if (item.type == "Exercise") { %>
 										<div class="type-rec-exercise"> <%= item.elapsed %> </div>
 									<% } %>
+
 									<div class="li-time">
 										<%= item.start + " - " + item.end %> 
 									</div> <!-- li time  -->
+									
 									<div class="li-description">
 										<%= item.description %>
 									</div> <!-- li description  -->
+
+									<div class="x-button">
+									</div>
 								</li>
 							<% } %>
 						<% }); %>
