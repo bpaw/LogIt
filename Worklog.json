@@ -2,3 +2,6 @@ December 21, 2016:
 	- changed the aesthetic of the site
 	- got basic write to file capability finished
 		- however, changes require entire server restart to load; need to fix this bug
+
+January 9, 2016:
+	- Set up temporary routes between pages using a menu with words (may replace with icons in future)

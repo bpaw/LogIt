@@ -5,41 +5,41 @@
     "Day": "2"
   },
   "lineLabels": [
-    "Jan 2",
     "Jan 3",
     "Jan 4",
     "Jan 5",
     "Jan 6",
     "Jan 7",
-    "Jan 8"
+    "Jan 8",
+    "Jan 9"
   ],
   "lineDefault": "Up to Today",
   "lineProductive": [
-    3,
     0,
     1.75,
     0,
     0,
     0,
-    0.417
+    2.167,
+    0
   ],
   "lineUnproductive": [
-    0,
     0,
     0.5,
     0,
     0,
     0,
-    1
+    6.25,
+    1.283
   ],
   "barDefault": "week",
   "barHours": [
-    5.166,
-    1.5,
+    3.916,
+    8.032,
     0.333,
     0,
-    3,
-    0.666,
+    4.533333333333333,
+    1.8486666666666667,
     0
   ],
   "barTypes": [

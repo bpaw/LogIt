@@ -27,6 +27,7 @@ input {
 }
 
 body {
+	font-family: "Helvetica Neue", "Helvetica", "Avenir", "Arial", sans-serif;
 	padding: 0px 0px 0px 0px;
 	margin: 0px 0px 0px 0px;
 	background-color: #e9eaea;
@@ -401,4 +402,23 @@ body {
   	color: gray;
 	cursor: pointer;
 	display: inline-block;
+}
+
+.menu {
+	width: 50vw;
+}
+
+.menu-li {
+	list-style-type: none;
+}
+
+.menu-li li {
+	float: left;
+	padding: 1em;
+	cursor: pointer;
+}
+
+.title-container {
+	width: 50%;
+	float: left; 
 }

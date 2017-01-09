@@ -1,5 +1,5 @@
 {
-  "date": "January 8, 2017",
+  "date": "January 9, 2017",
   "logs": [
     {
       "year": "2016",
@@ -1230,6 +1230,126 @@
       "end": "11:25 AM",
       "description": "Working",
       "elapsed": "00:25"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 8, 2017",
+      "type": "Leisure",
+      "start": "11:30 AM",
+      "end": "12:30 PM",
+      "description": "Playing battlefront 2",
+      "elapsed": "01:00"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 8, 2017",
+      "type": "Work",
+      "start": "12:30 PM",
+      "end": "2:15 PM",
+      "description": "Working on LogIt's statistic page",
+      "elapsed": "01:45"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 8, 2017",
+      "type": "Transportation",
+      "start": "2:30 PM",
+      "end": "2:45 PM",
+      "description": "Getting a sandwich from Earl's",
+      "elapsed": "00:15"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 8, 2017",
+      "type": "Transportation",
+      "start": "2:45 PM",
+      "end": "3:05 PM",
+      "description": "Walking to Kat's",
+      "elapsed": "00:20"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 8, 2017",
+      "type": "Leisure",
+      "start": "3:05 PM",
+      "end": "6:40 PM",
+      "description": "Hangin w/ Kat",
+      "elapsed": "03:35"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 8, 2017",
+      "type": "Leisure",
+      "start": "6:40 PM",
+      "end": "7:20 PM",
+      "description": "Playing Star Wars Battlefront w/ Chris",
+      "elapsed": "00:40"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 8, 2017",
+      "type": "Eating",
+      "start": "7:20 PM",
+      "end": "7:44 PM",
+      "description": "Eating curry w/ Kat",
+      "elapsed": "00:24"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 9, 2017",
+      "type": "Transportation",
+      "start": "10:00 AM",
+      "end": "10:20 AM",
+      "description": "Walking to Black Hall",
+      "elapsed": "00:20"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 9, 2017",
+      "type": "Leisure",
+      "start": "10:20 AM",
+      "end": "11:37 AM",
+      "description": "Not working",
+      "elapsed": "01:17"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 9, 2017",
+      "type": "Work",
+      "start": "11:37 AM",
+      "end": "12:17 PM",
+      "description": "Working on LogIt",
+      "elapsed": "00:40"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 9, 2017",
+      "type": "Eating",
+      "start": "12:17 AM",
+      "end": "12:45 PM",
+      "description": "Lunch and getting ready for class",
+      "elapsed": "01:08"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 9, 2017",
+      "type": "Transportation",
+      "start": "12:45 PM",
+      "end": "1:01 PM",
+      "description": "Walking to class",
+      "elapsed": "00:16"
     }
   ]
 }

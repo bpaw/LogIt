@@ -115,6 +115,23 @@ console.log("cal appended to col-right was called");
 
 	///// 	Event Listeners for Calendar 	/////
 
+$('#menu-home').click(function() {
+	location.href = "/";
+});
+
+$('#menu-journal').click(function() {
+	location.href = "/Log";
+});
+
+$('#menu-stats').click(function() {
+	location.href = "/statistics";
+});
+
+$('#menu-settings').click(function() {
+	location.href = "/placeholder";
+});
+
+
 $('body').on('click', '.calendar-banner-left', function() {
 	var monthCode = $('.col-left-month').text();
 	monthCode = monthCode.replace(" ", "");

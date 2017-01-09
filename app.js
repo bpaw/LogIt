@@ -533,8 +533,8 @@ function update_bar_and_doughnut_year(logData, statData) {
 
     // if the log is in the current year and month
     if (Number(logYear) == app.locals.currYear) {
-      console.error(logData.logs[i].date);
-      console.error(logType);
+      //console.error(logData.logs[i].date);
+      //console.error(logType);
 
       var logType = logData.logs[i].type;
       var logHours = parseInt(logData.logs[i].elapsed.substring(0,2));

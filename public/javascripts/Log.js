@@ -2,19 +2,19 @@ var main = function() {
 
 	/////////////// JavaScript for the banner items ////////////////////	
 	
-	$('#icon-menu-home').click(function() {
+	$('#menu-home').click(function() {
 		location.href = "/";
 	});
 
-	$('#icon-menu-history').click(function() {
+	$('#menu-stats').click(function() {
 		location.href = "/statistics";
 	});
 
-	$('#icon-menu-profile').click(function() {
+	$('#menu-cal').click(function() {
 		location.href = "/calendar";
 	});
 
-	$('#icon-menu-settings').click(function() {
+	$('#menu-settings').click(function() {
 		location.href = "/placeholder";
 	});
 	
@@ -124,20 +124,20 @@ var main = function() {
 		var T2 = new Date(Logdate + " " + endTimeNoMeridian);
 		diffHour = T2.getHours() - T1.getHours();
 		diffMin = T2.getMinutes() - T1.getMinutes();
-		alert(T1.getHours());
-		alert(T2.getHours());
-		alert(endTimeNoMeridian);
+		//alert(T1.getHours());
+		//alert(T2.getHours());
+		//alert(endTimeNoMeridian);
 		// edge cases - 1) crossing over midnight & 2) startTime's min > endTime's
 		if (T1.getHours() > T2.getHours()) {
-			alert("T1.getHours() > T2.getHours()");
+			//alert("T1.getHours() > T2.getHours()");
 			diffHour = (24 - T1.getHours()) + T2.getHours();
-			alert("diffHour (before diffMin computation)- " + diffHour);
+			//alert("diffHour (before diffMin computation)- " + diffHour);
 		}
 		if (T1.getMinutes() > T2.getMinutes()) {
-			alert("T1.getMinutes() > T2.getMinutes()");
+			//alert("T1.getMinutes() > T2.getMinutes()");
 			diffMin = (60 - T1.getMinutes()) + T2.getMinutes();
 			diffHour -= 1;
-			alert(diffHour + ":" + diffMin);
+			//alert(diffHour + ":" + diffMin);
 		}
 
 		// final padding so all values have 2 digits minimum

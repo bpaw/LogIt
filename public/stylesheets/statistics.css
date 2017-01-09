@@ -2,6 +2,7 @@ body {
 	padding: 0px 0px 0px 0px;
 	margin: 0px 0px 0px 0px;
 	background-color: #e9eaea;
+	font-family: "Helvetica Neue", "Helvetica", "Avenir", "Arial", sans-serif;
 }
 
 #banner {
@@ -71,4 +72,24 @@ body {
 	color: white;
 	font-family: monospace;
 	display: inline-block;
+}
+
+.menu {
+	color: white;
+	width: 50vw;
+}
+
+.menu-li {
+	list-style-type: none;
+}
+
+.menu-li li {
+	float: left;
+	padding: 1em;
+	cursor: pointer;
+}
+
+.title-container {
+	width: 50%;
+	float: left; 
 }

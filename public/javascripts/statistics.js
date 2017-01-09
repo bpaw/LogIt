@@ -137,12 +137,30 @@ var main = function () {
 
     drawCharts();
 
+    $('#menu-home').click(function() {
+        location.href = "/";
+    });
+
+    $('#menu-journal').click(function() {
+        location.href = "/Log";
+    });
+
+    $('#menu-cal').click(function() {
+        location.href = "/calendar";
+    });
+
+    $('#menu-settings').click(function() {
+        location.href = "/placeholder";
+    });
 
     /////////////// JavaScript for the Event listeners ////////////////////
     $('.bar-options').change(function () {
 
         $('#barChart').remove();
         $('.bar-container').append('<canvas id="barChart"></canvas>');
+
+        $('#doughnutChart').remove();
+        $('.doughnut-container').append('<canvas id="doughnutChart"></canvas>');
 
         var field = $(this).children(":selected").text();
         
