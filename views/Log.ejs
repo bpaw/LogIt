@@ -4,6 +4,7 @@
 	<head>
 		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="/stylesheets/Log.css">
+
 	</head>
 	
 	<body>
@@ -15,7 +16,7 @@
 					<li id="menu-home"> Home </li>
 					<li id="menu-stats"> Stats </li>
 					<li id="menu-cal"> Calendar </li>
-					<li id="menu-settings"> Settings </li>
+					<li id="menu-check"> Checklist </li>
 				</ul>
 			</div>
 
@@ -23,22 +24,6 @@
 				<h1 id="webpageName"> LogIt - Journal </h1>
 			</div>
 		</div>
-		
-		<!--
-		<div class="icon-menu-contents">
-			<ul><div class="icon-menu-closebtn">X</div>
-				<li id="icon-menu-home"><a href="#">Home</a></li>
-				<li id="icon-menu-history"><a href="#">History</a></li>
-				<li id="icon-menu-profile"><a href="#">Profile</a></li>
-				<li id="icon-menu-settings"><a href="#">Settings</a></li>
-			</ul>
-		</div>  icon menu contents  
-		
-		<div class="icon-menu">
-			<i class="fa fa-bars"></i>
-			Menu
-		</div>  icon menu  
-		-->
 
 		<div class="inner-page"> 
 			
@@ -98,25 +83,25 @@
 
 								<li class="log-list-style"> 
 									<% if (item.type == "Work") { %>
-										<div class="type-rec-work"> <%= item.elapsed %> </div>
+										<div class="type-rec" id="Work"> <%= item.elapsed %> </div>
 									<% } %>
 									<% if (item.type == "Leisure") { %>
-										<div class="type-rec-leisure"> <%= item.elapsed %> </div>
+										<div class="type-rec" id="Leisure"> <%= item.elapsed %> </div>
 									<% } %>
 									<% if (item.type == "Daily Routines") { %>
-										<div class="type-rec-daily"> <%= item.elapsed %> </div>
+										<div class="type-rec" id="Daily_Routines"> <%= item.elapsed %> </div>
 									<% } %>
 									<% if (item.type == "Sleep") { %>
-										<div class="type-rec-sleep"> <%= item.elapsed %> </div>
+										<div class="type-rec" id="Sleeping"> <%= item.elapsed %> </div>
 									<% } %>
 									<% if (item.type == "Eating") { %>
-										<div class="type-rec-eat"> <%= item.elapsed %> </div>
+										<div class="type-rec" id="Eating"> <%= item.elapsed %> </div>
 									<% } %>
 									<% if (item.type == "Transportation") { %>
-										<div class="type-rec-transp"> <%= item.elapsed %> </div>
+										<div class="type-rec" id="Transportation"> <%= item.elapsed %> </div>
 									<% } %>
 									<% if (item.type == "Exercise") { %>
-										<div class="type-rec-exercise"> <%= item.elapsed %> </div>
+										<div class="type-rec" id="Exercise"> <%= item.elapsed %> </div>
 									<% } %>
 
 									<div class="li-time">
@@ -127,8 +112,22 @@
 										<%= item.description %>
 									</div> <!-- li description  -->
 
-									<div class="x-button">
+									<div class="edit-button">
+										<i class="pencil"></i>
 									</div>
+
+									<div class="trash-button">
+										<i class="trash-o"></i>
+									</div>
+
+									<div class="x-button">
+										<i class="x"></i>
+									</div>
+									
+									<div class="check-button">
+										<i class="check"></i>
+									</div>
+
 								</li>
 							<% } %>
 						<% }); %>

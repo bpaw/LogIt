@@ -22,6 +22,11 @@ router.get('/calendar', function(req, res, next) {
 	res.render('calendar', { title: 'calendar' });
 });
 
+/* GET checklist page */
+router.get('/checklist', function(req, res, next) {
+	res.render('checklist', { title: 'placeholder'});
+});
+
 /* GET placeholder page */
 router.get('/placeholder', function(req, res, next) {
 	res.render('placeholder', { title: 'placeholder'});

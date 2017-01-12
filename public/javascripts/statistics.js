@@ -149,8 +149,8 @@ var main = function () {
         location.href = "/calendar";
     });
 
-    $('#menu-settings').click(function() {
-        location.href = "/placeholder";
+    $('#menu-check').click(function() {
+        location.href = "/checklist";
     });
 
     /////////////// JavaScript for the Event listeners ////////////////////

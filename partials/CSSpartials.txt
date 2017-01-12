@@ -1,0 +1,50 @@
+CSS
+
+html {
+	overflow-y: scroll;
+}
+
+#banner {
+	height: 10vh;
+	width: 100%;
+	background-color: rgb(105,210,231);
+	padding: 20px 0 10px 0;
+	display: inline-block;
+	text-align: center;
+}
+
+#webpageName {
+	color: white;
+	font-family: monospace;
+	display: inline-block;
+}
+
+body {
+	font-family: "Helvetica Neue", "Helvetica", "Avenir", "Arial", sans-serif;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	background-color: #e9eaea;
+	color: white;
+	position: relative;
+	overflow: hidden;
+	left: 0;
+}
+
+.menu {
+	width: 30vw;
+}
+
+.menu-li {
+	list-style-type: none;
+}
+
+.menu-li li {
+	float: left;
+	padding: 1em;
+	cursor: pointer;
+}
+
+.title-container {
+	width: 50%;
+	float: left; 
+}

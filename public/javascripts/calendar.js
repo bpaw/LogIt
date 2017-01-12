@@ -11,8 +11,8 @@ var months = ['January', 'February', 'March', 'April',
                      'October', 'November', 'December'];
 
 var month_labels = ['Jan', 'Feb', 'Mar', 'Apr',
-                     'May', 'Jun', 'Jul', 'Aug', 'Sep',
-                     'Oct', 'Nov', 'Dec'];
+                     'May', 'Jun', 'Jul', 'Aug', 
+                     'Sep', 'Oct', 'Nov', 'Dec'];
 
 var cal_flag = 0; // var that tells if any data has been loaded
 
@@ -127,8 +127,8 @@ $('#menu-stats').click(function() {
 	location.href = "/statistics";
 });
 
-$('#menu-settings').click(function() {
-	location.href = "/placeholder";
+$('#menu-check').click(function() {
+	location.href = "/checklist";
 });
 
 

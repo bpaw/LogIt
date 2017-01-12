@@ -242,7 +242,7 @@ body {
 .li-time {
 	width: 30%;
 	display: inline-block;
-	margin-right: 20%;
+	margin-right: 15%;
 }
 
 .li-description {
@@ -318,7 +318,7 @@ body {
 	padding-bottom: 2em;
 }
 
-.type-rec-work {
+#Work {
 	background-color: rgba(75,192,192,1);
 	border: .05em solid rgba(75,192,192,1);
 	border-radius: .25em;
@@ -330,7 +330,7 @@ body {
 	padding: .4em;
 }
 
-.type-rec-leisure {
+#Leisure {
 	background-color: rgba(239,83,80,1);
 	border: .05em solid rgba(239,83,80,1);
 	border-radius: .25em;
@@ -342,7 +342,7 @@ body {
 	padding: .4em;
 }
 
-.type-rec-daily {
+#Daily_Routines {
 	background-color: rgba(255, 99, 132, 1);
 	border: .05em solid rgba(255, 99, 132, 1);
 	border-radius: .25em;
@@ -353,7 +353,8 @@ body {
 	margin: 0px 2em 0px 0px;
 	padding: .4em;
 }
-.type-rec-sleep {
+
+#Sleeping {
 	background-color: rgba(54, 162, 235, 1);
 	border: .05em solid rgba(54, 162, 235, 1);
 	border-radius: .25em;
@@ -364,7 +365,8 @@ body {
 	margin: 0px 2em 0px 0px;
 	padding: .4em;
 }
-.type-rec-eat {
+
+#Eating {
 	background-color: rgba(255, 206, 86, 1);
 	border: .05em solid rgba(255, 206, 86, 1);
 	border-radius: .25em;
@@ -375,9 +377,10 @@ body {
 	margin: 0px 2em 0px 0px;
 	padding: .4em;
 }
-.type-rec-transp {
-	background-color: rgba(242, 116, 5, 1);
-	border: .05em solid rgba(242, 116, 5, 1);
+
+#Transportation {
+	background-color: rgba(242, 116, 5, .8);
+	border: .05em solid rgba(242, 116, 5, .8);
 	border-radius: .25em;
 	color: white;
 	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
@@ -386,7 +389,8 @@ body {
 	margin: 0px 2em 0px 0px;
 	padding: .4em;
 }
-.type-rec-exercise {
+
+#Exercise {
 	background-color: rgba(153, 102, 255, 1);
 	border: .05em solid rgba(153, 102, 255, 1);
 	border-radius: .25em;
@@ -398,10 +402,31 @@ body {
 	padding: .4em;
 }
 
-.x-button {
+.trash-button {
   	color: gray;
 	cursor: pointer;
 	display: inline-block;
+}
+
+.edit-button {
+	color: gray;
+	cursor: pointer;
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.check-button {
+	color: teal;
+	cursor: pointer;
+	display: inline-block;
+	margin-left: 1em;
+}
+
+.x-button {
+	color: #ef5350;
+	cursor: pointer;
+	display: inline-block;
+	margin-left: 1em;
 }
 
 .menu {
@@ -421,4 +446,19 @@ body {
 .title-container {
 	width: 50%;
 	float: left; 
+}
+
+#edit-start {
+	height: 1em;
+	margin: 0;
+}
+
+#edit-end {
+	height: 1em;
+	margin: 0;
+}
+
+#edit-desc {
+	height: 1em;
+	margin: 0;
 }

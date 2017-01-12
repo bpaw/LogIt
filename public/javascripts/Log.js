@@ -14,8 +14,8 @@ var main = function() {
 		location.href = "/calendar";
 	});
 
-	$('#menu-settings').click(function() {
-		location.href = "/placeholder";
+	$('#menu-check').click(function() {
+		location.href = "/checklist";
 	});
 	
 	/////////////// JavaScript for the Log entries ////////////////////
@@ -190,15 +190,192 @@ var main = function() {
 	}	
 	}); 
 
-	/* Event listener for hovering over a log item - show x option */
+	/* Event listener for hovering over a log item - show trash and edit options */
 	$('.log-list-style').mouseenter(function() {
-		$(this).children('.x-button').text('x');
+		$(this).children('.trash-button').children('.trash-o').html('<i class="fa fa-trash-o" aria-hidden="true"></i>');
+		$(this).children('.edit-button').children('.pencil').html('<i class="fa fa-pencil" aria-hidden="true"></i>');
 	}); 
 
-	/* Event listener for the mouse leaving a log item - get rid of x option */
+	/* Event listener for the mouse leaving a log item - get rid of trash and edit options */
 	$('.log-list-style').mouseleave(function() {
-		$(this).children('.x-button').text('');
+		$(this).children('.trash-button').children('.trash-o').html('<i class="trash"></i>');
+		$(this).children('.edit-button').children('.pencil').html('<i class="pencil"></i>');
 	}); 
+
+	$('.edit-button').click(function() {
+		// alert("edit");
+		
+		// "edit mode" - take off other buttons 
+		$(this).parent().children('.trash-button').children('.trash-o').html('<i class="trash"></i>');
+		$(this).parent().children('.edit-button').children('.pencil').html('<i class="pencil"></i>');
+		
+		var date = new Date();
+		var monthList = ["January", "February","March","April","May","June","July","August","September","October","November", "December"];
+		var currDate = monthList[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear();
+		
+		var log = {};
+		
+		var time = $(this).parent().children('.li-time').text().trim();
+		var index = time.indexOf("-");	
+		var startTime = time.substring(0, index - 1);
+		var endTime = time.substring(index + 2);
+		
+		var description = $(this).parent().children('.li-description').text().trim();
+		
+		var elapsedTime = $(this).parent().children('.type-rec').text().trim();
+		
+		var logType = $(this).parent().children('.type-rec').attr('id');
+
+		if (logType.indexOf("_") != -1) {
+			logType = logType.replace("_", " ");
+		}
+
+		log = {
+			year: String(date.getFullYear()),
+      		month: monthList[date.getMonth()],
+      		date: currDate,
+      		type: logType,
+      		start: startTime,
+      		end: endTime,
+      		description: description,
+      		elapsed: elapsedTime
+		} 
+
+		// change the log data
+		$(this).parent().children('.li-time').html('<input type="text" id="edit-start"/> - <input type="text" id="edit-end"/>')
+		$(this).parent().children('.li-description').html('<input type="text" id="edit-desc"/>');
+		
+		// add new buttons for edit mode 
+		$(this).parent().children('.check-button').html('<i class="fa fa-check" aria-hidden="true"></i>');
+		$(this).parent().children('.x-button').html('<i class="fa fa-times" aria-hidden="true"></i>');;
+		
+		// placeholder information for updated log input
+		$('#edit-desc').attr("placeholder", description);
+		$('#edit-desc').attr("size", ($('#edit-desc').attr('placeholder').length));
+		$('#edit-start').attr("placeholder", startTime);
+		$('#edit-end').attr("placeholder", endTime);
+		
+		///// Event listeners /////
+		
+		// edit mouse enter does not allow the pencil or trash icon to appear 
+		$('.log-list-style').mouseenter(function() {
+			$(this).children('.trash-button').children('.trash-o').html('<i class="trash"></i>');
+			$(this).children('.edit-button').children('.pencil').html('<i class="pencil"></i>');
+		}); 
+
+		// for editing the start time of a log
+		$('#edit-start').click(function() {
+			$(this).parent('.li-time').html('<input type="time" id="edit-start"/> - <input type="text" id="edit-end"/>');
+			$('#edit-end').attr("placeholder", endTime);
+			alert("edit start input");
+		});
+
+		// for editing the end time of a log
+		$('#edit-end').click(function() {
+			$(this).parent('.li-time').html('<input type="text" id="edit-start"/> - <input type="time" id="edit-end"/>');
+			$('#edit-start').attr("placeholder", startTime);
+			alert("edit end input");
+		});
+
+		// for canceling changes to a log
+		$('.x-button').click(function() {
+
+		});
+
+		// for submitting the changes to a log
+		$('.check-button').click(function() {
+
+			var editStart = $('#edit-start').val();
+			var editEnd = $('#edit-end').val();
+			var editDesc = $('#edit-desc').val();
+			if (editStart != "" || editEnd != "" || editDesc != "") {
+				alert("at least one input isnt empty");
+				if (editStart != "") {
+					alert("change to start time");
+				}
+				if (editEnd != "") {
+					alert("change to end time");
+				}
+				if (editDesc != "") {
+					alert("change to description");
+				}
+			}
+		});
+
+		/*
+		$.ajax({ 
+			type: "POST",
+			data: log,
+			url: "/editPost",
+		});
+
+		$.ajax({
+      		type: "POST",
+      		url: "/readUpdate",
+      		async: true,
+      		success: function(reloadroute) {
+	          location.href=reloadroute;
+	        },
+	        error: function(err) {
+	          console.log(err);
+	        }
+      	});*/
+	});
+
+	$('.trash-button').click(function() {
+		// alert("Delete this log?");
+		var date = new Date();
+		var monthList = ["January", "February","March","April","May","June","July","August","September","October","November", "December"];
+		var currDate = monthList[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear();
+		
+		var log = {};
+		
+		var time = $(this).parent().children('.li-time').text().trim();
+		var index = time.indexOf("-");	
+		var startTime = time.substring(0, index - 1);
+		var endTime = time.substring(index + 2);
+		
+		var description = $(this).parent().children('.li-description').text().trim();
+		
+		var elapsedTime = $(this).parent().children('.type-rec').text().trim();
+		
+		var logType = $(this).parent().children('.type-rec').attr('id');
+		
+		if (logType.indexOf("_") != -1) {
+			logType = logType.replace("_", " ");
+		}
+
+		log = {
+			year: String(date.getFullYear()),
+      		month: monthList[date.getMonth()],
+      		date: currDate,
+      		type: logType,
+      		start: startTime,
+      		end: endTime,
+      		description: description,
+      		elapsed: elapsedTime
+		} 
+
+		// console.error(log);
+
+		$.ajax({ 
+			type: "POST",
+			data: log,
+			url: "/deletePost",
+		});
+
+		$.ajax({
+      		type: "POST",
+      		url: "/readUpdate",
+      		async: true,
+      		success: function(reloadroute) {
+	          location.href=reloadroute;
+	        },
+	        error: function(err) {
+	          console.log(err);
+	        }
+      	});
+	});
 };
 
 $(document).ready(main);

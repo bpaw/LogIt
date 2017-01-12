@@ -3,6 +3,13 @@ body {
 	margin: 0px 0px 0px 0px;
 }
 
+.fa {
+	color: white;
+	position: relative;
+	left: 35%;
+	top: 30%;
+}
+
 .footer-div {
 	background-color: #D4D5D6;
 	color: #95979a;

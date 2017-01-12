@@ -142,6 +142,67 @@ app.post('/addNewLog', function(req, res) {
   res.status(200).send(message);
 });
 
+app.post('/deletePost', function(req, res) {
+
+  // read the posts file and save the text in a variable
+  var logsFile = fs.readFileSync(DATA_JSON);
+  var statsFile = fs.readFileSync(STATS_JSON);
+
+  // convert the text to JSON
+  var logData = JSON.parse(logsFile);
+  var statsObjs = JSON.parse(statsFile);
+
+  var inputLog = req.body;
+  for (var i = 0; i < logData.logs.length; i++) {
+    var condition1 = logData.logs[i].start == req.body.start;
+    var condition2 =  logData.logs[i].end == req.body.end;
+    var condition3 = logData.logs[i].date == req.body.date;
+    var condition4 = logData.logs[i].description == req.body.description;
+
+    if (condition1 && condition2 && condition3 && condition4) {
+      console.error(logData.logs[i]);
+      logData.logs.splice(i, 1);
+    }
+  }
+
+  logsFile = JSON.stringify(logData, null, 2);
+  fs.writeFileSync(DATA_JSON, logsFile);
+  console.error(logData.logs);
+
+  res.status(200).send("/Log");
+});
+
+// POST to edit a log from the log page 
+app.post('/editPost', function(req,res) {
+
+  console.error("in edit post");
+  // read the posts file and save the text in a variable
+  var logsFile = fs.readFileSync(DATA_JSON);
+  var statsFile = fs.readFileSync(STATS_JSON);
+
+  // convert the text to JSON
+  var logData = JSON.parse(logsFile);
+  var statsObjs = JSON.parse(statsFile);
+
+  var inputLog = req.body;
+  for (var i = 0; i < logData.logs.length; i++) {
+    var condition1 = logData.logs[i].start == req.body.start;
+    var condition2 =  logData.logs[i].end == req.body.end;
+    var condition3 = logData.logs[i].date == req.body.date;
+    var condition4 = logData.logs[i].description == req.body.description;
+
+    if (condition1 && condition2 && condition3 && condition4) {
+      console.error(logData.logs[i]);
+    }
+  }
+
+  logsFile = JSON.stringify(logData, null, 2);
+  fs.writeFileSync(DATA_JSON, logsFile);
+  //sconsole.error(logData.logs);
+
+  res.status(200).send("/Log");
+});
+
 // POST to update info from data.json for templates
 app.post('/readUpdate', function(req, res) {
   
@@ -448,7 +509,7 @@ function update_bar_and_doughnut_week(logData, statData) {
           statData.barHours[Daily_Routines] += update;
           statData.barHours[Daily_Routines] = Number(statData.barHours[Daily_Routines].toFixed(3));
           break;
-        case "Sleeping":
+        case "Sleep":
           statData.barHours[Sleep] += update;
           statData.barHours[Sleep] = Number(statData.barHours[Sleep].toFixed(3));
           break;
@@ -502,7 +563,7 @@ function update_bar_and_doughnut_month(logData, statData) {
           statData.barHours[Daily_Routines] += update;
           statData.barHours[Daily_Routines] = Number(statData.barHours[Daily_Routines].toFixed(3));
           break;
-        case "Sleeping":
+        case "Sleep":
           statData.barHours[Sleep] += update;
           statData.barHours[Sleep] = Number(statData.barHours[Sleep].toFixed(3));
           break;
@@ -555,7 +616,7 @@ function update_bar_and_doughnut_year(logData, statData) {
           statData.barHours[Daily_Routines] += update;
           statData.barHours[Daily_Routines] = Number(statData.barHours[Daily_Routines].toFixed(3));
           break;
-        case "Sleeping":
+        case "Sleep":
           statData.barHours[Sleep] += update;
           statData.barHours[Sleep] = Number(statData.barHours[Sleep].toFixed(3));
           break;

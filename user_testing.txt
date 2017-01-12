@@ -1,0 +1,12 @@
+NEED DATES
+	- (For log.ejs): split the log maker and the log history into two different cards
+	- (For statistics.ejs): allow the graphs to show more than the default (week) like month or year
+	- (For log.ejs): provide visual markers to show how much time was spent for a log 
+	- (For log.ejs): get rid of hamburger menu; just put a horizontal list in the banner 
+	- (For log.ejs): include options for editing/deleting logs
+
+
+
+JAN 10 2017
+Kat: 
+	- suggested checklist page

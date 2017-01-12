@@ -1,0 +1,86 @@
+html {
+	overflow-y: scroll;
+}
+
+#banner {
+	height: 10vh;
+	width: 100%;
+	background-color: rgb(105,210,231);
+	padding: 20px 0 10px 0;
+	display: inline-block;
+	text-align: center;
+}
+
+#webpageName {
+	color: white;
+	font-family: monospace;
+	display: inline-block;
+}
+
+body {
+	font-family: "Helvetica Neue", "Helvetica", "Avenir", "Arial", sans-serif;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	background-color: #e9eaea;
+	color: white;
+	position: relative;
+	overflow: hidden;
+	left: 0;
+}
+
+.checklist-generator {
+	background-color: white;
+	border: .05em solid gray;
+	height: 10vh;
+	padding: 1em 1em; 
+	width: 100%;
+}
+
+.checklist-generator-date {
+	color: gray;
+	float: left;
+	width: 50%;
+}
+
+.checklist-generator-task {
+	color: gray;
+	float: left;
+	width: 50%;
+}
+
+.inner-page {
+	margin: 2em auto 2em auto;
+	padding: 0px 0px 0px 0px;
+	width: 75%;	
+	height: 100%;
+	border-radius: .1em;
+}
+
+.input-checklist {
+	margin-left: auto;
+	margin-right: auto; 
+	margin: 2.5em;
+}
+
+#input-task {
+	width: 15vw;
+}
+
+.menu {
+	width: 30vw;
+}
+
+.menu-li {
+	list-style-type: none;
+}
+
+.menu-li li {
+	float: left;
+	padding: 1em;
+	cursor: pointer;
+}
+
+.title-container {
+	width: 50%;
+	float: left; 
+}

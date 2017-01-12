@@ -25,7 +25,7 @@ var main = function() {
 
 	/* action for clicking on the Last squre (aka logging page) */
 	$("#square4").click(function() {
-		location.href = "/placeholder";
+		location.href = "/checklist";
 	});
 }
 
