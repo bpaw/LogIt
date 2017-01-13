@@ -348,6 +348,10 @@ function generate_stats(result) {
 	    "Exercise"
   	]
 
+  	for (var i = 0; i < data.length; i++) {
+  		data[i] = data[i].toFixed(3);
+  	}
+
 	var barData = {
                 labels: barLabs,
                 datasets: [

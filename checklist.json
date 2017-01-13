@@ -1,0 +1,25 @@
+{
+	"2017": [{
+		"January": [{
+			"12": [{
+				"task": "Discussion: CSE21",
+				"start": "6:00 PM"
+			},
+			{
+				"task": "CSES GBM",
+				"start": "7:00 PM"
+			},
+			{
+				"task": "Discussion: MATH 18",
+				"start": "8:00 PM"
+			},
+			{
+				"task": "Discussion: CSE 30",
+				"start": "9:30 PM"
+			}]
+		}]
+	}],
+	"2018": {
+
+	}
+}

@@ -31,21 +31,76 @@ body {
 .checklist-generator {
 	background-color: white;
 	border: .05em solid gray;
-	height: 10vh;
-	padding: 1em 1em; 
+	height: 20vh;
 	width: 100%;
+}
+
+.checklist-generator-buttons {
+	width: 100%;
+	color: white;
+	border-top: .01em solid gray;;
+	height: 5vh;
+	margin-top: 1.5em;
+	padding: .75em 0;
+	text-align: center;
+}
+
+.checklist-generator-button-cancel {
+	background-color: gray;
+	border-radius: .2em;
+	cursor: pointer;
+	float: left;
+	left: 65%;
+	margin: 0px 0px 0px 5%;
+	padding: .25em;
+	position: relative;
+	width: 10%;
+}
+
+.checklist-generator-button-post {
+	background-color: rgb(105,210,231);
+	border-radius: .2em;
+	cursor: pointer;
+	float: left;
+	left: 65%;
+	margin: 0px 0px 0px 5%;
+	padding: .25em;
+	position: relative;
+	width: 10%;
 }
 
 .checklist-generator-date {
 	color: gray;
-	float: left;
-	width: 50%;
+	display: inline-block;
+	height: 2.5em;
+	width: 49%;
 }
 
 .checklist-generator-task {
 	color: gray;
-	float: left;
-	width: 50%;
+	display: inline-block;
+	height: 2.5em;
+	width: 49%;
+	vertical-align: top;
+}
+
+.checklist-log {
+	color: black;
+	background-color: white;
+	border: .05em solid gray;
+	margin: 1em 0;
+	width: 100%;
+}
+
+.fa-check-square-o {
+	margin: 0 1em 0 0;
+	color: teal;
+	cursor: pointer;
+}
+
+.fa-square-o {
+	margin: 0 1em 0 0;
+	cursor: pointer;
 }
 
 .inner-page {
@@ -66,8 +121,13 @@ body {
 	width: 15vw;
 }
 
+.checklist-body li {
+	list-style-type: none;
+	margin: 1em 0;
+}
+
 .menu {
-	width: 30vw;
+	width: 50vw;
 }
 
 .menu-li {

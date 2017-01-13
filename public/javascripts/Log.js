@@ -205,6 +205,11 @@ var main = function() {
 	$('.edit-button').click(function() {
 		// alert("edit");
 		
+		var startDiv = document.createElement('div');
+		var endDiv = document.createElement('div');
+		startDiv.className = 'edit-start-container';
+		endDiv.className = 'edit-end-container';
+
 		// "edit mode" - take off other buttons 
 		$(this).parent().children('.trash-button').children('.trash-o').html('<i class="trash"></i>');
 		$(this).parent().children('.edit-button').children('.pencil').html('<i class="pencil"></i>');
@@ -213,8 +218,8 @@ var main = function() {
 		var monthList = ["January", "February","March","April","May","June","July","August","September","October","November", "December"];
 		var currDate = monthList[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear();
 		
-		var log = {};
-		
+		var origLog = {};
+		var newLog = {};
 		var time = $(this).parent().children('.li-time').text().trim();
 		var index = time.indexOf("-");	
 		var startTime = time.substring(0, index - 1);
@@ -230,7 +235,7 @@ var main = function() {
 			logType = logType.replace("_", " ");
 		}
 
-		log = {
+		origLog = {
 			year: String(date.getFullYear()),
       		month: monthList[date.getMonth()],
       		date: currDate,
@@ -238,20 +243,40 @@ var main = function() {
       		start: startTime,
       		end: endTime,
       		description: description,
+      		elapsed: elapsedTime,
+      		updatedStart: "",
+      		updatedEnd: "",
+      		updatedElapsed: "",
+      		updatedDescription: ""
+      	}
+
+      	newLog = {
+      		year: String(date.getFullYear()),
+      		month: monthList[date.getMonth()],
+      		date: currDate,
+      		type: logType,
+      		start: startTime,
+      		end: endTime,
+      		description: description,
       		elapsed: elapsedTime
-		} 
+      	}
+
+		$(this).parent().children('.li-time').html("");
+		$('.li-time').append(startDiv);
+		$('.li-time').append(endDiv);
 
 		// change the log data
-		$(this).parent().children('.li-time').html('<input type="text" id="edit-start"/> - <input type="text" id="edit-end"/>')
+		$(this).parent().children('.li-time').children('.edit-start-container').html('<input type="text" id="edit-start"/>'); 
+		$(this).parent().children('.li-time').children('.edit-end-container').html('<input type="text" id="edit-end"/>');
+
 		$(this).parent().children('.li-description').html('<input type="text" id="edit-desc"/>');
 		
 		// add new buttons for edit mode 
 		$(this).parent().children('.check-button').html('<i class="fa fa-check" aria-hidden="true"></i>');
-		$(this).parent().children('.x-button').html('<i class="fa fa-times" aria-hidden="true"></i>');;
-		
+ 		$(this).parent().children('.x-button').html('<i class="fa fa-times" aria-hidden="true"></i>');
+
 		// placeholder information for updated log input
 		$('#edit-desc').attr("placeholder", description);
-		$('#edit-desc').attr("size", ($('#edit-desc').attr('placeholder').length));
 		$('#edit-start').attr("placeholder", startTime);
 		$('#edit-end').attr("placeholder", endTime);
 		
@@ -265,21 +290,19 @@ var main = function() {
 
 		// for editing the start time of a log
 		$('#edit-start').click(function() {
-			$(this).parent('.li-time').html('<input type="time" id="edit-start"/> - <input type="text" id="edit-end"/>');
-			$('#edit-end').attr("placeholder", endTime);
+			$(this).parent('.edit-start-container').html('<input type="time" id="edit-start"/>');
 			alert("edit start input");
 		});
 
 		// for editing the end time of a log
 		$('#edit-end').click(function() {
-			$(this).parent('.li-time').html('<input type="text" id="edit-start"/> - <input type="time" id="edit-end"/>');
-			$('#edit-start').attr("placeholder", startTime);
+			$(this).parent('.edit-end-container').html('<input type="time" id="edit-end"/>');
 			alert("edit end input");
 		});
 
 		// for canceling changes to a log
 		$('.x-button').click(function() {
-
+			location.href = "/Log";
 		});
 
 		// for submitting the changes to a log
@@ -290,36 +313,43 @@ var main = function() {
 			var editDesc = $('#edit-desc').val();
 			if (editStart != "" || editEnd != "" || editDesc != "") {
 				alert("at least one input isnt empty");
+
 				if (editStart != "") {
-					alert("change to start time");
+					newLog.start = toMeridian(editStart);
+					origLog.updatedStart = toMeridian(editStart);
+					origLog.updatedElapsed = getElapsed(toMilitary(newLog.start), toMilitary(newLog.end));
 				}
 				if (editEnd != "") {
-					alert("change to end time");
+					newLog.end = toMeridian(editEnd);
+					origLog.updatedEnd = toMeridian(editEnd);
+					origLog.updatedElapsed = getElapsed(toMilitary(newLog.start), toMilitary(newLog.end))
 				}
 				if (editDesc != "") {
 					alert("change to description");
+					origLog.updatedDescription = editDesc;
 				}
+				
+				$.ajax({ 
+					type: "POST",
+					data: origLog,
+					url: "/editPost",
+				});
+
+				$.ajax({
+		      		type: "POST",
+		      		url: "/readUpdate",
+		      		async: true,
+		      		success: function(reloadroute) {
+			          location.href=reloadroute;
+			        },
+			        error: function(err) {
+			          console.log(err);
+			        }
+		      	});
 			}
 		});
 
-		/*
-		$.ajax({ 
-			type: "POST",
-			data: log,
-			url: "/editPost",
-		});
-
-		$.ajax({
-      		type: "POST",
-      		url: "/readUpdate",
-      		async: true,
-      		success: function(reloadroute) {
-	          location.href=reloadroute;
-	        },
-	        error: function(err) {
-	          console.log(err);
-	        }
-      	});*/
+		
 	});
 
 	$('.trash-button').click(function() {
@@ -380,7 +410,113 @@ var main = function() {
 
 $(document).ready(main);
 
+// send data to ths method in military time format
+function getElapsed(start, end) {
 
+	var startHour = start.substring(0,2);
+	var endHour = end.substring(0,2);
+	alert(endHour);
+	alert(startHour);
+	var hour;
+	var min;
+	var result;
+
+	if (Number(endHour) > Number(startHour)) {
+		alert("normal case");
+		hour = Number(endHour) - Number(startHour);
+	}
+	else {
+		alert("edge case - crossing over midnight");
+		hour = 24 - Number(startHour) + Number(endHour);
+	}
+
+	var startMin = start.substring(3);
+	var endMin = end.substring(3);
+
+
+	if (Number(startMin) > Number(endMin)) {
+		min = (60 - Number(startMin)) + Number(endMin); 
+		hour = Number(hour) - 1;
+	}
+	else {
+		min = Number(endMin) - Number(startMin); 
+	}
+
+	alert("returning elapsed time: ");
+
+	if (Number(hour) < 10) {
+		hour = "0" + hour;
+	}
+	if (Number(min) < 10) {
+		min = "0" + min;
+	}
+
+	return String(hour + ":" + min);
+}
+
+function toMeridian(input) {
+
+	var inputHour = input.substring(0,2);
+
+	if (inputHour >= 12) {
+		if (inputHour != 12) {
+			inputHour = inputHour - 12;
+			input = inputHour + input.substring(2) + " PM";
+		}
+		else {
+			input = inputHour + input.substring(2) + " PM";	
+		}
+	}
+	else {
+		if (inputHour == 0) {
+			inputHour = 12;
+			input = inputHour + input.substring(2);
+			inputHour *= 0;
+		}
+		input = input + " AM";
+	}
+
+	return input;
+}
+
+function toMilitary(input) {
+
+	var input_length = input.length;
+	var meridian = input.substring(input_length - 2);
+	var inputHour = input.substring(0, 2);
+
+	if (inputHour.indexOf(":") != -1) {
+		inputHour = inputHour.replace(":", "");
+		inputHour = "0" + inputHour;
+		input = "0" + input;
+		input_length += 1;
+	}
+	
+	if (meridian == "AM") {
+
+		if (inputHour == 12) {
+			inputHour = Number(inputHour) - 12;
+			input = inputHour + input.substring(2 , input_length - 3);
+		}
+		else {
+			input = input.substring(0, input_length - 3);
+		}
+	}
+	else if (meridian == "PM") {
+		
+		if (inputHour == 12) {
+			input = input.substring(0, input_length - 3);
+		}
+		else {
+			inputHour = Number(inputHour) + 12;
+			input = inputHour + input.substring(2 , input_length - 3);
+		}
+		alert(input);
+	}
+
+	alert("toMilitary returning: " + input);
+	return input;
+}
 // Archives // 
 
 // CODE FOR CREATING FAKE HTML ELEMENTS PRIOR TO RELOAD

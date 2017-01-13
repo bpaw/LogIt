@@ -37,6 +37,40 @@ body {
 	left: 0;
 }
 
+#edit-end {
+	font-size: 1em;
+	padding: .5em;
+	width: 75%;
+}
+
+#edit-start {
+	font-size: 1em;
+	padding: .5em;
+	width: 75%;
+}
+
+#edit-desc {
+	font-size: 1em;
+	padding: .5em;
+	width: 75%;
+}
+
+.edit-start-container {
+	display: inline-block;
+	float: left;
+	margin-left: 0;
+	padding: 0;
+	width: 50%;
+}
+
+.edit-end-container {
+	display: inline-block;
+	float: left;
+	margin-left: 0;
+	padding: 0;
+	width: 50%;
+}
+
 .icon-menu-contents {
 	margin-top: 0px;
 	background-color: rgb(90,90,90);

@@ -14,10 +14,12 @@ var app = express();
 // data files 
 var DATA_JSON = './data.json';
 var STATS_JSON = './stats.json';
+var CHECK_JSON = './checklist.json';
 
 // variables for using the data.json file 
 app.locals.app_data = JSON.parse(fs.readFileSync(DATA_JSON));
 app.locals.app_stats = JSON.parse(fs.readFileSync(STATS_JSON));
+app.locals.app_check = JSON.parse(fs.readFileSync(CHECK_JSON));
 
 // arrays that store relevant information for date parsing
 var daysArray = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday",
@@ -176,6 +178,7 @@ app.post('/deletePost', function(req, res) {
 app.post('/editPost', function(req,res) {
 
   console.error("in edit post");
+  console.error(req.body);
   // read the posts file and save the text in a variable
   var logsFile = fs.readFileSync(DATA_JSON);
   var statsFile = fs.readFileSync(STATS_JSON);
@@ -193,6 +196,19 @@ app.post('/editPost', function(req,res) {
 
     if (condition1 && condition2 && condition3 && condition4) {
       console.error(logData.logs[i]);
+
+      if (req.body.updatedStart != "") {
+        logData.logs[i].start = req.body.updatedStart;
+      }
+      if (req.body.updatedEnd != "") {
+        logData.logs[i].end = req.body.updatedEnd;
+      }
+      if (req.body.updatedDescription != "") {
+        logData.logs[i].description = req.body.updatedDescription;
+      }
+      if (req.body.updatedElapsed != "") {
+        logData.logs[i].elapsed = req.body.updatedElapsed;
+      }
     }
   }
 

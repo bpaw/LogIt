@@ -10,3 +10,8 @@ NEED DATES
 JAN 10 2017
 Kat: 
 	- suggested checklist page
+
+JAN 12 2017
+Kat: 
+	- (For log.ejs): input box style for edit mode
+	- (For calendar.ejs): style edits for calendar
