@@ -140,6 +140,10 @@ body {
 	cursor: pointer;
 }
 
+.task-complete {
+	color: gray;
+}
+
 .title-container {
 	width: 50%;
 	float: left; 

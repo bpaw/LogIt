@@ -291,13 +291,13 @@ var main = function() {
 		// for editing the start time of a log
 		$('#edit-start').click(function() {
 			$(this).parent('.edit-start-container').html('<input type="time" id="edit-start"/>');
-			alert("edit start input");
+			// alert("edit start input");
 		});
 
 		// for editing the end time of a log
 		$('#edit-end').click(function() {
 			$(this).parent('.edit-end-container').html('<input type="time" id="edit-end"/>');
-			alert("edit end input");
+			// alert("edit end input");
 		});
 
 		// for canceling changes to a log
@@ -312,7 +312,7 @@ var main = function() {
 			var editEnd = $('#edit-end').val();
 			var editDesc = $('#edit-desc').val();
 			if (editStart != "" || editEnd != "" || editDesc != "") {
-				alert("at least one input isnt empty");
+				// alert("at least one input isnt empty");
 
 				if (editStart != "") {
 					newLog.start = toMeridian(editStart);
@@ -325,7 +325,7 @@ var main = function() {
 					origLog.updatedElapsed = getElapsed(toMilitary(newLog.start), toMilitary(newLog.end))
 				}
 				if (editDesc != "") {
-					alert("change to description");
+					// alert("change to description");
 					origLog.updatedDescription = editDesc;
 				}
 				
@@ -415,18 +415,20 @@ function getElapsed(start, end) {
 
 	var startHour = start.substring(0,2);
 	var endHour = end.substring(0,2);
-	alert(endHour);
-	alert(startHour);
+	
+	// alert(endHour);
+	// alert(startHour);
+	
 	var hour;
 	var min;
 	var result;
 
 	if (Number(endHour) > Number(startHour)) {
-		alert("normal case");
+		// alert("normal case");
 		hour = Number(endHour) - Number(startHour);
 	}
 	else {
-		alert("edge case - crossing over midnight");
+		// alert("edge case - crossing over midnight");
 		hour = 24 - Number(startHour) + Number(endHour);
 	}
 
@@ -442,7 +444,7 @@ function getElapsed(start, end) {
 		min = Number(endMin) - Number(startMin); 
 	}
 
-	alert("returning elapsed time: ");
+	// alert("returning elapsed time: ");
 
 	if (Number(hour) < 10) {
 		hour = "0" + hour;
@@ -511,10 +513,10 @@ function toMilitary(input) {
 			inputHour = Number(inputHour) + 12;
 			input = inputHour + input.substring(2 , input_length - 3);
 		}
-		alert(input);
+		// alert(input);
 	}
 
-	alert("toMilitary returning: " + input);
+	// alert("toMilitary returning: " + input);
 	return input;
 }
 // Archives // 

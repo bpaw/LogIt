@@ -1,4 +1,24 @@
+.animation-container {
+	height: 84.8vh;
+	width: 100%;
+}
+
+
+.animation-container-space {
+	height: 30vh;
+} 
+
+.animation-text-container {
+	color: gray;
+	text-align: center;
+}
+
+.animation-text-container p {
+	font-size: 1.5em;
+}
+
 body {
+	font-family: "Helvetica Neue", "Helvetica", "Avenir", "Arial", sans-serif;
 	padding: 0px 0px 0px 0px;
 	margin: 0px 0px 0px 0px;
 }
@@ -27,9 +47,12 @@ body {
 }
 
 #webpageName {
-	color: white;
+	border: .1em solid gray;
+	color: gray;
+	cursor: pointer;
 	font-family: monospace;
 	display: inline-block;
+	padding: .05em;
 	margin-left: 47.5%;
 }
 
@@ -38,7 +61,7 @@ body {
 	border-color: white;
 	border-width: 0px;
 	width: 25%;
-	height: 30vh;
+	height: 3vh;
 	float: left;
 	margin: 0px;
 	padding: 0px;
@@ -47,6 +70,7 @@ body {
 
 .square-hover {
 	cursor: pointer;
+	height: 30vh;
 }
 
 #square1 {
@@ -68,7 +92,6 @@ body {
 #banner {
 	height: 10vh;
 	width: 100%;
-	background-color: gray;
 	padding: 20px 0 10px 0;
 	display: inline-block;
 }
@@ -87,6 +110,35 @@ body {
 	margin-right: auto;
 	text-align: center;
 	width: 95%;
+}
+
+.tutorial {
+	width: 100%;
+	height: 100vh;
+}
+
+#tutorial-red {
+	background-color: rgb(217,61,4);
+}
+
+#tutorial-orange {
+	background-color: rgb(242,116,5);
+}
+
+#tutorial-green {
+	background-color: rgb(133,198,169);
+}
+
+#tutorial-blue {
+	background-color: rgb(105,210,231);
+}
+
+
+.arrow-down-red-active {
+	color: gray;
+	cursor: pointer;
+	position: relative;
+	left: 0%;
 }
 
 /* When the input field gets focus, change its width to 100% */

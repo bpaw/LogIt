@@ -33,7 +33,7 @@ var main = function() {
         if (fields_filled) {
             alert("all fields filled good job");
 
-            
+
         } 
     });
 
@@ -41,10 +41,12 @@ var main = function() {
         if ($(this).hasClass('fa-square-o')) {
             $(this).addClass('fa-check-square-o');
             $(this).removeClass('fa-square-o');
+            $(this).parent().addClass('task-complete');
         }
         else {
             $(this).addClass('fa-square-o');
             $(this).removeClass('fa-check-square-o');
+            $(this).parent().removeClass('task-complete');
         }
     });
 }

@@ -15,3 +15,15 @@ JAN 12 2017
 Kat: 
 	- (For log.ejs): input box style for edit mode
 	- (For calendar.ejs): style edits for calendar
+
+JAN 13 2017
+Will:
+	- (For homepage): make the dropdowns animate slower rather than pop up
+	- (For Log.ejs): enter button for logging; switch position of type and description input
+	- (For Log.ejs): Have the colored squares present labels when hovering
+	- (For statistics.ejs): bar and doughnut chart - if they have the same data then include the option 
+	   						to choose which one
+	- (For calendar.ejs): when clicking on a date with logs - make page scroll down automatically
+	- (For checklist.ejs): fade text color for completed tasks
+Michael:
+	- (For homepage): add text to the squares before hover

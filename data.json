@@ -2280,6 +2280,106 @@
       "end": "11:08 AM",
       "description": "Waking up",
       "elapsed": "01:08"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 13, 2017",
+      "type": "Work",
+      "start": "11:08 AM",
+      "end": "11:33 AM",
+      "description": "Finished LogIt edit functionality",
+      "elapsed": "00:25"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 13, 2017",
+      "type": "Leisure",
+      "start": "11:33 PM",
+      "end": "11:51 PM",
+      "description": "Hanging with Kat before she leaves",
+      "elapsed": "00:18"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 13, 2017",
+      "type": "Work",
+      "start": "11:51 AM",
+      "end": "12:09 PM",
+      "description": "Changes to LogIt homepage style",
+      "elapsed": "00:18"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 13, 2017",
+      "type": "Leisure",
+      "start": "12:09 PM",
+      "end": "1:55 PM",
+      "description": "Hanging out with Will",
+      "elapsed": "01:46"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 13, 2017",
+      "type": "Work",
+      "start": "1:55 PM",
+      "end": "3:11 PM",
+      "description": "Working on LogIt homepage animation",
+      "elapsed": "01:16"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 13, 2017",
+      "type": "Leisure",
+      "start": "3:11 PM",
+      "end": "3:45 PM",
+      "description": "Hanging out with Kat at Muir Woods",
+      "elapsed": "00:34"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 13, 2017",
+      "type": "Transportation",
+      "start": "3:45 PM",
+      "end": "4:00 PM",
+      "description": "Walking to WLH",
+      "elapsed": "00:15"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 13, 2017",
+      "type": "Work",
+      "start": "4:00 PM",
+      "end": "4:50 PM",
+      "description": "Lecture: MATH 18",
+      "elapsed": "00:50"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 13, 2017",
+      "type": "Transportation",
+      "start": "4:50 PM",
+      "end": "4:55 PM",
+      "description": "Walking to Black",
+      "elapsed": "00:05"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 13, 2017",
+      "type": "Work",
+      "start": "4:55 PM",
+      "end": "6:38 PM",
+      "description": "Working on LogIt",
+      "elapsed": "01:43"
     }
   ]
 }
