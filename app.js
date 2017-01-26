@@ -164,12 +164,13 @@ app.post('/deletePost', function(req, res) {
     if (condition1 && condition2 && condition3 && condition4) {
       console.error(logData.logs[i]);
       logData.logs.splice(i, 1);
+      i = logData.logs.length;
     }
   }
 
   logsFile = JSON.stringify(logData, null, 2);
   fs.writeFileSync(DATA_JSON, logsFile);
-  console.error(logData.logs);
+  // console.error(logData.logs);
 
   res.status(200).send("/Log");
 });
@@ -192,21 +193,29 @@ app.post('/editPost', function(req,res) {
     var condition1 = logData.logs[i].start == req.body.start;
     var condition2 =  logData.logs[i].end == req.body.end;
     var condition3 = logData.logs[i].date == req.body.date;
-    var condition4 = logData.logs[i].description == req.body.description;
+    var condition4 = logData.logs[i].description.trim() == req.body.description;
 
+    //console.error("condition1 is: " + condition1);
+    //console.error("condition2 is: " + condition2);
+    //console.error("condition3 is: " + condition3);
+    // console.error("condition4 is: " + condition4);
     if (condition1 && condition2 && condition3 && condition4) {
-      console.error(logData.logs[i]);
+      //console.error(logData.logs[i]);
 
       if (req.body.updatedStart != "") {
+        //console.error("updating start");
         logData.logs[i].start = req.body.updatedStart;
       }
       if (req.body.updatedEnd != "") {
+        //console.error("updating end");
         logData.logs[i].end = req.body.updatedEnd;
       }
       if (req.body.updatedDescription != "") {
+        //console.error("updating description");
         logData.logs[i].description = req.body.updatedDescription;
       }
       if (req.body.updatedElapsed != "") {
+        //console.error("updating elapsed");
         logData.logs[i].elapsed = req.body.updatedElapsed;
       }
     }
@@ -291,6 +300,217 @@ app.post('/getSpecificInfo', function(req, res) {
 
   var message = req.body.day + " was received";
   res.status(200).send(validLogs);
+});
+
+app.post('/addNewChecklistItem', function(req, res) {
+
+  console.error(req.body);
+  var date = new Date();
+
+  var checkFile = fs.readFileSync(CHECK_JSON);
+
+  var checkData = JSON.parse(checkFile);
+
+  if (Number(req.body.year) - date.getFullYear() == 0) {
+    console.error("Task set for 2017");
+
+    var monthIndex = monthList.indexOf(req.body.month);
+
+    // console.error(checkData.year[0]);
+
+    var target_year = checkData.year[0];
+    var target_month = target_year.current[monthIndex];
+
+    // console.error(target_month);
+    // console.error("After printing target_month");
+    // console.error(target_month.length);
+
+    var flag = false;
+
+    for (var i = 0; i < target_month.length; i++) {
+      // console.error("about to print out the items in target_month");
+      // console.error(target_month[i]);
+      if (Number(req.body.day < Number(target_month[i].day) ) ) {
+
+        console.error("incoming day is less than current day");
+
+        var new_item = {
+          day: req.body.day,
+          task: req.body.task,
+          start: req.body.start,
+          completed: req.body.completed
+        }
+
+        target_month.splice(i, 0, new_item);
+        i = target_month.length;
+        flag = true;
+      }
+      else if (Number(target_month[i].day) == Number(req.body.day)) {
+
+        console.error("days are equal");
+        // make it sorted on time 
+        var file_hour = target_month[i].start.substring(0,2);
+        var input_hour = req.body.start.substring(0,2);
+
+        if (file_hour == input_hour) {
+
+          var file_min = target_month[i].start.substring(3,5); 
+          var input_min = req.body.start.substring(3,5);
+          console.error(input_min);
+          if (Number(input_min) < Number(file_min)) {
+            var new_item = {
+              day: req.body.day,
+              task: req.body.task,
+              start: req.body.start,
+              completed: req.body.completed
+            }
+
+            target_month.splice(i, 0, new_item);
+            i = target_month.length;
+            flag = true;
+          }
+        }
+        else if (input_hour < file_hour) {
+          
+          console.error("adding bc input < file");
+          var new_item = {
+            day: req.body.day,
+            task: req.body.task,
+            start: req.body.start,
+            completed: req.body.completed
+          }
+
+          target_month.splice(i, 0, new_item);
+          i = target_month.length;
+          flag = true;
+        }
+      }
+    }
+
+    if (flag == false) {
+
+      console.error("LAST DITCH ADDITION");
+      flag = true;
+      var new_item = {
+        day: req.body.day,
+        task: req.body.task,
+        start: req.body.start,
+        completed: req.body.completed
+      }
+
+      console.error(new_item);
+      target_month.push(new_item);
+    }
+
+    console.error(target_month);
+
+    //checkData.[monthIndex];
+  }
+  else if (Number(req.body.year) - date.getFullYear() == 1) {
+    console.error("Task set for 2018");
+  }
+
+  checkFile = JSON.stringify(checkData, null, 2);
+  fs.writeFileSync(CHECK_JSON, checkFile);
+  app.locals.app_check = JSON.parse(fs.readFileSync(CHECK_JSON));
+
+  // SEND SOMETHING
+  res.status(200).send("returning");
+});
+
+app.post('/deleteChecklistItem', function(req, res) {
+
+  console.error(req.body);
+  var date = new Date();
+
+  var checkFile = fs.readFileSync(CHECK_JSON);
+
+  var checkData = JSON.parse(checkFile);
+
+  if (Number(req.body.year) - date.getFullYear() == 0) {
+    console.error("Task set for 2017");
+
+    var monthIndex = monthList.indexOf(req.body.month);
+
+    // console.error(checkData.year[0]);
+
+    var target_year = checkData.year[0];
+    var target_month = target_year.current[monthIndex];
+
+    // console.error(target_month);
+    // console.error("After printing target_month");
+    // console.error(target_month.length);
+
+    var target = req.body;
+
+    for (var i = 0; i < target_month.length; i++) {
+      // console.error("about to print out the items in target_month");
+      // console.error(target_month[i]);
+      
+      var condition1 = target.day == target_month[i].day;
+      var condition2 = target.task == target_month[i].task;
+      //var condition3 = target.start == target_month[i].start;
+
+      var found = condition1 && condition2;
+      if (found) {
+        console.error(target_month[i]);
+        target_month.splice(i, 1);
+      }
+    }
+
+    // console.error(target_month);
+
+    //checkData.[monthIndex];
+  }
+  else if (Number(req.body.year) - date.getFullYear() == 1) {
+    console.error("Task set for 2018");
+  }
+
+  checkFile = JSON.stringify(checkData, null, 2);
+  fs.writeFileSync(CHECK_JSON, checkFile);
+  app.locals.app_check = JSON.parse(fs.readFileSync(CHECK_JSON));
+
+  // SEND SOMETHING
+  res.status(200).send("returning");
+});
+
+app.post('/changeIcon', function(req, res) {
+
+  console.error(req.body.completed);
+
+  var checkFile = fs.readFileSync(CHECK_JSON);
+
+  var checkData = JSON.parse(checkFile);
+
+  // find the log at the year 
+  var target_year = checkData.year[Number(req.body.year) - date.getFullYear()];
+  console.error(req.body.year);
+  console.error(target_year);
+  // find the log month
+  var target_month = target_year.current[monthList.indexOf(req.body.month)];
+  console.error(target_month);
+  // find the log in the month
+  if (target_month.length > 0) {
+    for (var i = 0; i < target_month.length; i++) {
+
+      var condition1 = target_month[i].day == req.body.day;
+      var condition2 = target_month[i].task == req.body.description;
+
+      // once found, change its completed field
+      if (condition1 && condition2) {
+        console.error("Found the checklist item!");
+        target_month[i].completed = req.body.completed;
+      }
+    }
+  }
+
+  // write changes to file
+  // console.error(checkData);
+  checkFile = JSON.stringify(checkData, null, 2);
+  fs.writeFileSync(CHECK_JSON, checkFile);
+  app.locals.app_check = JSON.parse(fs.readFileSync(CHECK_JSON));
+
+  res.status(200).send("returning");
 });
 
 // catch 404 and forward to error handler
@@ -607,9 +827,10 @@ function update_bar_and_doughnut_year(logData, statData) {
     // information from the current log
     var logMonth = logData.logs[i].month;
     var logYear = logData.logs[i].year;
-
+    var monthBool = app.locals.currMonth == logData.logs[i].month;
+    var yearBool = app.locals.currYear == Number(logData.logs[i].year);
     // if the log is in the current year and month
-    if (Number(logYear) == app.locals.currYear) {
+    if (Number(logYear) == app.locals.currYear && monthBool && yearBool) {
       //console.error(logData.logs[i].date);
       //console.error(logType);
 
@@ -723,11 +944,13 @@ function update_line() {
 
     var logDay = Number(logData.logs[i].date.substring(lowerBound, upperBound));
     var bool = logDay <= label[6] || logDay >= label[0];
+    var monthBool = app.locals.currMonth == logData.logs[i].month;
+    var yearBool = app.locals.currYear == Number(logData.logs[i].year);
     // label[0] = 26
     // label[6] = 1
     var logMonth = logData.logs[i].month;
     var startOfWeek = app.locals.currDay - restOfWeek;
-    if (bool && (logMonth == currMonth || logMonth == prevMonth)) {
+    if (bool && (logMonth == currMonth || logMonth == prevMonth) && monthBool && yearBool) {
       // console.error(logDay);
       // console.log(logData.logs[i]);
       var logType = logData.logs[i].type;

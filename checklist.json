@@ -1,25 +1,214 @@
 {
-	"2017": [{
-		"January": [{
-			"12": [{
-				"task": "Discussion: CSE21",
-				"start": "6:00 PM"
-			},
-			{
-				"task": "CSES GBM",
-				"start": "7:00 PM"
-			},
-			{
-				"task": "Discussion: MATH 18",
-				"start": "8:00 PM"
-			},
-			{
-				"task": "Discussion: CSE 30",
-				"start": "9:30 PM"
-			}]
-		}]
-	}],
-	"2018": {
-
-	}
+  "year": [
+    {
+      "current": [
+        [
+          {
+            "day": "12",
+            "task": "Discussion: CSE21",
+            "start": "18:00",
+            "completed": "true"
+          },
+          {
+            "day": "12",
+            "task": "CSES GBM",
+            "start": "19:00",
+            "completed": "true"
+          },
+          {
+            "day": "12",
+            "task": "Discussion: MATH 18",
+            "start": "20:00",
+            "completed": "true"
+          },
+          {
+            "day": "12",
+            "task": "Discussion: CSE 30",
+            "start": "21:30",
+            "completed": "true"
+          },
+          {
+            "day": "15",
+            "task": "Rent",
+            "start": "18:30",
+            "completed": "true"
+          },
+          {
+            "day": "17",
+            "task": "CSE 30 PA0",
+            "start": "23:59",
+            "completed": "true"
+          },
+          {
+            "day": "18",
+            "task": "Winter Career Fair",
+            "start": "08:00",
+            "completed": "true"
+          },
+          {
+            "day": "18",
+            "task": "CSE 21 HW1",
+            "start": "23:59",
+            "completed": "true"
+          },
+          {
+            "day": "19",
+            "task": "DeCAF",
+            "start": "09:00",
+            "completed": "true"
+          },
+          {
+            "day": "19",
+            "task": "CSE 30 Quiz 1",
+            "start": "12:30",
+            "completed": "true"
+          },
+          {
+            "day": "20",
+            "task": "MATH 18: Matlab HW1",
+            "start": "15:00",
+            "completed": "true"
+          },
+          {
+            "day": "23",
+            "task": "MATH 18: HW1",
+            "start": "23:59",
+            "completed": "true"
+          },
+          {
+            "day": "24",
+            "task": "Facebook U internship info session",
+            "start": "16:00",
+            "completed": "true"
+          },
+          {
+            "day": "24",
+            "task": "CSE 21: HW2",
+            "start": "23:59",
+            "completed": "true"
+          },
+          {
+            "day": "25",
+            "task": "CSE 30: PA1 Milestone",
+            "start": "23:59",
+            "completed": "true"
+          },
+          {
+            "day": "26",
+            "task": "CSES DevFair",
+            "start": "14:00",
+            "completed": "false"
+          },
+          {
+            "day": "27",
+            "task": "MATH 18: Matlab HW2",
+            "start": "15:00",
+            "completed": "false"
+          },
+          {
+            "day": "30",
+            "task": "MATH 18: HW2",
+            "start": "23:59",
+            "completed": "false"
+          },
+          {
+            "day": "30",
+            "task": "MATH 18: HW3",
+            "start": "23:59",
+            "completed": "false"
+          }
+        ],
+        [
+          {
+            "day": "1",
+            "task": "MATH 18: Midterm 1",
+            "start": "16:00",
+            "completed": "false"
+          },
+          {
+            "day": "2",
+            "task": "CSE 30: Quiz 2",
+            "start": "12:30",
+            "completed": "false"
+          },
+          {
+            "day": "6",
+            "task": "CSE 21: Midterm 1",
+            "start": "18:30",
+            "completed": "false"
+          },
+          {
+            "day": "8",
+            "task": "CSE 30: PA2 Milestone",
+            "start": "23:59",
+            "completed": "false"
+          },
+          {
+            "day": "10",
+            "task": "MATH 18: Matlab HW3",
+            "start": "15:00",
+            "completed": "false"
+          },
+          {
+            "day": "14",
+            "task": "CSE 30: Quiz 3",
+            "start": "12:30",
+            "completed": "false"
+          },
+          {
+            "day": "14",
+            "task": "CSE 30: PA2 Due",
+            "start": "23:59",
+            "completed": "false"
+          },
+          {
+            "day": "16",
+            "task": "CSE 30: Midterm",
+            "start": "12:30",
+            "completed": "false"
+          },
+          {
+            "day": "27",
+            "task": "CSE 21: Midterm 2",
+            "start": "18:30",
+            "completed": "false"
+          }
+        ],
+        [
+          {
+            "day": "1",
+            "task": "MATH 18: Midterm 2",
+            "start": "16:00",
+            "completed": "false"
+          },
+          {
+            "day": "20",
+            "task": "CSE 21: Final",
+            "start": "19:00",
+            "completed": "false"
+          },
+          {
+            "day": "24",
+            "task": "MATH 18: Final",
+            "start": "15:00",
+            "completed": "false"
+          }
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "current": [
+        []
+      ]
+    }
+  ]
 }

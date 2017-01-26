@@ -15,7 +15,6 @@ body {
 	background-color: rgb(133,198,169);
 	padding: 20px 0 10px 0;
 	display: inline-block;
-	text-align: center;
 }
 
 .bar-container {
@@ -255,6 +254,11 @@ body {
 	margin-top: 2em;
 }
 
+.scroll-anchor {
+	color: black;
+	text-decoration: none;
+}
+
 .view-container {
 	background-color: white;
 	border: .05em solid gray;
@@ -271,7 +275,10 @@ body {
 
 .menu {
 	color: white;
-	width: 50vw;
+	width: 33vw;
+	display: inline-block;
+	margin: 0;
+	margin-right: 5vw;
 }
 
 .menu-li {
@@ -279,12 +286,155 @@ body {
 }
 
 .menu-li li {
-	float: left;
+	display: inline-block;
 	padding: 1em;
 	cursor: pointer;
 }
 
 .title-container {
+	display: inline-block;
+}
+
+#Work {
+	background-color: rgba(75,192,192,1);
+	border: .05em solid rgba(75,192,192,1);
+	border-radius: .25em;
+	color: white;
+	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	font-size: .75em;
+	display: inline-block;
+	margin: 0px 2em 0px 0px;
+	padding: .4em;
+}
+
+#Leisure {
+	background-color: rgba(239,83,80,1);
+	border: .05em solid rgba(239,83,80,1);
+	border-radius: .25em;
+	color: white;
+	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	font-size: .75em;
+	display: inline-block;
+	margin: 0px 2em 0px 0px;
+	padding: .4em;
+}
+
+#Daily_Routines {
+	background-color: rgba(255, 99, 132, 1);
+	border: .05em solid rgba(255, 99, 132, 1);
+	border-radius: .25em;
+	color: white;
+	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	font-size: .75em;
+	display: inline-block;
+	margin: 0px 2em 0px 0px;
+	padding: .4em;
+}
+
+#Sleeping {
+	background-color: rgba(255, 206, 86, 1);
+	border: .05em solid rgba(255, 206, 86, 1);
+	border-radius: .25em;
+	color: white;
+	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	font-size: .75em;
+	display: inline-block;
+	margin: 0px 2em 0px 0px;
+	padding: .4em;
+}
+
+#Eating {
+	background-color: rgba(54, 162, 235, 1);
+	border: .05em solid rgba(54, 162, 235, 1);
+	border-radius: .25em;
+	color: white;
+	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	font-size: .75em;
+	display: inline-block;
+	margin: 0px 2em 0px 0px;
+	padding: .4em;
+}
+#Transportation {
+	background-color: rgba(242, 116, 5, .8);
+	border: .05em solid rgba(242, 116, 5, .8);
+	border-radius: .25em;
+	color: white;
+	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	font-size: .75em;
+	display: inline-block;
+	margin: 0px 2em 0px 0px;
+	padding: .4em;
+}
+
+#Exercise {
+	background-color: rgba(153, 102, 255, 1);
+	border: .05em solid rgba(153, 102, 255, 1);
+	border-radius: .25em;
+	color: white;
+	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	font-size: .75em;
+	display: inline-block;
+	margin: 0px 2em 0px 0px;
+	padding: .4em;
+}
+
+.trash-button {
+  	color: gray;
+	cursor: pointer;
+	display: inline-block;
+}
+
+.edit-button {
+	color: gray;
+	cursor: pointer;
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.check-button {
+	color: teal;
+	cursor: pointer;
+	display: inline-block;
+	margin-left: 1em;
+}
+
+.x-button {
+	color: #ef5350;
+	cursor: pointer;
+	display: inline-block;
+	margin-left: 1em;
+}
+
+#edit-end {
+	font-size: 1em;
+	padding: .5em;
+	width: 75%;
+}
+
+#edit-start {
+	font-size: 1em;
+	padding: .5em;
+	width: 75%;
+}
+
+#edit-desc {
+	font-size: 1em;
+	padding: .5em;
+	width: 75%;
+}
+
+.edit-start-container {
+	display: inline-block;
+	float: left;
+	margin-left: 0;
+	padding: 0;
 	width: 50%;
-	float: left; 
+}
+
+.edit-end-container {
+	display: inline-block;
+	float: left;
+	margin-left: 0;
+	padding: 0;
+	width: 50%;
 }

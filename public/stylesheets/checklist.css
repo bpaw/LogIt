@@ -8,7 +8,6 @@ html {
 	background-color: rgb(105,210,231);
 	padding: 20px 0 10px 0;
 	display: inline-block;
-	text-align: center;
 }
 
 #webpageName {
@@ -26,6 +25,33 @@ body {
 	position: relative;
 	overflow: hidden;
 	left: 0;
+}
+
+.check-description {
+	width: 30%;
+	display: inline-block;
+}
+
+.check-start {
+	width: 30%;
+	display: inline-block;
+}
+
+.checklist-date {
+	color: #2F4F4F;
+}
+
+.checklist-header {
+	text-align: left;
+	font-family: 'Helvetica Neue', 'Helvetica', 'Avenir', 'Arial', sans-serif;
+	font-size: 1.2em;
+	color: black;
+	padding-bottom: .2em;
+	margin: 1em;
+}
+
+.checklist-subheader {
+	margin-top: 3em;
 }
 
 .checklist-generator {
@@ -90,6 +116,7 @@ body {
 	border: .05em solid gray;
 	margin: 1em 0;
 	width: 100%;
+	cursor: default;
 }
 
 .fa-check-square-o {
@@ -127,7 +154,11 @@ body {
 }
 
 .menu {
-	width: 50vw;
+	color: white;
+	width: 33vw;
+	display: inline-block;
+	margin: 0;
+	margin-right: 5vw;
 }
 
 .menu-li {
@@ -135,7 +166,7 @@ body {
 }
 
 .menu-li li {
-	float: left;
+	display: inline-block;
 	padding: 1em;
 	cursor: pointer;
 }
@@ -145,6 +176,24 @@ body {
 }
 
 .title-container {
-	width: 50%;
-	float: left; 
+	display: inline-block;
+}
+
+.start-time-container {
+	display: inline-block;
+}
+
+li div {
+	display: inline-block;
+}
+
+.fa-pencil {
+	color: gray;
+	cursor: pointer;
+	margin-right: .5em;
+}
+
+.fa-trash-o {
+	color: gray;
+	cursor: pointer;
 }

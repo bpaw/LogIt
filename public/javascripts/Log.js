@@ -190,6 +190,19 @@ var main = function() {
 	}	
 	}); 
 
+	/* Event listener for hovering over an elapsed time box 
+	$('.type-rec').mouseenter(function() {
+		
+		var type_info = document.createElement('div');
+		type_info.className = "type_info";
+
+	});
+
+	/* Event listener for mouse leaving an elapsed time box 
+	$('.type-rec').mouseenter(function() {
+
+	});*/
+
 	/* Event listener for hovering over a log item - show trash and edit options */
 	$('.log-list-style').mouseenter(function() {
 		$(this).children('.trash-button').children('.trash-o').html('<i class="fa fa-trash-o" aria-hidden="true"></i>');
@@ -231,6 +244,7 @@ var main = function() {
 		
 		var logType = $(this).parent().children('.type-rec').attr('id');
 
+		// "Daily_Routines" needs to be converted to "Daily Routines"
 		if (logType.indexOf("_") != -1) {
 			logType = logType.replace("_", " ");
 		}
@@ -317,11 +331,15 @@ var main = function() {
 				if (editStart != "") {
 					newLog.start = toMeridian(editStart);
 					origLog.updatedStart = toMeridian(editStart);
+					// alert(toMilitary(newLog.start));
+					// alert(toMilitary(newLog.end));
 					origLog.updatedElapsed = getElapsed(toMilitary(newLog.start), toMilitary(newLog.end));
 				}
 				if (editEnd != "") {
 					newLog.end = toMeridian(editEnd);
 					origLog.updatedEnd = toMeridian(editEnd);
+					// alert(toMilitary(newLog.start));
+					// alert(toMilitary(newLog.end));
 					origLog.updatedElapsed = getElapsed(toMilitary(newLog.start), toMilitary(newLog.end))
 				}
 				if (editDesc != "") {
@@ -423,13 +441,13 @@ function getElapsed(start, end) {
 	var min;
 	var result;
 
-	if (Number(endHour) > Number(startHour)) {
-		// alert("normal case");
-		hour = Number(endHour) - Number(startHour);
-	}
-	else {
+	if (Number(startHour) > Number(endHour)) {
 		// alert("edge case - crossing over midnight");
 		hour = 24 - Number(startHour) + Number(endHour);
+	}
+	else {
+		// alert("normal case");
+		hour = Number(endHour) - Number(startHour);
 	}
 
 	var startMin = start.substring(3);
@@ -498,7 +516,7 @@ function toMilitary(input) {
 
 		if (inputHour == 12) {
 			inputHour = Number(inputHour) - 12;
-			input = inputHour + input.substring(2 , input_length - 3);
+			input = "0" + inputHour + input.substring(2 , input_length - 3);
 		}
 		else {
 			input = input.substring(0, input_length - 3);

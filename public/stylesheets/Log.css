@@ -17,7 +17,6 @@ input {
 	background-color: #e84d39;
 	padding: 20px 0 10px 0;
 	display: inline-block;
-	text-align: center;
 }
 
 #webpageName {
@@ -334,6 +333,7 @@ body {
 }
 
 .log-list-style {
+	cursor: default;
 	font-family: 'Helvetica Neue', 'Helvetica', 'Avenir', 'Arial', sans-serif;
 	font-size: .8em;
 	margin-bottom: 1em; 
@@ -389,8 +389,8 @@ body {
 }
 
 #Sleeping {
-	background-color: rgba(54, 162, 235, 1);
-	border: .05em solid rgba(54, 162, 235, 1);
+	background-color: rgba(255, 206, 86, 1);
+	border: .05em solid rgba(255, 206, 86, 1);
 	border-radius: .25em;
 	color: white;
 	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
@@ -401,8 +401,8 @@ body {
 }
 
 #Eating {
-	background-color: rgba(255, 206, 86, 1);
-	border: .05em solid rgba(255, 206, 86, 1);
+	background-color: rgba(54, 162, 235, 1);
+	border: .05em solid rgba(54, 162, 235, 1);
 	border-radius: .25em;
 	color: white;
 	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
@@ -464,22 +464,24 @@ body {
 }
 
 .menu {
-	width: 50vw;
+	color: white;
+	width: 33vw;
+	display: inline-block;
+	margin: 0;
+	margin-right: 5vw;
 }
-
 .menu-li {
 	list-style-type: none;
 }
 
 .menu-li li {
-	float: left;
+	display: inline-block;
 	padding: 1em;
 	cursor: pointer;
 }
 
 .title-container {
-	width: 50%;
-	float: left; 
+	display: inline-block;
 }
 
 #edit-start {
@@ -495,4 +497,8 @@ body {
 #edit-desc {
 	height: 1em;
 	margin: 0;
+}
+
+.type_info {
+	
 }

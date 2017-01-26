@@ -1,13 +1,15 @@
 {
-  "logs": [{
+  "date": "January 23, 2017",
+  "logs": [
+    {
       "year": "2016",
       "month": "December",
       "date": "December 20, 2016",
-      "type": "Morning routine",
+      "type": "Daily Routine",
       "start": "11:30 AM",
       "end": "1:00 PM",
       "description": "Woke up, watched TV, got ready",
-      "productive": "hour: 1.5"
+      "elapsed": "01:30"
     },
     {
       "year": "2016",
@@ -17,7 +19,7 @@
       "start": "1:00 PM",
       "end": "1:40 PM",
       "description": "Worked on LogIt while eating lunch",
-      "productive": "min: 40"
+      "elapsed": "00:40"
     },
     {
       "year": "2016",
@@ -27,7 +29,7 @@
       "start": "1:40 PM",
       "end": "2:08 PM",
       "description": "Took a break - TV",
-      "productive": "min: 32"
+      "elapsed": "00:32"
     },
     {
       "year": "2016",
@@ -37,7 +39,7 @@
       "start": "2:08 PM",
       "end": "2:58 PM",
       "description": "Worked on LogIt",
-      "productive": "min: 50"
+      "elapsed": "00:50"
     },
     {
       "year": "2016",
@@ -47,7 +49,7 @@
       "start": "3:02 PM",
       "end": "4:28 PM",
       "description": "Break - TV",
-      "productive": "min: 50"
+      "elapsed": "00:50"
     },
     {
       "year": "2016",
@@ -57,7 +59,7 @@
       "start": "4:28 PM",
       "end": "6:03 PM",
       "description": "Worked on LogIt",
-      "productive": "hour: 1.5"
+      "elapsed": "01:30"
     },
     {
       "year": "2016",
@@ -67,7 +69,7 @@
       "start": "6:03 PM",
       "end": "8:00 PM",
       "description": "Break - TV, eating dinner, Break - TV",
-      "productive": "min: 50"
+      "elapsed": "00:50"
     },
     {
       "year": "2016",
@@ -77,7 +79,7 @@
       "start": "8:08 PM",
       "end": "8:30 PM",
       "description": "Showering",
-      "productive": "min: 50"
+      "elapsed": "00:50"
     },
     {
       "year": "2016",
@@ -87,7 +89,7 @@
       "start": "8:30 PM",
       "end": "9:05 PM",
       "description": "Researching Net Neutrality",
-      "productive": "min: 50"
+      "elapsed": "00:50"
     },
     {
       "year": "2016",
@@ -97,7 +99,7 @@
       "start": "9:05 PM",
       "end": "9:28 PM",
       "description": "Break - TV",
-      "productive": "min: 50"
+      "elapsed": "00:50"
     },
     {
       "year": "2016",
@@ -107,7 +109,7 @@
       "start": "9:28 PM",
       "end": "10:22 PM",
       "description": "Smoothie Time",
-      "productive": "min: 50"
+      "elapsed": "00:50"
     },
     {
       "year": "2016",
@@ -117,6 +119,3457 @@
       "start": "10:22 PM",
       "end": "11:28 PM",
       "description": "Working on LogIt",
-      "productive": "hour: 1"
-    }]
+      "elapsed": "01:00"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 21, 2016",
+      "type": "Work",
+      "start": "1:30 PM",
+      "end": "4:00 PM",
+      "description": "Working on LogIt at Starbucks",
+      "elapsed": "02:30"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 24, 2016",
+      "type": "Work",
+      "start": "6:00 PM",
+      "end": "7:27 PM",
+      "description": "Dinner and coding",
+      "elapsed": "01:27"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 24, 2016",
+      "type": "Work",
+      "start": "7:27 PM",
+      "end": "7:33 PM",
+      "description": "Last touch ups to LogIt before presents",
+      "elapsed": "00:06"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 24, 2016",
+      "type": "Leisure",
+      "start": "7:33 PM",
+      "end": "8:00 PM",
+      "description": "presents",
+      "elapsed": "00:27"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 25, 2016",
+      "type": "Eating",
+      "start": "12:00 AM",
+      "end": "1:00 PM",
+      "description": "Eating vegan waffles for breakfast",
+      "elapsed": "01:00"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 25, 2016",
+      "type": "Work",
+      "start": "1:00 PM",
+      "end": "1:30 PM",
+      "description": "Dealing with computer issues and buying Rent tickets",
+      "elapsed": "00:30"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 25, 2016",
+      "type": "Leisure",
+      "start": "1:30 PM",
+      "end": "4:37 PM",
+      "description": "Not doing work - Netflix",
+      "elapsed": "03:07"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 25, 2016",
+      "type": "Work",
+      "start": "4:37 PM",
+      "end": "6:12 PM",
+      "description": "Working on LogIt - Log.ejs style and loading only today's logs",
+      "elapsed": "01:35"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 25, 2016",
+      "type": "Eating",
+      "start": "6:13 PM",
+      "end": "6:46 PM",
+      "description": "Eating Dinner",
+      "elapsed": "00:33"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 25, 2016",
+      "type": "Work",
+      "start": "6:46 PM",
+      "end": "7:15 PM",
+      "description": "Working on LogIt (before & during dessert time)",
+      "elapsed": "00:29"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 25, 2016",
+      "type": "Work",
+      "start": "7:15 PM",
+      "end": "7:48 PM",
+      "description": "Working on LogIt",
+      "elapsed": "00:33"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 25, 2016",
+      "type": "Leisure",
+      "start": "7:48 PM",
+      "end": "9:20 PM",
+      "description": "Watching Troll Hunters",
+      "elapsed": "01:32"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 25, 2016",
+      "type": "Eating",
+      "start": "9:20 PM",
+      "end": "10:02 PM",
+      "description": "Smoothies",
+      "elapsed": "00:42"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 25, 2016",
+      "type": "Leisure",
+      "start": "10:02 PM",
+      "end": "10:29 PM",
+      "description": "Watching Troll Hunters",
+      "elapsed": "00:27"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 25, 2016",
+      "type": "Work",
+      "start": "10:29 PM",
+      "end": "10:47 PM",
+      "description": "Previewing the MEAN tutorial from reddit user",
+      "elapsed": "00:18"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 25, 2016",
+      "type": "Leisure",
+      "start": "10:47 PM",
+      "end": "11:16 PM",
+      "description": "Watching Troll Hunters",
+      "elapsed": "00:29"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 25, 2016",
+      "type": "Work",
+      "start": "11:16 PM",
+      "end": "12:06 AM",
+      "description": "Working on elapsedTime data field for LogIt",
+      "elapsed": "00:40"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 26, 2016",
+      "type": "Work",
+      "start": "12:00 AM",
+      "end": "12:11 AM",
+      "description": "Testing out elapsed time",
+      "elapsed": "00:11"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 26, 2016",
+      "type": "Work",
+      "start": "12:11 AM",
+      "end": "12:26 AM",
+      "description": "Working on LogIt - 12AM bug",
+      "elapsed": "00:15"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 26, 2016",
+      "type": "Work",
+      "start": "12:11 AM",
+      "end": "12:26 AM",
+      "description": "Working on LogIt - 12AM bug",
+      "elapsed": "00:15"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 26, 2016",
+      "type": "Leisure",
+      "start": "12:26 AM",
+      "end": "02:37 AM",
+      "description": "Watching - Troll Hunters",
+      "elapsed": "02:11"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 26, 2016",
+      "type": "Sleeping",
+      "start": "02:37 AM",
+      "end": "11:00 AM",
+      "description": "Sleeping",
+      "elapsed": "08:23"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 26, 2016",
+      "type": "Eating",
+      "start": "11:00 AM",
+      "end": "12:20 AM",
+      "description": "Eating breakfast",
+      "elapsed": "01:20"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 26, 2016",
+      "type": "Leisure",
+      "start": "12:20 AM",
+      "end": "1:34 PM",
+      "description": "Watching Netflix - Troll Hunters",
+      "elapsed": "01:14"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 26, 2016",
+      "type": "Eating",
+      "start": "1:34 PM",
+      "end": "2:03 PM",
+      "description": "Lunch",
+      "elapsed": "00:29"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 26, 2016",
+      "type": "Leisure",
+      "start": "2:03 PM",
+      "end": "5:08 PM",
+      "description": "Anything but work",
+      "elapsed": "03:05"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 26, 2016",
+      "type": "Work",
+      "start": "5:08 PM",
+      "end": "5:28 PM",
+      "description": "Working on LogIt before birthday dinner",
+      "elapsed": "00:20"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 26, 2016",
+      "type": "Eating",
+      "start": "5:28 PM",
+      "end": "7:34 PM",
+      "description": "Birthday Dinner",
+      "elapsed": "02:06"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 26, 2016",
+      "type": "Eating",
+      "start": "7:34 PM",
+      "end": "8:11 PM",
+      "description": "Birthday dessert",
+      "elapsed": "00:37"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 26, 2016",
+      "type": "Daily Routines",
+      "start": "8:11 PM",
+      "end": "9:00 PM",
+      "description": "Shower and something else",
+      "elapsed": "00:11"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 27, 2016",
+      "type": "Daily Routines",
+      "start": "10:30 AM",
+      "end": "1:10 PM",
+      "description": "Waking up and goofing off",
+      "elapsed": "02:40"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 27, 2016",
+      "type": "Eating",
+      "start": "1:10 PM",
+      "end": "1:40 PM",
+      "description": "Working on LogIt",
+      "elapsed": "00:30"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 27, 2016",
+      "type": "Eating",
+      "start": "1:40 PM",
+      "end": "2:08 PM",
+      "description": "Lunch",
+      "elapsed": "00:22"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 27, 2016",
+      "type": "Leisure",
+      "start": "2:08 PM",
+      "end": "4:08 PM",
+      "description": "Netflix - Black Mirror",
+      "elapsed": "02:00"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 27, 2016",
+      "type": "Leisure",
+      "start": "2:08 PM",
+      "end": "4:08 PM",
+      "description": "Netflix - Black Mirror",
+      "elapsed": "02:00"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 28, 2016",
+      "type": "Daily Routines",
+      "start": "10:30 AM",
+      "end": "11:41 AM",
+      "description": "Waking up",
+      "elapsed": "01:11"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 28, 2016",
+      "type": "Work",
+      "start": "11:41 AM",
+      "end": "11:57 AM",
+      "description": "Working on LogIt",
+      "elapsed": "00:16"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 28, 2016",
+      "type": "Leisure",
+      "start": "12:00 AM",
+      "end": "6:30 PM",
+      "description": "Spence's birthday celebrations",
+      "elapsed": "06:30"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 28, 2016",
+      "type": "Work",
+      "start": "6:30 PM",
+      "end": "6:40 PM",
+      "description": "Working on LogIt",
+      "elapsed": "00:10"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 28, 2016",
+      "type": "Eating",
+      "start": "6:40 PM",
+      "end": "7:28 PM",
+      "description": "Dinner + Dessert",
+      "elapsed": "00:48"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 28, 2016",
+      "type": "Leisure",
+      "start": "7:28 PM",
+      "end": "9:48 PM",
+      "description": "Not doing work (Netflix, Youtube)",
+      "elapsed": "02:20"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 28, 2016",
+      "type": "Daily Routines",
+      "start": "9:48 PM",
+      "end": "10:30 PM",
+      "description": "Smoothie time and Shower",
+      "elapsed": "00:42"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 28, 2016",
+      "type": "Work",
+      "start": "10:30 PM",
+      "end": "11:10 PM",
+      "description": "Working on LogIt's backend",
+      "elapsed": "00:40"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 28, 2016",
+      "type": "Work",
+      "start": "11:10 PM",
+      "end": "11:37 PM",
+      "description": "Working on LogIt some more",
+      "elapsed": "00:27"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 29, 2016",
+      "type": "Leisure",
+      "start": "10:30 AM",
+      "end": "12:00 AM",
+      "description": "Woke up, watched Netflix & Youtube",
+      "elapsed": "01:30"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 29, 2016",
+      "type": "Work",
+      "start": "12:00 PM",
+      "end": "1:17 AM",
+      "description": "Working on LogIt",
+      "elapsed": "01:17"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Daily Routines",
+      "start": "12:41 AM",
+      "end": "12:57 AM",
+      "description": "Showering",
+      "elapsed": "00:16"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Leisure",
+      "start": "12:57 PM",
+      "end": "02:30 AM",
+      "description": "Watching TV",
+      "elapsed": "2:33"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Sleep",
+      "start": "02:30 AM",
+      "end": "10:30 AM",
+      "description": "Sleeping",
+      "elapsed": "08:00"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Work",
+      "start": "3:00 PM",
+      "end": "4:15 PM",
+      "description": "Working on LogIt",
+      "elapsed": "01:15"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Work",
+      "start": "4:15 PM",
+      "end": "4:26 PM",
+      "description": "Debugging the bugs I added to LogIt",
+      "elapsed": "00:11"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Work",
+      "start": "4:26 PM",
+      "end": "4:30 PM",
+      "description": "logit",
+      "elapsed": "00:04"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Leisure",
+      "start": "4:30 PM",
+      "end": "6:00 PM",
+      "description": "Not doing work ",
+      "elapsed": "01:30"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Work",
+      "start": "6:00 PM",
+      "end": "6:34 PM",
+      "description": "Working on LogIt - Debugging daily_update",
+      "elapsed": "00:34"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Work",
+      "start": "6:34 PM",
+      "end": "6:45 PM",
+      "description": "Working on LogIt more",
+      "elapsed": "00:11"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Work",
+      "start": "6:45 PM",
+      "end": "7:05 PM",
+      "description": "Working on LogIt",
+      "elapsed": "00:20"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Eating",
+      "start": "7:05 PM",
+      "end": "7:45 PM",
+      "description": "Dinner",
+      "elapsed": "00:40"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Work",
+      "start": "7:45 PM",
+      "end": "8:18 PM",
+      "description": "Working on LogIt",
+      "elapsed": "00:33"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Work",
+      "start": "8:18 PM",
+      "end": "9:03 PM",
+      "description": "Working on LogIt",
+      "elapsed": "00:45"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Leisure",
+      "start": "9:03 PM",
+      "end": "9:52 PM",
+      "description": "Playing SWBII",
+      "elapsed": "00:49"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Daily Routines",
+      "start": "9:52 PM",
+      "end": "10:10 PM",
+      "description": "Showering",
+      "elapsed": "00:18"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Work",
+      "start": "10:10 PM",
+      "end": "10:30 PM",
+      "description": "Working on LogIt",
+      "elapsed": "00:20"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Daily Routines",
+      "start": "10:30 PM",
+      "end": "10:45 PM",
+      "description": "Smoothie Time",
+      "elapsed": "00:15"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 30, 2016",
+      "type": "Work",
+      "start": "10:45 PM",
+      "end": "11:56 PM",
+      "description": "Working on LogIt - Calendar JS file",
+      "elapsed": "01:11"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Exercise",
+      "start": "11:56 PM",
+      "end": "12:01 AM",
+      "description": "Set of pushups",
+      "elapsed": "00:05"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Work",
+      "start": "12:01 AM",
+      "end": "12:35 AM",
+      "description": "Working on LogIt - more daily update bugs to fix",
+      "elapsed": "00:34"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Leisure",
+      "start": "12:35 AM",
+      "end": "02:51 AM",
+      "description": "Netflix - 3%",
+      "elapsed": "02:16"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Sleep",
+      "start": "02:51 AM",
+      "end": "10:30 AM",
+      "description": "Sleeping",
+      "elapsed": "07:39"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Daily Routines",
+      "start": "10:30 AM",
+      "end": "11:14 AM",
+      "description": "Getting up",
+      "elapsed": "00:44"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Leisure",
+      "start": "11:14 AM",
+      "end": "12:27 PM",
+      "description": "Netflix - 3%",
+      "elapsed": "01:13"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Eating",
+      "start": "12:27 PM",
+      "end": "12:39 PM",
+      "description": "Lunch",
+      "elapsed": "00:12"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Work",
+      "start": "12:39 PM",
+      "end": "1:20 PM",
+      "description": "LogIt - debugging elapsed time bug",
+      "elapsed": "00:41"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Leisure",
+      "start": "1:20 PM",
+      "end": "1:49 PM",
+      "description": "Netflix - 3%",
+      "elapsed": "00:29"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Leisure",
+      "start": "1:49 PM",
+      "end": "3:37 PM",
+      "description": "Thrift shopping with Miki",
+      "elapsed": "01:48"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Work",
+      "start": "3:37 PM",
+      "end": "6:40 PM",
+      "description": "Khan Academy HackerRank preparation",
+      "elapsed": "03:03"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Eating",
+      "start": "6:40 PM",
+      "end": "7:12 PM",
+      "description": "Dinner",
+      "elapsed": "00:32"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Transportation",
+      "start": "7:12 PM",
+      "end": "7:40 PM",
+      "description": "Driving to Spence's New Years Party",
+      "elapsed": "00:28"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Leisure",
+      "start": "7:40 PM",
+      "end": "10:04 PM",
+      "description": "Hangin' at Spence's New Years Party",
+      "elapsed": "02:24"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Transportation",
+      "start": "10:04 PM",
+      "end": "10:30 PM",
+      "description": "Driving home from Spence's New Years Party",
+      "elapsed": "00:26"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Leisure",
+      "start": "10:30 PM",
+      "end": "10:49 PM",
+      "description": "Chatting with Miki",
+      "elapsed": "00:19"
+    },
+    {
+      "year": "2016",
+      "month": "December",
+      "date": "December 31, 2016",
+      "type": "Leisure",
+      "start": "10:30 PM",
+      "end": "10:49 PM",
+      "description": "Chatting with Miki",
+      "elapsed": "00:19"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Work",
+      "start": "10:49 PM",
+      "end": "12:21 AM",
+      "description": "Preparing for Khan Academy HackerRank",
+      "elapsed": "01:32"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Work",
+      "start": "12:21 AM",
+      "end": "02:00 AM",
+      "description": "Preparing for Khan Academy HackerRank",
+      "elapsed": "01:39"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Leisure",
+      "start": "02:00 AM",
+      "end": "04:00 AM",
+      "description": "Watching Netflix - 3%",
+      "elapsed": "02:00"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Sleep",
+      "start": "04:00 AM",
+      "end": "08:00 AM",
+      "description": "Sleeping",
+      "elapsed": "04:00"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Daily Routines",
+      "start": "08:00 AM",
+      "end": "08:30 AM",
+      "description": "Packing",
+      "elapsed": "00:30"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Work",
+      "start": "08:30 AM",
+      "end": "09:40 AM",
+      "description": "Preparing for Khan Academy HackerRank",
+      "elapsed": "01:10"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Sleep",
+      "start": "09:50 AM",
+      "end": "10:50 AM",
+      "description": "Sleeping in the car",
+      "elapsed": "01:00"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Eating",
+      "start": "10:50 AM",
+      "end": "11:30 AM",
+      "description": "Eating Panda Express vegies",
+      "elapsed": "00:40"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Work",
+      "start": "11:30 AM",
+      "end": "1:19 PM",
+      "description": "Working on LogIt & logging day",
+      "elapsed": "01:49"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Work",
+      "start": "1:19 PM",
+      "end": "2:33 PM",
+      "description": "Working on LogIt",
+      "elapsed": "01:14"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Work",
+      "start": "2:33 PM",
+      "end": "3:06 PM",
+      "description": "Working on LogIt bug - line chart for data that crosses months",
+      "elapsed": "00:33"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Exercise",
+      "start": "3:06 PM",
+      "end": "4:31 PM",
+      "description": "Family walk around Vegas malls",
+      "elapsed": "01:25"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Work",
+      "start": "4:31 PM",
+      "end": "5:10 PM",
+      "description": "Debugging LogIt line chart",
+      "elapsed": "00:39"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Work",
+      "start": "5:10 PM",
+      "end": "5:22 PM",
+      "description": "Studying HackerRank solution",
+      "elapsed": "00:12"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Work",
+      "start": "5:27 PM",
+      "end": "5:56 PM",
+      "description": "Working on LogIt Logging page front end",
+      "elapsed": "00:29"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Transportation",
+      "start": "6:00 PM",
+      "end": "6:50 PM",
+      "description": "Walking to Nobu's",
+      "elapsed": "00:50"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Eating",
+      "start": "6:50 PM",
+      "end": "9:30 PM",
+      "description": "Feasting at Nobu's",
+      "elapsed": "02:40"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Transportation",
+      "start": "9:30 PM",
+      "end": "10:30 PM",
+      "description": "Walking back to Vdara from Nobu's",
+      "elapsed": "01:00"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 1, 2017",
+      "type": "Work",
+      "start": "10:30 PM",
+      "end": "12:00 AM",
+      "description": "Preparing for Khan Academy HackerRank",
+      "elapsed": "01:30"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 2, 2017",
+      "type": "Work",
+      "start": "12:30 PM",
+      "end": "02:00 PM",
+      "description": "Fake data",
+      "elapsed": "01:30"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 4, 2017",
+      "type": "Eating",
+      "start": "08:00 AM",
+      "end": "09:00 AM",
+      "description": "fake breakfast",
+      "elapsed": "01:00"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 4, 2017",
+      "type": "Daily Routines",
+      "start": "09:00 AM",
+      "end": "09:20 AM",
+      "description": "Fake getting ready",
+      "elapsed": "00:20"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 4, 2017",
+      "type": "Transportation",
+      "start": "09:20 AM",
+      "end": "10:00 AM",
+      "description": "Fake walking",
+      "elapsed": "00:40"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 4, 2017",
+      "type": "Eating",
+      "start": "10:00 AM",
+      "end": "12:00 PM",
+      "description": "Fake lunch",
+      "elapsed": "02:00"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 4, 2017",
+      "type": "Work",
+      "start": "11:45 AM",
+      "end": "1:30 PM",
+      "description": "Fake work",
+      "elapsed": "01:45"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 4, 2017",
+      "type": "Leisure",
+      "start": "1:30 PM",
+      "end": "2:00 PM",
+      "description": "fake leisure",
+      "elapsed": "00:30"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 4, 2017",
+      "type": "Sleep",
+      "start": "2:00 PM",
+      "end": "3:01 PM",
+      "description": "Fake sleep",
+      "elapsed": "01:01"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 8, 2017",
+      "type": "Leisure",
+      "start": "10:00 AM",
+      "end": "11:00 AM",
+      "description": "Watching clone wars",
+      "elapsed": "01:00"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 8, 2017",
+      "type": "Work",
+      "start": "11:00 AM",
+      "end": "11:25 AM",
+      "description": "Working",
+      "elapsed": "00:25"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 8, 2017",
+      "type": "Leisure",
+      "start": "11:30 AM",
+      "end": "12:30 PM",
+      "description": "Playing battlefront 2",
+      "elapsed": "01:00"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 8, 2017",
+      "type": "Work",
+      "start": "12:30 PM",
+      "end": "2:15 PM",
+      "description": "Working on LogIt's statistic page",
+      "elapsed": "01:45"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 8, 2017",
+      "type": "Transportation",
+      "start": "2:30 PM",
+      "end": "2:45 PM",
+      "description": "Getting a sandwich from Earl's",
+      "elapsed": "00:15"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 8, 2017",
+      "type": "Transportation",
+      "start": "2:45 PM",
+      "end": "3:05 PM",
+      "description": "Walking to Kat's",
+      "elapsed": "00:20"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 8, 2017",
+      "type": "Leisure",
+      "start": "3:05 PM",
+      "end": "6:40 PM",
+      "description": "Hangin w/ Kat",
+      "elapsed": "03:35"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 8, 2017",
+      "type": "Leisure",
+      "start": "6:40 PM",
+      "end": "7:20 PM",
+      "description": "Playing Star Wars Battlefront w/ Chris",
+      "elapsed": "00:40"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 8, 2017",
+      "type": "Eating",
+      "start": "7:20 PM",
+      "end": "7:44 PM",
+      "description": "Eating curry w/ Kat",
+      "elapsed": "00:24"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 9, 2017",
+      "type": "Transportation",
+      "start": "10:00 AM",
+      "end": "10:20 AM",
+      "description": "Walking to Black Hall",
+      "elapsed": "00:20"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 9, 2017",
+      "type": "Leisure",
+      "start": "10:20 AM",
+      "end": "11:37 AM",
+      "description": "Not working",
+      "elapsed": "01:17"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 9, 2017",
+      "type": "Work",
+      "start": "11:37 AM",
+      "end": "12:17 PM",
+      "description": "Working on LogIt",
+      "elapsed": "00:40"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 9, 2017",
+      "type": "Eating",
+      "start": "12:17 AM",
+      "end": "12:45 PM",
+      "description": "Lunch and getting ready for class",
+      "elapsed": "01:08"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 9, 2017",
+      "type": "Transportation",
+      "start": "12:45 PM",
+      "end": "1:01 PM",
+      "description": "Walking to class",
+      "elapsed": "00:16"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 9, 2017",
+      "type": "Work",
+      "start": "1:01 PM",
+      "end": "1:50 PM",
+      "description": "Lecture: CSE 21 (Jones)",
+      "elapsed": "00:49"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 9, 2017",
+      "type": "Transportation",
+      "start": "1:50 PM",
+      "end": "2:01 PM",
+      "description": "Walking to Black Hall",
+      "elapsed": "00:11"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 9, 2017",
+      "type": "Leisure",
+      "start": "2:01 PM",
+      "end": "2:29 PM",
+      "description": "Working on LogIt but Clone Wars was on",
+      "elapsed": "00:28"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 9, 2017",
+      "type": "Leisure",
+      "start": "2:29 PM",
+      "end": "3:50 PM",
+      "description": "Playing Star  Battlefront",
+      "elapsed": "01:21"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 9, 2017",
+      "type": "Transportation",
+      "start": "3:50 PM",
+      "end": "4:00 PM",
+      "description": "Walking to Math 18",
+      "elapsed": "00:10"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 9, 2017",
+      "type": "Work",
+      "start": "4:00 PM",
+      "end": "4:50 PM",
+      "description": "Lecture: Math 18",
+      "elapsed": "00:50"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 9, 2017",
+      "type": "Transportation",
+      "start": "4:50 PM",
+      "end": "4:55 PM",
+      "description": "Walking back from class",
+      "elapsed": "00:05"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 9, 2017",
+      "type": "Leisure",
+      "start": "4:55 PM",
+      "end": "5:15 PM",
+      "description": "Playing Battlefront 2",
+      "elapsed": "00:20"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 9, 2017",
+      "type": "Work",
+      "start": "5:15 PM",
+      "end": "5:33 PM",
+      "description": "Looking into class logistics",
+      "elapsed": "00:18"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 9, 2017",
+      "type": "Leisure",
+      "start": "5:33 PM",
+      "end": "6:00 PM",
+      "description": "Just chilling before class",
+      "elapsed": "00:27"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 9, 2017",
+      "type": "Transportation",
+      "start": "6:00 PM",
+      "end": "6:30 PM",
+      "description": "Walking to class (and getting food first)",
+      "elapsed": "00:30"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 9, 2017",
+      "type": "Work",
+      "start": "6:30 PM",
+      "end": "7:50 PM",
+      "description": "Lecture: CSE 21 (Kahng)",
+      "elapsed": "01:20"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 9, 2017",
+      "type": "Transportation",
+      "start": "7:50 PM",
+      "end": "8:00 PM",
+      "description": "Walking back home",
+      "elapsed": "00:10"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 9, 2017",
+      "type": "Leisure",
+      "start": "8:00 PM",
+      "end": "11:37 PM",
+      "description": "Anything but work",
+      "elapsed": "03:37"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 10, 2017",
+      "type": "Sleep",
+      "start": "12:00 AM",
+      "end": "09:25 AM",
+      "description": "Sleeping",
+      "elapsed": "09:25"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 10, 2017",
+      "type": "Daily Routines",
+      "start": "09:25 AM",
+      "end": "09:40 AM",
+      "description": "Getting ready ",
+      "elapsed": "00:15"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 10, 2017",
+      "type": "Eating",
+      "start": "09:40 AM",
+      "end": "09:45 AM",
+      "description": "Eating breakfast",
+      "elapsed": "00:05"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 10, 2017",
+      "type": "Transportation",
+      "start": "09:50 AM",
+      "end": "10:20 AM",
+      "description": "Walking to Muir for coffee and to see Kat",
+      "elapsed": "00:30"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 10, 2017",
+      "type": "Leisure",
+      "start": "10:20 AM",
+      "end": "11:00 AM",
+      "description": "Hanging with Kat",
+      "elapsed": "00:40"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 10, 2017",
+      "type": "Eating",
+      "start": "11:00 AM",
+      "end": "11:46 AM",
+      "description": "Farmer's Market",
+      "elapsed": "00:46"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 10, 2017",
+      "type": "Leisure",
+      "start": "11:46 AM",
+      "end": "11:57 AM",
+      "description": "Chilling w/ Kat at Farmer's Market",
+      "elapsed": "00:11"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 10, 2017",
+      "type": "Transportation",
+      "start": "11:57 AM",
+      "end": "12:12 PM",
+      "description": "Walking to Solis Hall",
+      "elapsed": "00:15"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 10, 2017",
+      "type": "Work",
+      "start": "12:12 PM",
+      "end": "12:22 PM",
+      "description": "Emailing Professor Kahng",
+      "elapsed": "00:10"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 10, 2017",
+      "type": "Work",
+      "start": "12:22 PM",
+      "end": "2:00 PM",
+      "description": "Lecture: CSE 30",
+      "elapsed": "01:38"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 10, 2017",
+      "type": "Transportation",
+      "start": "2:01 PM",
+      "end": "2:13 PM",
+      "description": "Walking back from class",
+      "elapsed": "00:12"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 10, 2017",
+      "type": "Work",
+      "start": "2:13 PM",
+      "end": "3:20 PM",
+      "description": "Intel event",
+      "elapsed": "01:07"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 10, 2017",
+      "type": "Work",
+      "start": "3:20 PM",
+      "end": "3:47 PM",
+      "description": "Work: resume, career fair info, and LogIt",
+      "elapsed": "00:27"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 10, 2017",
+      "type": "Leisure",
+      "start": "3:47 PM",
+      "end": "4:46 PM",
+      "description": "Hanging out ",
+      "elapsed": "00:59"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 10, 2017",
+      "type": "Work",
+      "start": "4:46 PM",
+      "end": "4:59 PM",
+      "description": "Working",
+      "elapsed": "00:13"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 10, 2017",
+      "type": "Eating",
+      "start": "5:00 PM",
+      "end": "5:48 PM",
+      "description": "Ruben's event",
+      "elapsed": "00:48"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 10, 2017",
+      "type": "Leisure",
+      "start": "5:48 PM",
+      "end": "7:59 PM",
+      "description": "Not work",
+      "elapsed": "02:11"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 10, 2017",
+      "type": "Work",
+      "start": "7:59 PM",
+      "end": "8:08 PM",
+      "description": "Working on LogIt",
+      "elapsed": "00:09"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 10, 2017",
+      "type": "Leisure",
+      "start": "8:08 PM",
+      "end": "9:17 PM",
+      "description": "Hanging with apartmentmates",
+      "elapsed": "01:09"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 10, 2017",
+      "type": "Transportation",
+      "start": "9:17 PM",
+      "end": "9:46 PM",
+      "description": "Walking to Muir",
+      "elapsed": "00:29"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 10, 2017",
+      "type": "Exercise",
+      "start": "9:57 PM",
+      "end": "9:58 PM",
+      "description": "Push ups",
+      "elapsed": "00:01"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 10, 2017",
+      "type": "Work",
+      "start": "9:58 PM",
+      "end": "10:11 PM",
+      "description": "Working on LogIt",
+      "elapsed": "00:13"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 11, 2017",
+      "type": "Work",
+      "start": "09:33 AM",
+      "end": "09:56 AM",
+      "description": "LogIt edit/delete functionality",
+      "elapsed": "00:23"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 11, 2017",
+      "type": "Daily Routines",
+      "start": "09:56 AM",
+      "end": "10:10 AM",
+      "description": "Pooping",
+      "elapsed": "00:14"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 11, 2017",
+      "type": "Work",
+      "start": "10:10 AM",
+      "end": "10:20 AM",
+      "description": "Working on LogIt",
+      "elapsed": "00:10"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 11, 2017",
+      "type": "Daily Routines",
+      "start": "10:20 AM",
+      "end": "10:35 AM",
+      "description": "Getting ready",
+      "elapsed": "00:15"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 11, 2017",
+      "type": "Work",
+      "start": "10:35 AM",
+      "end": "11:47 AM",
+      "description": "Working on LogIt edit functionality",
+      "elapsed": "01:12"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 11, 2017",
+      "type": "Transportation",
+      "start": "11:50 AM",
+      "end": "12:05 PM",
+      "description": "Walking to OVT",
+      "elapsed": "00:15"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 11, 2017",
+      "type": "Eating",
+      "start": "12:05 PM",
+      "end": "1:24 PM",
+      "description": "Eating at OVT",
+      "elapsed": "01:19"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 11, 2017",
+      "type": "Transportation",
+      "start": "1:24 PM",
+      "end": "2:02 PM",
+      "description": "Went to bookstore to buy textbooks then walked home",
+      "elapsed": "00:38"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 11, 2017",
+      "type": "Work",
+      "start": "2:02 PM",
+      "end": "2:39 PM",
+      "description": "LogIt edit functionality ",
+      "elapsed": "00:37"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 11, 2017",
+      "type": "Work",
+      "start": "2:39 PM",
+      "end": "2:50 PM",
+      "description": "Prepping for Kahng's OH",
+      "elapsed": "00:11"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 11, 2017",
+      "type": "Transportation",
+      "start": "2:50 PM",
+      "end": "3:00 PM",
+      "description": "Walking to Kahng's office",
+      "elapsed": "00:10"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 11, 2017",
+      "type": "Work",
+      "start": "3:00 PM",
+      "end": "3:20 PM",
+      "description": "Professor Kahng's office hours",
+      "elapsed": "00:20"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 11, 2017",
+      "type": "Transportation",
+      "start": "3:00 PM",
+      "end": "3:28 PM",
+      "description": "Walking back to Black Hall",
+      "elapsed": "00:28"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 11, 2017",
+      "type": "Leisure",
+      "start": "3:28 PM",
+      "end": "3:55 PM",
+      "description": "Pre Math 18 fun",
+      "elapsed": "00:27"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 11, 2017",
+      "type": "Transportation",
+      "start": "3:55 PM",
+      "end": "4:00 PM",
+      "description": "Walking to Math 18",
+      "elapsed": "00:05"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 11, 2017",
+      "type": "Work",
+      "start": "4:00 PM",
+      "end": "4:50 PM",
+      "description": "Lecture: Math 18 (i.e. hell)",
+      "elapsed": "00:50"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 11, 2017",
+      "type": "Transportation",
+      "start": "4:50 PM",
+      "end": "4:58 PM",
+      "description": "Walking back to Black Hall",
+      "elapsed": "00:08"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 11, 2017",
+      "type": "Work",
+      "start": "5:00 PM",
+      "end": "7:00 PM",
+      "description": "IEEE resume review",
+      "elapsed": "02:00"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 11, 2017",
+      "type": "Work",
+      "start": "7:00 PM",
+      "end": "7:50 PM",
+      "description": "Lecture: CSE 21",
+      "elapsed": "00:50"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 11, 2017",
+      "type": "Transportation",
+      "start": "7:50 PM",
+      "end": "8:06 PM",
+      "description": "Walking back to Black Hall",
+      "elapsed": "00:16"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 11, 2017",
+      "type": "Work",
+      "start": "8:06 PM",
+      "end": "8:13 PM",
+      "description": "Working on LogIt",
+      "elapsed": "00:07"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 11, 2017",
+      "type": "Transportation",
+      "start": "8:13 PM",
+      "end": "8:27 PM",
+      "description": "Went to CV for a salad",
+      "elapsed": "00:14"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 11, 2017",
+      "type": "Work",
+      "start": "8:27 PM",
+      "end": "9:10 PM",
+      "description": "Worked on LogIt checklist.ejs while eating salad",
+      "elapsed": "00:43"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 11, 2017",
+      "type": "Work",
+      "start": "9:10 PM",
+      "end": "9:31 PM",
+      "description": "General work",
+      "elapsed": "00:21"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 11, 2017",
+      "type": "Daily Routines",
+      "start": "9:31 PM",
+      "end": "9:56 PM",
+      "description": "Shower then poop",
+      "elapsed": "00:25"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 11, 2017",
+      "type": "Eating",
+      "start": "9:56 PM",
+      "end": "10:08 PM",
+      "description": "Night time snack",
+      "elapsed": "00:12"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 11, 2017",
+      "type": "Daily Routines",
+      "start": "10:08 PM",
+      "end": "10:11 PM",
+      "description": "Brushing teeth",
+      "elapsed": "00:03"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 11, 2017",
+      "type": "Work",
+      "start": "10:11 PM",
+      "end": "10:45 PM",
+      "description": "LogIt + Coursera Interview course",
+      "elapsed": "00:34"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 11, 2017",
+      "type": "Leisure",
+      "start": "10:45 PM",
+      "end": "11:13 PM",
+      "description": "TV",
+      "elapsed": "00:28"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 12, 2017",
+      "type": "Daily Routines",
+      "start": "10:07 AM",
+      "end": "10:20 AM",
+      "description": "Getting Ready",
+      "elapsed": "00:13"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 12, 2017",
+      "type": "Work",
+      "start": "10:20 AM",
+      "end": "10:50 AM",
+      "description": "Reading SPARC book",
+      "elapsed": "00:30"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 12, 2017",
+      "type": "Work",
+      "start": "10:50 AM",
+      "end": "11:30 AM",
+      "description": "Working on LogIt edit functionality ",
+      "elapsed": "00:40"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 12, 2017",
+      "type": "Leisure",
+      "start": "11:30 AM",
+      "end": "11:46 AM",
+      "description": "Chilling with Michael in Black",
+      "elapsed": "00:16"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 12, 2017",
+      "type": "Transportation",
+      "start": "11:46 AM",
+      "end": "11:52 AM",
+      "description": "Walking to Price Center",
+      "elapsed": "00:06"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 12, 2017",
+      "type": "Eating",
+      "start": "11:58 AM",
+      "end": "12:10 PM",
+      "description": "Lunch: Indian place in PC",
+      "elapsed": "00:12"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 12, 2017",
+      "type": "Transportation",
+      "start": "12:10 PM",
+      "end": "12:16 PM",
+      "description": "Walking to CSE 30 Lecture",
+      "elapsed": "00:06"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 12, 2017",
+      "type": "Work",
+      "start": "12:16 PM",
+      "end": "1:50 PM",
+      "description": "Lecture: CSE 30",
+      "elapsed": "01:34"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 12, 2017",
+      "type": "Transportation",
+      "start": "1:50 PM",
+      "end": "2:00 PM",
+      "description": "Walking to Muir Woods",
+      "elapsed": "00:10"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 12, 2017",
+      "type": "Work",
+      "start": "2:00 PM",
+      "end": "3:36 PM",
+      "description": "Working on LogIt edit functinoality",
+      "elapsed": "01:36"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 12, 2017",
+      "type": "Daily Routines",
+      "start": "3:50 PM",
+      "end": "4:06 PM",
+      "description": "Poo",
+      "elapsed": "00:16"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 12, 2017",
+      "type": "Work",
+      "start": "4:06 PM",
+      "end": "4:40 PM",
+      "description": "Working on LogIt w/ Kat",
+      "elapsed": "00:34"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 12, 2017",
+      "type": "Leisure",
+      "start": "4:40 PM",
+      "end": "5:47 PM",
+      "description": "Hanging out with Kat",
+      "elapsed": "01:07"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 12, 2017",
+      "type": "Transportation",
+      "start": "5:48 PM",
+      "end": "6:00 PM",
+      "description": "Walking to CSE 21 Discussion",
+      "elapsed": "00:12"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 12, 2017",
+      "type": "Work",
+      "start": "6:00 PM",
+      "end": "6:50 PM",
+      "description": "Discussion: CSE 21",
+      "elapsed": "00:50"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 12, 2017",
+      "type": "Transportation",
+      "start": "6:50 PM",
+      "end": "7:00 PM",
+      "description": "Walking to Black Hall and then CSES GBM",
+      "elapsed": "00:10"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 12, 2017",
+      "type": "Work",
+      "start": "7:00 PM",
+      "end": "7:43 PM",
+      "description": "CSES GBM",
+      "elapsed": "00:43"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 12, 2017",
+      "type": "Transportation",
+      "start": "7:46 PM",
+      "end": "8:00 PM",
+      "description": "Walking to Math 18 Discussion",
+      "elapsed": "00:14"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 12, 2017",
+      "type": "Work",
+      "start": "8:00 PM",
+      "end": "8:33 PM",
+      "description": "Discussion: MATH 18",
+      "elapsed": "00:33"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 12, 2017",
+      "type": "Transportation",
+      "start": "8:33 PM",
+      "end": "8:51 PM",
+      "description": "Walking to Starbucks",
+      "elapsed": "00:18"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 12, 2017",
+      "type": "Work",
+      "start": "8:51 PM",
+      "end": "9:19 PM",
+      "description": "Working at LogIt at Starbucks",
+      "elapsed": "00:28"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 12, 2017",
+      "type": "Transportation",
+      "start": "9:19 PM",
+      "end": "9:30 PM",
+      "description": "Walking to CSE 30 Discussion",
+      "elapsed": "00:11"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 12, 2017",
+      "type": "Work",
+      "start": "9:30 PM",
+      "end": "10:05 PM",
+      "description": "Discussion: CSE 30",
+      "elapsed": "00:35"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 12, 2017",
+      "type": "Transportation",
+      "start": "10:05 PM",
+      "end": "10:25 PM",
+      "description": "Walking to Kat's",
+      "elapsed": "00:20"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 12, 2017",
+      "type": "Work",
+      "start": "10:25 PM",
+      "end": "11:59 PM",
+      "description": "Working on LogIt",
+      "elapsed": "01:34"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 13, 2017",
+      "type": "Work",
+      "start": "12:04 AM",
+      "end": "01:05 AM",
+      "description": "Working on LogIt",
+      "elapsed": "01:01"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 13, 2017",
+      "type": "Daily Routines",
+      "start": "01:05 AM",
+      "end": "01:30 AM",
+      "description": "Shower + brushing teeth",
+      "elapsed": "00:25"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 13, 2017",
+      "type": "Daily Routines",
+      "start": "10:00 AM",
+      "end": "11:08 AM",
+      "description": "Waking up",
+      "elapsed": "01:08"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 13, 2017",
+      "type": "Work",
+      "start": "11:08 AM",
+      "end": "11:33 AM",
+      "description": "Finished LogIt edit functionality",
+      "elapsed": "00:25"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 13, 2017",
+      "type": "Leisure",
+      "start": "11:33 PM",
+      "end": "11:51 PM",
+      "description": "Hanging with Kat before she leaves",
+      "elapsed": "00:18"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 13, 2017",
+      "type": "Work",
+      "start": "11:51 AM",
+      "end": "12:09 PM",
+      "description": "Changes to LogIt homepage style",
+      "elapsed": "00:18"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 13, 2017",
+      "type": "Leisure",
+      "start": "12:09 PM",
+      "end": "1:55 PM",
+      "description": "Hanging out with Will",
+      "elapsed": "01:46"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 13, 2017",
+      "type": "Work",
+      "start": "1:55 PM",
+      "end": "3:11 PM",
+      "description": "Working on LogIt homepage animation",
+      "elapsed": "01:16"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 13, 2017",
+      "type": "Leisure",
+      "start": "3:11 PM",
+      "end": "3:45 PM",
+      "description": "Hanging out with Kat at Muir Woods",
+      "elapsed": "00:34"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 13, 2017",
+      "type": "Transportation",
+      "start": "3:45 PM",
+      "end": "4:00 PM",
+      "description": "Walking to WLH",
+      "elapsed": "00:15"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 13, 2017",
+      "type": "Work",
+      "start": "4:00 PM",
+      "end": "4:50 PM",
+      "description": "Lecture: MATH 18",
+      "elapsed": "00:50"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 13, 2017",
+      "type": "Transportation",
+      "start": "4:50 PM",
+      "end": "4:55 PM",
+      "description": "Walking to Black",
+      "elapsed": "00:05"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 13, 2017",
+      "type": "Work",
+      "start": "4:55 PM",
+      "end": "6:38 PM",
+      "description": "Working on LogIt",
+      "elapsed": "01:43"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 13, 2017",
+      "type": "Transportation",
+      "start": "6:38 PM",
+      "end": "7:00 PM",
+      "description": "Walking to Kat's for dinner",
+      "elapsed": "00:22"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 13, 2017",
+      "type": "Leisure",
+      "start": "7:00 PM",
+      "end": "10:00 PM",
+      "description": "Hanging out with Kat",
+      "elapsed": "03:00"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 13, 2017",
+      "type": "Transportation",
+      "start": "10:00 PM",
+      "end": "10:15 PM",
+      "description": "Walking to Black",
+      "elapsed": "00:15"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 13, 2017",
+      "type": "Work",
+      "start": "10:15 PM",
+      "end": "11:05 PM",
+      "description": "Working on LogIt and looking at CSE 30 PA0 writeup",
+      "elapsed": "00:50"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 13, 2017",
+      "type": "Daily Routines",
+      "start": "11:10 PM",
+      "end": "11:32 PM",
+      "description": "Showering and getting ready for bed",
+      "elapsed": "00:22"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 13, 2017",
+      "type": "Work",
+      "start": "11:32 PM",
+      "end": "11:59 PM",
+      "description": "misc. work",
+      "elapsed": "00:27"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 14, 2017",
+      "type": "Leisure",
+      "start": "12:00 AM",
+      "end": "12:55 AM",
+      "description": "Star Wars Rebels",
+      "elapsed": "00:55"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 14, 2017",
+      "type": "Work",
+      "start": "12:55 AM",
+      "end": "01:46 AM",
+      "description": "Coursera ",
+      "elapsed": "00:51"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 14, 2017",
+      "type": "Work",
+      "start": "11:18 AM",
+      "end": "11:43 AM",
+      "description": "Working on LogIt",
+      "elapsed": "00:25"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 14, 2017",
+      "type": "Work",
+      "start": "11:43 AM",
+      "end": "12:04 PM",
+      "description": "LogIt - user testing fixes",
+      "elapsed": "00:21"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 14, 2017",
+      "type": "Work",
+      "start": "12:04 PM",
+      "end": "1:01 PM",
+      "description": "Working on LogIt and typing out source code for CSE 30 pa0",
+      "elapsed": "00:57"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 14, 2017",
+      "type": "Eating",
+      "start": "1:01 PM",
+      "end": "1:47 PM",
+      "description": "Lunch w/ Kat",
+      "elapsed": "00:46"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 14, 2017",
+      "type": "Transportation",
+      "start": "1:50 PM",
+      "end": "2:10 PM",
+      "description": "Walking to Muir",
+      "elapsed": "00:20"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 14, 2017",
+      "type": "Leisure",
+      "start": "2:10 PM",
+      "end": "2:30 PM",
+      "description": "Hanging out with Kat",
+      "elapsed": "00:20"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 14, 2017",
+      "type": "Leisure",
+      "start": "2:30 PM",
+      "end": "5:19 PM",
+      "description": "Costco Trip with Will and Steven",
+      "elapsed": "02:49"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 14, 2017",
+      "type": "Sleep",
+      "start": "5:19 PM",
+      "end": "7:05 PM",
+      "description": "Napping",
+      "elapsed": "01:46"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 14, 2017",
+      "type": "Work",
+      "start": "7:05 PM",
+      "end": "7:40 PM",
+      "description": "Typing out CSE 30 source code",
+      "elapsed": "00:35"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 14, 2017",
+      "type": "Work",
+      "start": "7:40 PM",
+      "end": "7:56 PM",
+      "description": "Working on LogIt",
+      "elapsed": "00:16"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 14, 2017",
+      "type": "Eating",
+      "start": "7:56 PM",
+      "end": "8:18 PM",
+      "description": "Eating dinner with Kat",
+      "elapsed": "00:22"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 15, 2017",
+      "type": "Work",
+      "start": "12:30 PM",
+      "end": "1:18 PM",
+      "description": "Working on LogIt",
+      "elapsed": "00:48"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 15, 2017",
+      "type": "Eating",
+      "start": "1:18 PM",
+      "end": "1:54 PM",
+      "description": "Eating lunch at Pines",
+      "elapsed": "00:36"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 15, 2017",
+      "type": "Leisure",
+      "start": "1:54 PM",
+      "end": "2:20 PM",
+      "description": "Waiting for Kat to pack",
+      "elapsed": "00:26"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 15, 2017",
+      "type": "Transportation",
+      "start": "2:20 PM",
+      "end": "3:10 PM",
+      "description": "Long trip to the house",
+      "elapsed": "00:50"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 15, 2017",
+      "type": "Work",
+      "start": "3:10 PM",
+      "end": "3:48 PM",
+      "description": "Working on LogIt + typing out CSE 30 source code",
+      "elapsed": "00:38"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 15, 2017",
+      "type": "Sleep",
+      "start": "3:48 PM",
+      "end": "4:28 PM",
+      "description": "Nap",
+      "elapsed": "00:40"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 15, 2017",
+      "type": "Daily Routines",
+      "start": "4:28 PM",
+      "end": "4:38 PM",
+      "description": "Getting ready for date",
+      "elapsed": "00:10"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 15, 2017",
+      "type": "Transportation",
+      "start": "4:38 PM",
+      "end": "4:56 PM",
+      "description": "Uber ride to Operacaffe",
+      "elapsed": "00:18"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 15, 2017",
+      "type": "Eating",
+      "start": "4:56 PM",
+      "end": "6:20 PM",
+      "description": "Eating at Operacaffe",
+      "elapsed": "01:24"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 15, 2017",
+      "type": "Transportation",
+      "start": "6:20 PM",
+      "end": "6:34 PM",
+      "description": "Walking to San Diego Civic Theatre",
+      "elapsed": "00:14"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 15, 2017",
+      "type": "Leisure",
+      "start": "6:34 PM",
+      "end": "9:11 PM",
+      "description": "Watching Rent",
+      "elapsed": "02:37"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 15, 2017",
+      "type": "Transportation",
+      "start": "9:11 PM",
+      "end": "9:44 PM",
+      "description": "Going back home",
+      "elapsed": "00:33"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 16, 2017",
+      "type": "Daily Routines",
+      "start": "11:00 AM",
+      "end": "11:30 AM",
+      "description": "Morning routine",
+      "elapsed": "00:30"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 16, 2017",
+      "type": "Work",
+      "start": "11:30 AM",
+      "end": "11:48 AM",
+      "description": "Typing out last file for CSE 30 source code",
+      "elapsed": "00:18"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 16, 2017",
+      "type": "Daily Routines",
+      "start": "11:48 AM",
+      "end": "12:00 PM",
+      "description": "Making and waiting for coffee",
+      "elapsed": "00:12"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 16, 2017",
+      "type": "Work",
+      "start": "12:00 PM",
+      "end": "2:30 PM",
+      "description": "Working on CSE 30 debugging",
+      "elapsed": "02:30"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 16, 2017",
+      "type": "Eating",
+      "start": "2:30 PM",
+      "end": "2:58 PM",
+      "description": "Lunch: Uber Eats indian place",
+      "elapsed": "00:28"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 16, 2017",
+      "type": "Work",
+      "start": "2:58 PM",
+      "end": "3:14 PM",
+      "description": "CSE 30 pa0",
+      "elapsed": "00:16"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 16, 2017",
+      "type": "Daily Routines",
+      "start": "3:14 PM",
+      "end": "3:38 PM",
+      "description": "Pooping",
+      "elapsed": "00:24"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 16, 2017",
+      "type": "Work",
+      "start": "3:38 PM",
+      "end": "3:50 PM",
+      "description": "CSE 30 pa0: neg. numbers edge case",
+      "elapsed": "00:12"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 16, 2017",
+      "type": "Leisure",
+      "start": "3:50 PM",
+      "end": "5:54 PM",
+      "description": "Watching Crazy Ex Girlfriend w/ Kat",
+      "elapsed": "02:04"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 16, 2017",
+      "type": "Work",
+      "start": "5:54 PM",
+      "end": "6:45 PM",
+      "description": "CSE 30 pa0",
+      "elapsed": "00:51"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 16, 2017",
+      "type": "Daily Routines",
+      "start": "6:45 PM",
+      "end": "7:19 PM",
+      "description": "Waiting for Uber Eats delivery",
+      "elapsed": "00:34"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 16, 2017",
+      "type": "Work",
+      "start": "7:19 PM",
+      "end": "7:28 PM",
+      "description": "LogIt",
+      "elapsed": "00:09"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 16, 2017",
+      "type": "Eating",
+      "start": "7:28 PM",
+      "end": "7:45 PM",
+      "description": "Dinner: Uber Eats Noodles & Co.",
+      "elapsed": "00:17"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 16, 2017",
+      "type": "Work",
+      "start": "7:45 PM",
+      "end": "8:15 PM",
+      "description": "Working on LogIt - checklist",
+      "elapsed": "00:30"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 16, 2017",
+      "type": "Leisure",
+      "start": "8:15 PM",
+      "end": "9:23 PM",
+      "description": "Watching Crazy Ex Girlfriend",
+      "elapsed": "01:08"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 16, 2017",
+      "type": "Daily Routines",
+      "start": "9:23 PM",
+      "end": "10:06 PM",
+      "description": "Getting ready to leave the house",
+      "elapsed": "00:43"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 16, 2017",
+      "type": "Transportation",
+      "start": "10:06 PM",
+      "end": "10:18 PM",
+      "description": "Drive back to campus",
+      "elapsed": "00:12"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 16, 2017",
+      "type": "Work",
+      "start": "10:18 PM",
+      "end": "11:43 PM",
+      "description": "Working on LogIt - checklist",
+      "elapsed": "01:25"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 17, 2017",
+      "type": "Work",
+      "start": "12:30 AM",
+      "end": "02:18 AM",
+      "description": "Working on LogIt checklist",
+      "elapsed": "01:48"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 17, 2017",
+      "type": "Work",
+      "start": "06:30 AM",
+      "end": "06:45 AM",
+      "description": "LogIt",
+      "elapsed": "00:15"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 17, 2017",
+      "type": "Daily Routines",
+      "start": "06:45 AM",
+      "end": "06:50 AM",
+      "description": "Getting ready",
+      "elapsed": "00:05"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 17, 2017",
+      "type": "Exercise",
+      "start": "06:50 AM",
+      "end": "08:17 AM",
+      "description": "Working out with Will and Steven",
+      "elapsed": "01:27"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 17, 2017",
+      "type": "Transportation",
+      "start": "08:17 AM",
+      "end": "08:27 AM",
+      "description": "Walking to Muir",
+      "elapsed": "00:10"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 17, 2017",
+      "type": "Leisure",
+      "start": "08:27 AM",
+      "end": "09:30 AM",
+      "description": "Hanging out at Will's",
+      "elapsed": "01:03"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 17, 2017",
+      "type": "Work",
+      "start": "9:30 PM",
+      "end": "9:55 PM",
+      "description": "Working on LogIt - checklist backend",
+      "elapsed": "00:25"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 17, 2017",
+      "type": "Transportation",
+      "start": "9:55 PM",
+      "end": "10:15 PM",
+      "description": "Walking to Black",
+      "elapsed": "00:20"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 17, 2017",
+      "type": "Work",
+      "start": "10:15 PM",
+      "end": "10:40 PM",
+      "description": "Working on LogIt - checklist functionality",
+      "elapsed": "00:25"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 17, 2017",
+      "type": "Leisure",
+      "start": "10:40 PM",
+      "end": "11:13 PM",
+      "description": "Playing Battlefront II on steam",
+      "elapsed": "00:33"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 17, 2017",
+      "type": "Daily Routines",
+      "start": "11:13 PM",
+      "end": "11:19 PM",
+      "description": "Changing",
+      "elapsed": "00:06"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 17, 2017",
+      "type": "Transportation",
+      "start": "11:19 AM",
+      "end": "11:40 AM",
+      "description": "Walking to Farmer's Market",
+      "elapsed": "00:21"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 17, 2017",
+      "type": "Eating",
+      "start": "11:40 AM",
+      "end": "12:06 PM",
+      "description": "Lunch: Farmer's Market",
+      "elapsed": "00:26"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 17, 2017",
+      "type": "Transportation",
+      "start": "12:06 PM",
+      "end": "12:21 PM",
+      "description": "Walking to class",
+      "elapsed": "00:15"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 17, 2017",
+      "type": "Work",
+      "start": "12:21 PM",
+      "end": "1:50 PM",
+      "description": "Lecture: CSE 30",
+      "elapsed": "01:29"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 17, 2017",
+      "type": "Transportation",
+      "start": "1:50 PM",
+      "end": "2:07 PM",
+      "description": "Walking to Black",
+      "elapsed": "00:17"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 17, 2017",
+      "type": "Daily Routines",
+      "start": "2:07 PM",
+      "end": "2:12 PM",
+      "description": "Getting settled in",
+      "elapsed": "00:05"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 17, 2017",
+      "type": "Work",
+      "start": "2:12 PM",
+      "end": "3:33 PM",
+      "description": "Finishing CSE 30 pa0",
+      "elapsed": "01:21"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 17, 2017",
+      "type": "Work",
+      "start": "3:33 PM",
+      "end": "4:08 PM",
+      "description": "Writing email to Professor Guo",
+      "elapsed": "00:35"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 17, 2017",
+      "type": "Leisure",
+      "start": "4:08 PM",
+      "end": "4:57 PM",
+      "description": "Playing Battlefront II on steam",
+      "elapsed": "00:49"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 17, 2017",
+      "type": "Work",
+      "start": "4:57 PM",
+      "end": "6:43 PM",
+      "description": "LogIt",
+      "elapsed": "01:46"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 17, 2017",
+      "type": "Leisure",
+      "start": "6:43 PM",
+      "end": "6:57 PM",
+      "description": "Chilling with Michael",
+      "elapsed": "00:14"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 17, 2017",
+      "type": "Transportation",
+      "start": "6:57 PM",
+      "end": "7:14 PM",
+      "description": "Walking to Muir",
+      "elapsed": "00:17"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 17, 2017",
+      "type": "Eating",
+      "start": "7:14 PM",
+      "end": "7:51 PM",
+      "description": "Dinner: leftovers with Kat",
+      "elapsed": "00:37"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 17, 2017",
+      "type": "Leisure",
+      "start": "7:51 PM",
+      "end": "8:57 PM",
+      "description": "Hanging out with Kat",
+      "elapsed": "01:06"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 17, 2017",
+      "type": "Transportation",
+      "start": "8:57 PM",
+      "end": "9:19 PM",
+      "description": "Walking back to Black",
+      "elapsed": "00:22"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 17, 2017",
+      "type": "Work",
+      "start": "9:37 PM",
+      "end": "10:33 PM",
+      "description": "CSE 21 HW1",
+      "elapsed": "00:56"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 18, 2017",
+      "type": "Work",
+      "start": "09:00 AM",
+      "end": "2:30 PM",
+      "description": "Winter Career Fair",
+      "elapsed": "05:30"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 18, 2017",
+      "type": "Leisure",
+      "start": "2:30 PM",
+      "end": "3:55 PM",
+      "description": "Literally doing nothing",
+      "elapsed": "01:25"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 18, 2017",
+      "type": "Transportation",
+      "start": "3:55 PM",
+      "end": "4:00 PM",
+      "description": "Walking to WLH",
+      "elapsed": "00:05"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 18, 2017",
+      "type": "Work",
+      "start": "4:00 PM",
+      "end": "4:50 PM",
+      "description": "Lecture: MATH 18",
+      "elapsed": "00:50"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 18, 2017",
+      "type": "Transportation",
+      "start": "4:50 PM",
+      "end": "4:55 PM",
+      "description": "Walking back to Black",
+      "elapsed": "00:05"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 18, 2017",
+      "type": "Work",
+      "start": "4:55 PM",
+      "end": "6:16 PM",
+      "description": "CSE 21 Homework",
+      "elapsed": "01:21"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 18, 2017",
+      "type": "Transportation",
+      "start": "6:16 PM",
+      "end": "6:30 PM",
+      "description": "Walking to class",
+      "elapsed": "00:14"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 18, 2017",
+      "type": "Work",
+      "start": "6:30 PM",
+      "end": "7:50 PM",
+      "description": "Lecture: CSE 21",
+      "elapsed": "01:20"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 18, 2017",
+      "type": "Transportation",
+      "start": "7:50 PM",
+      "end": "8:15 PM",
+      "description": "Walking back to Black and then PC",
+      "elapsed": "00:25"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 18, 2017",
+      "type": "Eating",
+      "start": "8:15 PM",
+      "end": "8:33 PM",
+      "description": "Eating Santorini fries while finishing CSE 21",
+      "elapsed": "00:18"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 18, 2017",
+      "type": "Leisure",
+      "start": "8:33 PM",
+      "end": "9:00 PM",
+      "description": "Waiting for CSE 30 Quiz Review to start",
+      "elapsed": "00:27"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 18, 2017",
+      "type": "Work",
+      "start": "9:00 PM",
+      "end": "9:45 PM",
+      "description": "CSE 30 Quiz Review",
+      "elapsed": "00:45"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 18, 2017",
+      "type": "Transportation",
+      "start": "9:45 PM",
+      "end": "9:50 PM",
+      "description": "Walking to Black",
+      "elapsed": "00:05"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 18, 2017",
+      "type": "Leisure",
+      "start": "9:51 PM",
+      "end": "11:00 PM",
+      "description": "Playing Star Wars Battlefront II on Steam",
+      "elapsed": "01:09"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 18, 2017",
+      "type": "Work",
+      "start": "11:00 PM",
+      "end": "11:18 PM",
+      "description": "Re-submitting CSE 21 HW1 and fixing LogIt bug",
+      "elapsed": "00:18"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 19, 2017",
+      "type": "Leisure",
+      "start": "06:56 AM",
+      "end": "08:30 AM",
+      "description": "Waking up ",
+      "elapsed": "01:34"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 19, 2017",
+      "type": "Work",
+      "start": "08:30 AM",
+      "end": "10:20 AM",
+      "description": "Waiting in line for DeCAF",
+      "elapsed": "01:50"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 19, 2017",
+      "type": "Work",
+      "start": "10:20 AM",
+      "end": "11:41 AM",
+      "description": "DeCAF",
+      "elapsed": "01:21"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 19, 2017",
+      "type": "Transportation",
+      "start": "11:41 AM",
+      "end": "12:30 PM",
+      "description": "Going home and then to class",
+      "elapsed": "00:49"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 19, 2017",
+      "type": "Work",
+      "start": "12:30 PM",
+      "end": "1:50 PM",
+      "description": "Lecture: CSE 30",
+      "elapsed": "01:20"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 19, 2017",
+      "type": "Work",
+      "start": "1:50 PM",
+      "end": "3:00 PM",
+      "description": "DeCAF round two ",
+      "elapsed": "01:10"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 19, 2017",
+      "type": "Transportation",
+      "start": "3:00 PM",
+      "end": "3:10 PM",
+      "description": "Walking home",
+      "elapsed": "00:10"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 19, 2017",
+      "type": "Leisure",
+      "start": "3:10 PM",
+      "end": "3:25 PM",
+      "description": "Not sure",
+      "elapsed": "00:15"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 19, 2017",
+      "type": "Work",
+      "start": "3:25 PM",
+      "end": "3:41 PM",
+      "description": "Looking into Matlab",
+      "elapsed": "00:16"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 19, 2017",
+      "type": "Daily Routines",
+      "start": "3:41 PM",
+      "end": "3:55 PM",
+      "description": "Pooping",
+      "elapsed": "00:14"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 19, 2017",
+      "type": "Work",
+      "start": "3:55 PM",
+      "end": "4:07 PM",
+      "description": "Researching how to make a Java Weather app",
+      "elapsed": "00:12"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 19, 2017",
+      "type": "Leisure",
+      "start": "4:07 PM",
+      "end": "5:00 PM",
+      "description": "Playing Star Wars Battlefront II on Steam",
+      "elapsed": "00:53"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 19, 2017",
+      "type": "Work",
+      "start": "5:00 PM",
+      "end": "5:40 PM",
+      "description": "Working on Math 18 Matlab HW1",
+      "elapsed": "00:40"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 19, 2017",
+      "type": "Transportation",
+      "start": "5:40 PM",
+      "end": "6:00 PM",
+      "description": "Walking to class",
+      "elapsed": "00:20"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 19, 2017",
+      "type": "Work",
+      "start": "6:00 PM",
+      "end": "6:50 PM",
+      "description": "Discussion: CSE 21",
+      "elapsed": "00:50"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 19, 2017",
+      "type": "Transportation",
+      "start": "6:50 PM",
+      "end": "7:04 PM",
+      "description": "Walking to Kat's",
+      "elapsed": "00:14"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 19, 2017",
+      "type": "Leisure",
+      "start": "7:04 PM",
+      "end": "7:50 PM",
+      "description": "Hanging out with Kat",
+      "elapsed": "00:46"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 19, 2017",
+      "type": "Transportation",
+      "start": "7:50 PM",
+      "end": "8:00 PM",
+      "description": "Walking to class",
+      "elapsed": "00:10"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 19, 2017",
+      "type": "Work",
+      "start": "8:00 PM",
+      "end": "8:45 PM",
+      "description": "Discussion: MATH 18",
+      "elapsed": "00:45"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 19, 2017",
+      "type": "Transportation",
+      "start": "8:45 PM",
+      "end": "9:02 PM",
+      "description": "Walking to Starbucks",
+      "elapsed": "00:17"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 19, 2017",
+      "type": "Leisure",
+      "start": "9:02 PM",
+      "end": "9:25 PM",
+      "description": "Hanging at Starbucks before discussion",
+      "elapsed": "00:23"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 19, 2017",
+      "type": "Transportation",
+      "start": "9:25 PM",
+      "end": "9:30 PM",
+      "description": "Walking to class",
+      "elapsed": "00:05"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 19, 2017",
+      "type": "Work",
+      "start": "9:30 PM",
+      "end": "10:25 PM",
+      "description": "Discussion: CSE 30",
+      "elapsed": "00:55"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 19, 2017",
+      "type": "Transportation",
+      "start": "10:25 PM",
+      "end": "10:30 PM",
+      "description": "Walking back to Black",
+      "elapsed": "00:05"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 20, 2017",
+      "type": "Daily Routines",
+      "start": "10:41 AM",
+      "end": "11:02 AM",
+      "description": "Getting ready",
+      "elapsed": "00:21"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 20, 2017",
+      "type": "Eating",
+      "start": "11:02 AM",
+      "end": "12:47 PM",
+      "description": "Lunch with Fam",
+      "elapsed": "01:45"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 20, 2017",
+      "type": "Work",
+      "start": "12:47 PM",
+      "end": "1:14 PM",
+      "description": "Looking at Yahoo Weather API and PA1 writeup",
+      "elapsed": "00:27"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 20, 2017",
+      "type": "Daily Routines",
+      "start": "1:14 PM",
+      "end": "1:26 PM",
+      "description": "Pooping",
+      "elapsed": "00:12"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 20, 2017",
+      "type": "Work",
+      "start": "1:26 PM",
+      "end": "2:35 PM",
+      "description": "Not very productive work",
+      "elapsed": "01:09"
+    }
+  ]
 }

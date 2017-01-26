@@ -62,6 +62,9 @@
 
 					<div class="checklist-generator-task">
 						<input type="text" placeholder="Set your task here" id="input-task" class="input-checklist">
+						<div class="start-time-container">
+							start: <input type="time" id="input-time" class="check-time"/>
+						</div>
 					</div> <!-- checklist generator task -->
 
 					<div class="checklist-generator-buttons">
@@ -80,31 +83,118 @@
 				<div class="checklist-log">
 					
 					<div class="checklist-body">
-						<h2>
+						<div class="checklist-header">
 							Your Checklist: 
-						</h2>
+						</div>
+						<% var monthList = ["January", "February","March","April","May","June","July",
+                 "August","September","October","November", "December"]; %>
+						<% app_check.year.forEach(function(curryear) { %>
+							<% for (var i = 0; i < curryear.current.length; i++) { %>
+								<% if (curryear.current[i].length > 0) { %>
+									<% var month = monthList[i] %>
+									<% var day = (curryear.current[i])[0].day %>
+									<ul>
+									<div class="checklist-subheader">
+										<%= month + " " + day + " " + (Number(currYear)) %>
+									</div>
+									<% for (var j = 0; j < curryear.current[i].length; j++) { %>
+										<% if ((curryear.current[i])[j].day != day) { %>
+											<% var day = (curryear.current[i])[j].day; %> 
+											
+											<div class="checklist-subheader">
+												<%= month + " " + day + " " + (Number(currYear)) %>
+											</div>
+										<% } %>
+										<ul>
+											<li>
+												<% var complete_flag = false %>
+												<% if ((curryear.current[i])[j].completed == "true") { %>
+													<i class="fa fa-check-square-o" aria-hidden="true"></i>
+													<% complete_flag = true; %> 
+												<% } %>
+												<% if ((curryear.current[i])[j].completed == "false") { %>
+													<i class="fa fa-square-o" aria-hidden="true"></i>
+												<% } %>
 
-						<ul class="list-dates">
-							<li>
-								<h3>
-									January 12 2017
-								</h3>
-								<ul class="list-tasks">
-									<li>
-										<i class="fa fa-square-o" aria-hidden="true"></i>Discussion CSE21 : 7:00 PM
-									</li>
-									<li>
-										<i class="fa fa-square-o" aria-hidden="true"></i>CSES GBM : 7:00 PM
-									</li>
-									<li>
-										<i class="fa fa-square-o" aria-hidden="true"></i>Discussion MATH 18 : 8:00 PM
-									</li>
-									<li>
-										<i class="fa fa-square-o" aria-hidden="true"></i>Discussion CSE 30 : 9:30 PM
-									</li>	
+												<% if (complete_flag == false) { %>
+													<div class="check-description">
+														<%= (curryear.current[i])[j].task %>
+													</div>
+													<div class="check-start">
+														<% var start = (curryear.current[i])[j].start %>
+														<% if (Number(start.substring(0,2)) >= 12) { %>
+															<% if (Number(start.substring(0,2)) == 12) { 
+																%>
+																<% var startHour = 12 %>
+																<% var start = startHour + start.substring(2) + " PM" %>
+															<% } else { %>
+																<% var startHour = Number(start.substring(0,2)) - 12 %>
+																<% if (Number(startHour) < 10) { %>
+																	<% startHour = "0" + startHour%>
+																<% } %>
+																<% start = startHour + start.substring(2) + " PM"%>
+															<% } %>
+														<% } else if (Number(start.substring(0,2)) < 12) { %>
+															<% if (Number(start.substring(0,2)) == 0) { %>
+																<% var startHour = 12 %>
+																<% var start = startHour + start.substring(2) + " AM" %>
+															<% } %>
+															<% if (Number(start.substring(0,2)) != 12) { %>
+																<% var startHour = start.substring(0,2) %>
+																<% start = start + " AM" %>
+															<% } %>
+														<% } %>
+														<%=  start%>
+												<% } else { %>
+													<div class="check-description task-complete">
+														<%= (curryear.current[i])[j].task %>
+													</div>
+													<div class="check-start task-complete">
+														<% var start = (curryear.current[i])[j].start %>
+														<% if (Number(start.substring(0,2)) >= 12) { %>
+															<% if (Number(start.substring(0,2)) == 12) { 
+																%>
+																<% var startHour = 12 %>
+																<% var start = startHour + start.substring(2) + " PM" %>
+															<% } else { %>
+																<% var startHour = Number(start.substring(0,2)) - 12 %>
+																<% if (Number(startHour) < 10) { %>
+																	<% startHour = "0" + startHour%>
+																<% } %>
+																<% start = startHour + start.substring(2) + " PM"%>
+															<% } %>
+														<% } else if (Number(start.substring(0,2)) < 12) { %>
+															<% if (Number(start.substring(0,2)) == 0) { %>
+																<% var startHour = 12 %>
+																<% var start = startHour + start.substring(2) + " AM" %>
+															<% } %>
+															<% if (Number(start.substring(0,2)) != 12) { %>
+																<% var startHour = start.substring(0,2) %>
+																<% start = start + " AM" %>
+															<% } %>
+														<% } %>
+														<%=  start%>
+												<% } %>
+												</div>
+												<div>
+													<i class="pencil"></i>
+												</div>
+												<div>
+													<i class="trash"></i>
+												</div>
+												<div>
+													<i class="x-button"></i>
+												</div>
+												<div>
+													<i class="check"></i>
+												</div>
+											</li>
+										</ul>
+									<% } %>
+								<% } %>
 								</ul>
-							</li>
-						</ul>
+							<% }%>
+						<% }); %>
 					</div>
 				</div> <!-- checklist log -->
 
