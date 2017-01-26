@@ -474,6 +474,75 @@ app.post('/deleteChecklistItem', function(req, res) {
   res.status(200).send("returning");
 });
 
+app.post('/editChecklistItem', function(req, res) {
+
+  console.error(req.body);
+  var date = new Date();
+
+  var checkFile = fs.readFileSync(CHECK_JSON);
+
+  var checkData = JSON.parse(checkFile);
+
+  if (Number(req.body.year) - date.getFullYear() == 0) {
+    console.error("Task set for 2017");
+
+    var monthIndex = monthList.indexOf(req.body.month);
+
+    // console.error(checkData.year[0]);
+
+    var target_year = checkData.year[0];
+    var target_month = target_year.current[monthIndex];
+
+    // console.error(target_month);
+    // console.error("After printing target_month");
+    // console.error(target_month.length);
+
+    var target = req.body;
+
+    console.error("entering for loop");
+
+    for (var i = 0; i < target_month.length; i++) {
+      // console.error("about to print out the items in target_month");
+      // console.error(target_month[i]);
+      
+      var condition1 = target.day == target_month[i].day;
+      var condition2 = target.task == target_month[i].task;
+      //var condition3 = target.start == target_month[i].start;
+
+      var found = condition1 && condition2;
+      if (found) {
+        console.error("Found: \n");
+        console.error(target_month[i]);
+        
+        if(target.updatedDesc != "") {
+          console.error("Updating description");
+          target_month[i].task = target.updatedDesc;
+        }
+
+        if(target.updatedStart != "") {
+          console.error("Updating start time.");
+          target_month[i].start = target.updatedStart;
+        }
+      }
+    }
+
+    // console.error(target_month);
+
+    //checkData.[monthIndex];
+  }
+  else if (Number(req.body.year) - date.getFullYear() == 1) {
+    console.error("Task set for 2018");
+  }
+
+  checkFile = JSON.stringify(checkData, null, 2);
+  fs.writeFileSync(CHECK_JSON, checkFile);
+  app.locals.app_check = JSON.parse(fs.readFileSync(CHECK_JSON));
+
+  // SEND SOMETHING
+  res.status(200).send("returning");
+});
+
+
 app.post('/changeIcon', function(req, res) {
 
   console.error(req.body.completed);

@@ -4070,6 +4070,46 @@
       "end": "11:52 PM",
       "description": "Getting ready for bed",
       "elapsed": "00:22"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 26, 2017",
+      "type": "Eating",
+      "start": "09:06 AM",
+      "end": "09:24 AM",
+      "description": "Eating breakfast",
+      "elapsed": "00:18"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 26, 2017",
+      "type": "Work",
+      "start": "09:24 AM",
+      "end": "09:47 AM",
+      "description": "Working on LogIt",
+      "elapsed": "00:23"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 26, 2017",
+      "type": "Daily Routines",
+      "start": "09:47 AM",
+      "end": "10:06 AM",
+      "description": "Showering",
+      "elapsed": "00:19"
+    },
+    {
+      "year": "2017",
+      "month": "January",
+      "date": "January 26, 2017",
+      "type": "Daily Routines",
+      "start": "10:06 AM",
+      "end": "10:30 AM",
+      "description": "Getting ready",
+      "elapsed": "00:24"
     }
   ]
 }

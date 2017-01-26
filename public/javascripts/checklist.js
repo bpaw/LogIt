@@ -54,7 +54,7 @@ var main = function() {
     });
 
 
-    $('li').mouseenter(function() {
+    $('li:not(.unhoverable)').mouseenter(function() {
         $(this).children().children('.pencil').addClass('fa fa-pencil');
         $(this).children().children('.trash').addClass("fa fa-trash-o");
     });
@@ -64,8 +64,109 @@ var main = function() {
         $(this).children().children('.trash').removeClass("fa fa-trash-o");
     });
 
-    $('.pencil').click(function() {
-        alert("clicking on pencil");
+    $('.edit-button').click(function() {
+
+        var check_task = $(this).parent().children('.check-description').text().trim();
+        var check_time = $(this).parent().children('.check-start').text().trim();
+
+        var startDiv = document.createElement('div');
+        startDiv.className = 'edit-start-container';
+
+        // "edit mode" - take off other buttons 
+        $('li').children('.trash-button').remove();
+        $('li').children('.edit-button').children('.pencil').remove();
+        
+        // add new buttons for edit mode 
+        $(this).parent().children('.check-button').html('<i class="fa fa-check" aria-hidden="true"></i>');
+        $(this).parent().children('.x-button').html('<i class="fa fa-times" aria-hidden="true"></i>');
+
+        // change format of li-time
+        $(this).parent().children('.check-start').html("");
+        $('.check-start').append(startDiv);
+
+        // change the log data
+        $(this).parent().children('.check-start').children('.edit-start-container').html('<input type="text" id="edit-start"/>'); 
+
+        $(this).parent().children('.check-description').html('<input type="text" id="edit-desc"/>');
+        // TODO
+
+        // "edit mode" buttons
+        // new input boxes for edit mode
+        // check if any of the boxes were edited
+
+        var grandparent = $(this).parent().parent();
+
+        
+        while (grandparent.prev().attr('class') != "checklist-subheader") {
+            grandparent = grandparent.prev();
+        }
+
+        console.error(grandparent.prev());
+
+        var date = grandparent.prev().text().trim();
+
+        var date_length = date.length;
+        var year_offset = date.length - 4;
+        var day_offset = date.length - 7;
+        
+        var check_year = date.substring(year_offset, date_length).trim();
+        var check_day = date.substring(day_offset, year_offset).trim();
+        var check_month = date.substring(0, day_offset).trim();
+
+        console.error($(this).parent().children('.check-start'));
+
+        var checkObj = {
+            year: check_year,
+            month: check_month,
+            day: check_day,
+            task: check_task,
+            start: check_time,
+            completed: "false",
+            updatedDesc: "",
+            updatedStart: ""
+        }
+        
+        ///// Event listeners /////
+
+        // for editing the start time of a log
+        $('#edit-start').click(function() {
+            $(this).parent('.edit-start-container').html('<input type="time" id="edit-start"/>');
+            // alert("edit start input");
+        });
+
+        // for canceling changes to a log
+        $('.x-button').click(function() {
+            location.href = "/checklist";
+        });
+
+        $('.check-button').click(function() {
+            
+            var editStart = $('#edit-start').val();
+            var editDesc = $('#edit-desc').val();
+            
+            var oneField = editStart != "" || editDesc != "";
+
+            if (oneField) {
+
+                alert("one field filled. calling ajax");
+
+                if (editStart != "") {
+                    checkObj.updatedStart = editStart;
+                }
+
+                if (editDesc != "") {
+                    checkObj.updatedDesc = editDesc;
+                }
+
+                $.ajax({
+                    type: "POST",
+                    data: checkObj,
+                    url: "/editChecklistItem"
+                }).done(function() {
+                    location.href = '/checklist';
+                });
+            }
+        })
     });
 
     $('.trash').click(function() {
@@ -117,8 +218,6 @@ var main = function() {
         }).done(function() {
             location.href = '/checklist';
         });
-
-        alert("clicking on trash");
     });
 
     $('.fa').click(function() {

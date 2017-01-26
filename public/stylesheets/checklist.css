@@ -197,3 +197,17 @@ li div {
 	color: gray;
 	cursor: pointer;
 }
+
+.check-button {
+	color: teal;
+	cursor: pointer;
+	display: inline-block;
+	margin-left: 1em;
+}
+
+.x-button {
+	color: #ef5350;
+	cursor: pointer;
+	display: inline-block;
+	margin-left: 1em;
+}

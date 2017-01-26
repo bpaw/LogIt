@@ -106,7 +106,7 @@
 											</div>
 										<% } %>
 										<ul>
-											<li>
+											<li class="check_list">
 												<% var complete_flag = false %>
 												<% if ((curryear.current[i])[j].completed == "true") { %>
 													<i class="fa fa-check-square-o" aria-hidden="true"></i>
@@ -176,16 +176,16 @@
 														<%=  start%>
 												<% } %>
 												</div>
-												<div>
+												<div class="edit-button">
 													<i class="pencil"></i>
 												</div>
-												<div>
+												<div class="trash-button">
 													<i class="trash"></i>
 												</div>
-												<div>
-													<i class="x-button"></i>
+												<div class="x-button">
+													<i class="x"></i>
 												</div>
-												<div>
+												<div class="check-button">
 													<i class="check"></i>
 												</div>
 											</li>
