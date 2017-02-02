@@ -766,31 +766,37 @@ function update_bar_and_doughnut_week(logData, statData) {
     var logMonth = logData.logs[i].month;
     var logYear = logData.logs[i].year;
 
+    var prevMonth;
+
+    var currYear = app.locals.currYear;
+
+    var dayCheck = Number(logDay) - restOfWeek;
     var startOfWeek = app.locals.currDay - restOfWeek;
     var monthIndex = date.getMonth() - 1;
     // SPECIAL CONDITION - logs that were made at end of month if currday is less than 7
-    if (startOfWeek < 1) {
+    if (dayCheck >= startOfWeek) {
       // move one index backwards in monthList[] 
       if (app.locals.currMonth != "January") {
-        logDay += daysInMonth[monthIndex];
-        logMonth = monthList[monthIndex];
+        startOfWeek += daysInMonth[monthIndex];
+        prevMonth = monthList[monthIndex];
       }
       // but if January, loop back around to end 
       else {
-        logMonth = "December";
+        prevMonth = "December";
         monthIndex = 11;
-        logDay += daysInMonth[monthIndex];
+        startOfWeek += daysInMonth[monthIndex];
+        currYear -= 1;
       }
     }
-
-    var condition1 = logDay >= startOfWeek;
-    var condition2 = logMonth == app.locals.currMonth; 
-    var condition3 = Number(logYear) == app.locals.currYear;
-    var condition4 = logDay == daysInMonth[monthIndex];
+    console.error("startOfWeek : "+ startOfWeek);
+    console.error("prevMonth is: " + prevMonth);
+    var condition1 = logDay <= startOfWeek && logMonth == app.locals.currMonth;
+    var condition2 = logDay >= startOfWeek && logMonth == prevMonth; 
+    var condition3 = Number(logYear) == currYear;
     // filter out logs that aren't relevant 
     // replace with startOfWeek and test later
-    if (condition1 && condition2 && condition3 || condition4) {
-
+    if (condition1 || condition2 && condition3) {
+      console.error(logDay);
       var logType = logData.logs[i].type;
       var logHours = parseInt(logData.logs[i].elapsed.substring(0,2));
       var logMin = parseInt(logData.logs[i].elapsed.substring(3));
@@ -843,9 +849,10 @@ function update_bar_and_doughnut_month(logData, statData) {
     // information from the current log
     var logMonth = logData.logs[i].month;
     var logYear = logData.logs[i].year;
+    var monthBool = app.locals.currMonth == (logData.logs[i].month);
 
     // if the log is in the current year and month
-    if (logMonth == app.locals.currMonth && Number(logYear) == app.locals.currYear) {
+    if (monthBool) {
       console.error(logData.logs[i].date);
       console.error(logType);
 
@@ -896,10 +903,10 @@ function update_bar_and_doughnut_year(logData, statData) {
     // information from the current log
     var logMonth = logData.logs[i].month;
     var logYear = logData.logs[i].year;
-    var monthBool = app.locals.currMonth == logData.logs[i].month;
     var yearBool = app.locals.currYear == Number(logData.logs[i].year);
+
     // if the log is in the current year and month
-    if (Number(logYear) == app.locals.currYear && monthBool && yearBool) {
+    if (yearBool) {
       //console.error(logData.logs[i].date);
       //console.error(logType);
 
@@ -946,6 +953,8 @@ function update_bar_and_doughnut_year(logData, statData) {
 
 function update_line() {
 
+  console.error("calling update_line");
+
   // console.error("calling update_line()");
   var label = []; 
 
@@ -976,7 +985,9 @@ function update_line() {
       // move one index backwards in monthList[] 
       if (app.locals.currMonth != "January") {
         labelDay += daysInMonth[date.getMonth() - 1];
-        labelMonth = monthList[date.getMonth() - 1];
+        labelMonth = monthList[monthList.indexOf(app.locals.currMonth) - 1];
+        console.error("day is: " + labelDay);
+        console.error("month is: " + labelMonth);
       }
       // but if January, loop back around to end 
       else {
@@ -984,7 +995,7 @@ function update_line() {
         labelDay += daysInMonth[11];
       }
     }
-           
+
     // construct the label
     statData.lineLabels[day] = labelMonth.substring(0,3) + " " + labelDay;
     // console.error(statData.lineLabels[day]);
@@ -993,14 +1004,18 @@ function update_line() {
     // update data
   }
 
+  console.error(label);
+
   var currDay = date.getDate();
   var currMonth = monthList[date.getMonth()];
   if (date.getMonth() == 0) {
     prevMonth = monthList[11]
   }
   else {
-    prevMonth = monthList[date.getMonth() - 2];
+    prevMonth = monthList[date.getMonth() - 1];
   }
+
+  console.error("prevMonth is: "+prevMonth);
 
   for (var i = 0; i < logData.logs.length; i++) {
     
@@ -1012,14 +1027,16 @@ function update_line() {
     var upperBound = logData.logs[i].date.length - afterDay;
 
     var logDay = Number(logData.logs[i].date.substring(lowerBound, upperBound));
-    var bool = logDay <= label[6] || logDay >= label[0];
-    var monthBool = app.locals.currMonth == logData.logs[i].month;
+    //var bool = logDay <= label[6] || logDay >= label[0];
+    //var monthBool = app.locals.currMonth == logData.logs[i].month || logData.logs[i].month == prevMonth;
+    var currBool = logDay <= label[6] && logData.logs[i].month == app.locals.currMonth; 
+    var prevBool = logDay >= label[0] && logData.logs[i].month == prevMonth;
     var yearBool = app.locals.currYear == Number(logData.logs[i].year);
     // label[0] = 26
     // label[6] = 1
     var logMonth = logData.logs[i].month;
     var startOfWeek = app.locals.currDay - restOfWeek;
-    if (bool && (logMonth == currMonth || logMonth == prevMonth) && monthBool && yearBool) {
+    if (currBool || prevBool && yearBool) {
       // console.error(logDay);
       // console.log(logData.logs[i]);
       var logType = logData.logs[i].type;

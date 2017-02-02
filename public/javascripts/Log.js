@@ -305,12 +305,15 @@ var main = function() {
 		// for editing the start time of a log
 		$('#edit-start').click(function() {
 			$(this).parent('.edit-start-container').html('<input type="time" id="edit-start"/>');
+			$(this).focus();
+			$('#edit-start').focus();
 			// alert("edit start input");
 		});
 
 		// for editing the end time of a log
-		$('#edit-end').click(function() {
+		$('#edit-end').focus(function() {
 			$(this).parent('.edit-end-container').html('<input type="time" id="edit-end"/>');
+			$('#edit-end').focus();
 			// alert("edit end input");
 		});
 

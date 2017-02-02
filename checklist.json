@@ -5,26 +5,8 @@
         [
           {
             "day": "12",
-            "task": "Discussion: CSE21",
-            "start": "18:00",
-            "completed": "true"
-          },
-          {
-            "day": "12",
             "task": "CSES GBM",
             "start": "19:00",
-            "completed": "true"
-          },
-          {
-            "day": "12",
-            "task": "Discussion: MATH 18",
-            "start": "20:00",
-            "completed": "true"
-          },
-          {
-            "day": "12",
-            "task": "Discussion: CSE 30",
-            "start": "21:30",
             "completed": "true"
           },
           {
@@ -97,25 +79,31 @@
             "day": "26",
             "task": "CSES DevFair",
             "start": "14:00",
-            "completed": "false"
+            "completed": "true"
           },
           {
             "day": "27",
             "task": "MATH 18: Matlab HW2",
             "start": "15:00",
-            "completed": "false"
+            "completed": "true"
           },
           {
             "day": "30",
             "task": "MATH 18: HW2",
             "start": "23:59",
-            "completed": "false"
+            "completed": "true"
           },
           {
             "day": "30",
             "task": "MATH 18: HW3",
             "start": "23:59",
-            "completed": "false"
+            "completed": "true"
+          },
+          {
+            "day": "31",
+            "task": "CSE 30: PA1",
+            "start": "23:59",
+            "completed": "true"
           }
         ],
         [
@@ -123,6 +111,12 @@
             "day": "1",
             "task": "MATH 18: Midterm 1",
             "start": "16:00",
+            "completed": "false"
+          },
+          {
+            "day": "1",
+            "task": "CSE 21: HW3",
+            "start": "23:59",
             "completed": "false"
           },
           {
