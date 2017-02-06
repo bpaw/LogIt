@@ -30,178 +30,167 @@ var main = function() {
 
 	/* Event listener for clicking on POST BUTTON */
 	$('.post-button').click(function() {
-	var descriptionPlaceholder = "description of activity";
-	var timePlaceholder = "_:_ _ - _:_ _";
+		var descriptionPlaceholder = "description of activity";
+		var timePlaceholder = "_:_ _ - _:_ _";
 
-	// getting values from the input boxes	
-	var startTime = $('#start-time').val();
-	var endTime = $('#end-time').val();
-	var logDescription = $('.log-description').val();
-	var log_type = $('#type-selection').val();
-	var startTimeNoMeridian;
-	var endTimeNoMeridian; 
-	
-	var condition1 = startTime.length > 0 && endTime.length > 0 && logDescription.length > 0;
-	var condition2 = logDescription != descriptionPlaceholder;
-	var condition3 = log_type != "";
-	
-	// testing conditions to see if the input boxes were filled
-	if (condition1 && condition2 && condition3) {
+		// getting values from the input boxes	
+		var startTime = $('#start-time').val();
+		var endTime = $('#end-time').val();
+		var logDescription = $('.log-description').val();
+		var log_type = $('#type-selection').val();
+		var startTimeNoMeridian;
+		var endTimeNoMeridian; 
+		
+		var condition1 = startTime.length > 0 && endTime.length > 0 && logDescription.length > 0;
+		var condition2 = logDescription != descriptionPlaceholder;
+		var condition3 = log_type != "";
+		
+		// testing conditions to see if the input boxes were filled
+		if (condition1 && condition2 && condition3) {
 
-		// variables to get first two numbers in the start and end time
-		var startHour = startTime.substring(0, 2);
-		var endHour = endTime.substring(0, 2);
+			// variables to get first two numbers in the start and end time
+			var startHour = startTime.substring(0, 2);
+			var endHour = endTime.substring(0, 2);
 
-		var NOON = 12; 			// var to refer to NOON for readability
-		var MIDNIGHT = 12;
-		// converting start time to meridian format
-		if (startHour >= NOON) {
-			if (startHour != NOON) {
-				startHour = startHour - NOON;
-				startTimeNoMeridian = (startHour + NOON) + startTime.substring(2);
-				startTime = startHour + startTime.substring(2) + " PM";
-				startTimeNoMeridian = startTimeNoMeridian + ':00';
+			var NOON = 12; 			// var to refer to NOON for readability
+			var MIDNIGHT = 12;
+			// converting start time to meridian format
+			if (startHour >= NOON) {
+				if (startHour != NOON) {
+					startHour = startHour - NOON;
+					startTimeNoMeridian = (startHour + NOON) + startTime.substring(2);
+					startTime = startHour + startTime.substring(2) + " PM";
+					startTimeNoMeridian = startTimeNoMeridian + ':00';
+				}
+				else {
+					startTimeNoMeridian = NOON + startTime.substring(2) + ':00'; 
+					startTime = startHour + startTime.substring(2) + " PM";
+				}
 			}
 			else {
-				startTimeNoMeridian = NOON + startTime.substring(2) + ':00'; 
-				startTime = startHour + startTime.substring(2) + " PM";
+				if (startHour == 0) {
+					startHour = NOON;
+					startTime = startHour + startTime.substring(2);
+					startHour *= 0;
+				}
+				startTimeNoMeridian = startHour + startTime.substring(2) + ':00';
+				startTime = startTime + " AM";
 			}
-		}
-		else {
-			if (startHour == 0) {
-				startHour = NOON;
-				startTime = startHour + startTime.substring(2);
-				startHour *= 0;
-			}
-			startTimeNoMeridian = startHour + startTime.substring(2) + ':00';
-			startTime = startTime + " AM";
-		}
 
-		// converting end time to meridian format
-		if (endHour >= NOON) {
-			if (endHour != NOON) {
-				endHour = endHour - NOON;
-				endTimeNoMeridian = (endHour + NOON) + endTime.substring(2);
-				endTime = endHour + endTime.substring(2) + " PM";
-				endTimeNoMeridian = endTimeNoMeridian + ':00';
+			// converting end time to meridian format
+			if (endHour >= NOON) {
+				if (endHour != NOON) {
+					endHour = endHour - NOON;
+					endTimeNoMeridian = (endHour + NOON) + endTime.substring(2);
+					endTime = endHour + endTime.substring(2) + " PM";
+					endTimeNoMeridian = endTimeNoMeridian + ':00';
+				}
+				else {
+					endTimeNoMeridian = NOON + endTime.substring(2) + ':00';
+					endTime = endHour + endTime.substring(2) + " PM";
+					
+				}
 			}
 			else {
-				endTimeNoMeridian = NOON + endTime.substring(2) + ':00';
-				endTime = endHour + endTime.substring(2) + " PM";
-				
+				if (endHour == 0) {
+					endHour = NOON;
+					endTime = endHour + endTime.substring(2);
+					endHour *= 0;
+				}
+				endTimeNoMeridian = endHour + endTime.substring(2) + ':00';
+				endTime = endTime + " AM";
 			}
-		}
-		else {
-			if (endHour == 0) {
-				endHour = NOON;
-				endTime = endHour + endTime.substring(2);
-				endHour *= 0;
+
+			// setting to null so placeholders comes back in 
+			$('.log-description').val("");
+			$('#start-time').val("");
+			$('#end-time').val("");
+			$('#type-selection').val("");
+			
+			// Date object so we can access Date methods
+			var date = new Date();
+
+			// getting values to use as Log object field values 
+			var Logyear = date.getFullYear()
+			var monthList = ["January", "February","March","April","May","June","July","August","September","October","November", "December"];
+			var Logmonth = date.getMonth();
+			Logmonth = monthList[parseInt(Logmonth)];
+			var Logday = date.getDate();
+			var Logdate = Logmonth + " " + Logday + ", " + Logyear;
+			// var elapsedTime = Number(startTime) - endTime;
+
+			var elapsedTime = new Date();
+			var T1 = new Date(Logdate + " " + startTimeNoMeridian);
+			var T2 = new Date(Logdate + " " + endTimeNoMeridian);
+			diffHour = T2.getHours() - T1.getHours();
+			diffMin = T2.getMinutes() - T1.getMinutes();
+			
+			//alert(T1.getHours());
+			//alert(T2.getHours());
+			//alert(endTimeNoMeridian);
+			
+			// edge cases - 1) crossing over midnight & 2) startTime's min > endTime's
+			if (T1.getHours() > T2.getHours()) {
+				//alert("T1.getHours() > T2.getHours()");
+				diffHour = (24 - T1.getHours()) + T2.getHours();
+				//alert("diffHour (before diffMin computation)- " + diffHour);
 			}
-			endTimeNoMeridian = endHour + endTime.substring(2) + ':00';
-			endTime = endTime + " AM";
-		}
+			if (T1.getMinutes() > T2.getMinutes()) {
+				//alert("T1.getMinutes() > T2.getMinutes()");
+				diffMin = (60 - T1.getMinutes()) + T2.getMinutes();
+				diffHour -= 1;
+				//alert(diffHour + ":" + diffMin);
+			}
 
-		// setting to null so placeholders comes back in 
-		$('.log-description').val("");
-		$('#start-time').val("");
-		$('#end-time').val("");
-		$('#type-selection').val("");
-		
-		// Date object so we can access Date methods
-		var date = new Date();
+			// final padding so all values have 2 digits minimum
+			if (diffHour < 10) {
+				diffHour = "0" + diffHour;
+			}
+			if (diffMin < 10) {
+				diffMin = "0" + diffMin;
+			}
 
-		// getting values to use as Log object field values 
-		var Logyear = date.getFullYear()
-		var monthList = ["January", "February","March","April","May","June","July","August","September","October","November", "December"];
-		var Logmonth = date.getMonth();
-		Logmonth = monthList[parseInt(Logmonth)];
-		var Logday = date.getDate();
-		var Logdate = Logmonth + " " + Logday + ", " + Logyear;
-		// var elapsedTime = Number(startTime) - endTime;
+			elapsedTime = diffHour + ":" + diffMin;
 
-		var elapsedTime = new Date();
-		var T1 = new Date(Logdate + " " + startTimeNoMeridian);
-		var T2 = new Date(Logdate + " " + endTimeNoMeridian);
-		diffHour = T2.getHours() - T1.getHours();
-		diffMin = T2.getMinutes() - T1.getMinutes();
-		//alert(T1.getHours());
-		//alert(T2.getHours());
-		//alert(endTimeNoMeridian);
-		// edge cases - 1) crossing over midnight & 2) startTime's min > endTime's
-		if (T1.getHours() > T2.getHours()) {
-			//alert("T1.getHours() > T2.getHours()");
-			diffHour = (24 - T1.getHours()) + T2.getHours();
-			//alert("diffHour (before diffMin computation)- " + diffHour);
-		}
-		if (T1.getMinutes() > T2.getMinutes()) {
-			//alert("T1.getMinutes() > T2.getMinutes()");
-			diffMin = (60 - T1.getMinutes()) + T2.getMinutes();
-			diffHour -= 1;
-			//alert(diffHour + ":" + diffMin);
-		}
+			// creating a new log entry to push to data.json
+			var newLog = {
+				year: Logyear.toString(),
+	      		month: Logmonth,
+	      		date: Logdate,
+	      		type: log_type,
+	      		start: startTime,
+	      		end: endTime,
+	      		description: logDescription,
+	      		elapsed: elapsedTime
+			}
 
-		// final padding so all values have 2 digits minimum
-		if (diffHour < 10) {
-			diffHour = "0" + diffHour;
-		}
-		if (diffMin < 10) {
-			diffMin = "0" + diffMin;
-		}
-
-		elapsedTime = diffHour + ":" + diffMin;
-
-		// creating a new log entry to push to data.json
-		var newLog = {
-			year: Logyear.toString(),
-      		month: Logmonth,
-      		date: Logdate,
-      		type: log_type,
-      		start: startTime,
-      		end: endTime,
-      		description: logDescription,
-      		elapsed: elapsedTime
-		}
-
-		var newData = JSON.stringify(newLog);
-		
-		$.ajax({
-        type: "POST",
-        url: "/addNewLog",
-        contentType: "application/json; charset=utf-8",
-        dataType: "text",
-        data: newData,
-        async: true,
-        success: function(message) {
-        	console.error(message);
-        }
-      	}); 
-
-      	$.ajax({
-      		type: "POST",
-      		url: "/readUpdate",
-      		async: true,
-      		success: function(reloadroute) {
-	          location.href=reloadroute;
-	        },
-	        error: function(err) {
-	          console.log(err);
+			var newData = JSON.stringify(newLog);
+			
+			$.ajax({
+	        type: "POST",
+	        url: "/addNewLog",
+	        contentType: "application/json; charset=utf-8",
+	        dataType: "text",
+	        data: newData,
+	        async: true,
+	        success: function(message) {
+	        	console.error(message);
 	        }
-      	});
-	}	
+	      	}); 
+
+	      	$.ajax({
+	      		type: "POST",
+	      		url: "/readUpdate",
+	      		async: true,
+	      		success: function(reloadroute) {
+		          location.href=reloadroute;
+		        },
+		        error: function(err) {
+		          console.log(err);
+		        }
+	      	});
+		}	
 	}); 
-
-	/* Event listener for hovering over an elapsed time box 
-	$('.type-rec').mouseenter(function() {
-		
-		var type_info = document.createElement('div');
-		type_info.className = "type_info";
-
-	});
-
-	/* Event listener for mouse leaving an elapsed time box 
-	$('.type-rec').mouseenter(function() {
-
-	});*/
 
 	/* Event listener for hovering over a log item - show trash and edit options */
 	$('.log-list-style').mouseenter(function() {

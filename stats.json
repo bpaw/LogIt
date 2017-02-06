@@ -1,54 +1,54 @@
 {
-  "date": {
-    "Year": 2016,
-    "Month": "January",
-    "Day": "2"
-  },
-  "lineLabels": [
-    "Jan 26",
-    "Jan 27",
-    "Jan 28",
-    "Jan 29",
-    "Jan 30",
-    "Jan 31",
-    "Feb 1"
-  ],
-  "lineDefault": "Up to Today",
-  "lineProductive": [
-    6.816,
-    4.7,
-    5.183,
-    6.417,
-    8.817,
-    8.865,
-    8.617
-  ],
-  "lineUnproductive": [
-    2.133,
-    6.766,
-    5.516,
-    1.633,
-    1.033,
-    2.349,
-    0
-  ],
-  "barDefault": "week",
-  "barHours": [
-    49.401,
-    19.43,
-    6.394,
-    1.533,
-    4.597,
-    16.49,
-    0
-  ],
-  "barTypes": [
-    "Work",
-    "Leisure",
-    "Daily Routines",
-    "Sleeping",
-    "Eating",
-    "Transportation",
-    "Exercise"
-  ]
+ "date": {
+  "Year": 2016,
+  "Month": "January",
+  "Day": "2"
+ },
+ "lineLabels": [
+  "Jan 30",
+  "Jan 31",
+  "Feb 1",
+  "Feb 2",
+  "Feb 3",
+  "Feb 4",
+  "Feb 5"
+ ],
+ "lineDefault": "Up to Today",
+ "lineProductive": [
+  8.817,
+  8.865,
+  12.65,
+  8.8,
+  5.932,
+  3,
+  7.75
+ ],
+ "lineUnproductive": [
+  1.033,
+  2.349,
+  0.533,
+  2.5,
+  4.617,
+  7.967,
+  0.9
+ ],
+ "barDefault": "week",
+ "barHours": [
+  42.13933333333333,
+  6.782,
+  5.295,
+  6.016,
+  8.547666666666666,
+  4.778666666666666,
+  1.416
+ ],
+ "barTypes": [
+  "Work",
+  "Leisure",
+  "Daily Routines",
+  "Sleeping",
+  "Eating",
+  "Transportation",
+  "Exercise"
+ ]
 }

@@ -111,19 +111,25 @@
             "day": "1",
             "task": "MATH 18: Midterm 1",
             "start": "16:00",
-            "completed": "false"
+            "completed": "true"
+          },
+          {
+            "day": "1",
+            "task": "CSE 30: Quiz 2 Review",
+            "start": "21:00",
+            "completed": "true"
           },
           {
             "day": "1",
             "task": "CSE 21: HW3",
             "start": "23:59",
-            "completed": "false"
+            "completed": "true"
           },
           {
             "day": "2",
             "task": "CSE 30: Quiz 2",
             "start": "12:30",
-            "completed": "false"
+            "completed": "true"
           },
           {
             "day": "6",
@@ -138,9 +144,21 @@
             "completed": "false"
           },
           {
+            "day": "9",
+            "task": "CSE 21: HW4 due",
+            "start": "23:59",
+            "completed": "false"
+          },
+          {
             "day": "10",
             "task": "MATH 18: Matlab HW3",
             "start": "15:00",
+            "completed": "false"
+          },
+          {
+            "day": "13",
+            "task": "CSE 30: Quiz 3 Review @ WLH 2001",
+            "start": "21:30",
             "completed": "false"
           },
           {
@@ -151,8 +169,44 @@
           },
           {
             "day": "14",
+            "task": "Quiz 3",
+            "start": "12:30",
+            "completed": "false"
+          },
+          {
+            "day": "14",
             "task": "CSE 30: PA2 Due",
             "start": "23:59",
+            "completed": "false"
+          },
+          {
+            "day": "14",
+            "task": "CSE 30: PA2 - REMEMBER NO COMPILER WARNINGS",
+            "start": "23:59",
+            "completed": "false"
+          },
+          {
+            "day": "14",
+            "task": "CSE 30: THOROUGHLY CHECK PIAZZA FOR README ANSWERS",
+            "start": "23:59",
+            "completed": "false"
+          },
+          {
+            "day": "14",
+            "task": "CSE 30: PA2",
+            "start": "23:59",
+            "completed": "false"
+          },
+          {
+            "day": "14",
+            "task": "CSE 30: Midterm",
+            "start": "23:59",
+            "completed": "false"
+          },
+          {
+            "day": "15",
+            "task": "CSE 30: Midterm Review @ Peterson 108",
+            "start": "21:00",
             "completed": "false"
           },
           {

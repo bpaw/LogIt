@@ -1,4 +1,3 @@
-console.log("this js file is being called");
 // these are labels for the days of the week
 var day_labels = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
@@ -6,29 +5,25 @@ var day_labels = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 var days_in_months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 // these are human-readable month name labels, in order
-var months = ['January', 'February', 'March', 'April',
-                     'May', 'June', 'July', 'August', 'September',
-                     'October', 'November', 'December'];
-
-var month_labels = ['Jan', 'Feb', 'Mar', 'Apr',
-                     'May', 'Jun', 'Jul', 'Aug', 
-                     'Sep', 'Oct', 'Nov', 'Dec'];
+var months = ['January', 'February', 'March', 'April', 'May', 'June',
+              'July', 'August', 'September', 'October', 'November', 'December'];
+var month_labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
+                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 var cal_flag = 0; // var that tells if any data has been loaded
 
 // current date
 var curr_date = new Date();
-
+// date used to start calendar's default display
 var default_date = new Date(curr_date.getFullYear(), curr_date.getMonth(), 1);
-// var fake_date = new Date(2016, 11, 1);
 
+// variables used for generating the calendar
 var starting_day = default_date.getDay();
-
 var month_length = days_in_months[curr_date.getMonth()];
-
 var currMonth = curr_date.getMonth();
 var currYear = curr_date.getFullYear();
 
+// checking for leap years
 if (currMonth == 1) {
 	
 	if ((currYear % 4 == 0 && currYear % 100 != 0) || currYear % 400 == 0) {
@@ -36,39 +31,39 @@ if (currMonth == 1) {
 	}
 }
 
+// get original date for when we reset page's information
 var orig_date = $('.log-subheader').text();
+
+// month and year info 
 $('.col-left-year').text(String(currYear));
 $('.col-left-month').text(month_labels[currMonth]);
 
-console.log("month_length: " + month_length );
-console.log("starting_day: " + starting_day);
-
-
+// Calendar object constructor
 function Calendar(month, year) {
 	this.month = (isNaN(month) || month == null) ? curr_date.getMonth() : month;
 	this.year = (isNaN(year) || year == null) ? curr_date.getFullYear() : year ;
 	this.html = "";
 }
 
+// prototyped function to create Calendar's html information
 Calendar.prototype.generateHTML = function() {
 
 	// creating the table 
 	var html = '<table>';
 	html += '<tr class="calendar-header">';
 
-	// add a row for the days of the week
+	// add a row for each day of the week
 	for (var i = 0; i < 7; i++) {
 		html += '<td class="calendar-header-day">';
-		html += day_labels[i];
-		html += '</td>';
+		html += day_labels[i];	// add day labels 
+		html += '</td>';		// finish table entry
 	}
-	html += '</tr>';
+	html += '</tr>';			// finish row
 
 	// calculate max # of rows needed on the calendar
 	row = Math.ceil((starting_day + month_length)/7);
-	console.log(row);
 	
-	var day = 1;
+	var day = 1;	
 	var offset = 1;
 
 	// add rows for every day in the month 
@@ -77,6 +72,7 @@ Calendar.prototype.generateHTML = function() {
 		// this loop is for the days in the calendar
 		for (var j = 0; j < 7; j++) {
 			html += '<td class="calendar-day">';
+			// leave blank unless it's a day of the month
 			if (offset - starting_day > 0 && day <= (month_length)) {
 				html += '<a href="#view" class="scroll-anchor">';
 				html += day;
@@ -95,25 +91,25 @@ Calendar.prototype.generateHTML = function() {
 	this.html = html;
 }
 
+// getter function to return html of Calendar object
 Calendar.prototype.getHTML = function() {
   return this.html;
 }
 
+// create Calendar object and generate it's html
 var cal = new Calendar(curr_date.getMonth(), curr_date.getFullYear());
-//var cal = new Calendar(11, 2016); for testing 
-
-console.log(cal);
 cal.generateHTML();
 
+// setting up calendar creation
+// get div meant for calendar
 var col_right = document.getElementsByClassName("col-right");
-var table = document.createElement("TABLE");
-table.className = ('calendar-table');
+var table = document.createElement("TABLE");	// create a table HTML element	
+table.className = ('calendar-table');			// assign class for style
+table.innerHTML = (cal.getHTML());				// assign html to Calendar 
+												// object's html field
 
-table.innerHTML = (cal.getHTML());
-//col_right.append(table);
+// add table to the page 
 $('.col-right').append(table);
-
-console.log("cal appended to col-right was called");
 
 	///// 	Event Listeners for Calendar 	/////
 
@@ -729,11 +725,13 @@ function shiftMonth(month, year) {
 	default_date = new Date(year, month, 1);
 	starting_day = default_date.getDay();
 	month_length = days_in_months[month];
-	console.log(month_length);
+
 	// reassign Calendar object
 	cal = new Calendar(month, year);
+
 	// generate new HTML
 	cal.generateHTML();
+
 	// assign that new HTML to the table element
 	table.innerHTML = (cal.getHTML());
 }

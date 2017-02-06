@@ -228,10 +228,12 @@ var main = function() {
         //console.error($(this).parent().parent().closest('.checklist-subheader'));
         
         var grandparent = $(this).parent().parent();
-
-        console.error(grandparent);
-        console.error(grandparent.prev());
-        console.error(grandparent.prev().prev().attr('class'));
+        //console.error($(this));
+        //console.error($(this).parent());
+        //console.error($(this).parent().prev());
+        //console.error(grandparent);
+        //console.error(grandparent.prev());
+        //console.error(grandparent.prev().prev().attr('class'));
         
         while (grandparent.prev().attr('class') != "checklist-subheader") {
             grandparent = grandparent.prev();
@@ -245,7 +247,7 @@ var main = function() {
         var offset_month = date_string.length - 8;
 
         var year = date_string.substring(offset_year, offset_year + 4).trim();
-        var month = date_string.substring(0, offset_month).trim();
+        var month = date_string.substring(0, offset_month+1).trim();
         var day = date_string.substring(offset_day, offset_day + 2).trim(); 
 
         if ($(this).hasClass('fa-square-o')) {
@@ -262,7 +264,8 @@ var main = function() {
                 month: month,
                 day: day
             }
-
+            console.error("sending data: ");
+            console.error(status);
             // write change to file - make task.completed = true
             $.ajax({
                 type: "POST",

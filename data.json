@@ -1,5 +1,5 @@
 {
-  "date": "February 1, 2017",
+  "date": "February 5, 2017",
   "logs": [
     {
       "year": "2016",
@@ -5240,6 +5240,696 @@
       "end": "6:30 PM",
       "description": "Walking to class",
       "elapsed": "00:10"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 1, 2017",
+      "type": "Work",
+      "start": "6:30 PM",
+      "end": "7:50 PM",
+      "description": "Lecture: CSE 21",
+      "elapsed": "01:20"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 1, 2017",
+      "type": "Transportation",
+      "start": "7:50 PM",
+      "end": "8:00 PM",
+      "description": "Walking to Starbucks",
+      "elapsed": "00:10"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 1, 2017",
+      "type": "Work",
+      "start": "8:00 PM",
+      "end": "9:00 PM",
+      "description": "Working on CSE 21 HW3 w/ Hasan @ Starbucks",
+      "elapsed": "01:00"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 1, 2017",
+      "type": "Transportation",
+      "start": "9:00 PM",
+      "end": "9:05 PM",
+      "description": "Walking to Peterson",
+      "elapsed": "00:05"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 1, 2017",
+      "type": "Work",
+      "start": "9:05 PM",
+      "end": "10:00 PM",
+      "description": "CSE 30: quiz 2 review session",
+      "elapsed": "00:55"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 1, 2017",
+      "type": "Transportation",
+      "start": "10:00 PM",
+      "end": "10:10 PM",
+      "description": "Going to the Village",
+      "elapsed": "00:10"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 1, 2017",
+      "type": "Work",
+      "start": "10:10 PM",
+      "end": "10:57 PM",
+      "description": "Working at the Village",
+      "elapsed": "00:47"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 1, 2017",
+      "type": "Transportation",
+      "start": "10:57 PM",
+      "end": "11:27 PM",
+      "description": "Walking back to Muir",
+      "elapsed": "00:30"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 1, 2017",
+      "type": "Leisure",
+      "start": "11:27 PM",
+      "end": "11:59 PM",
+      "description": "Not doing work",
+      "elapsed": "00:32"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 2, 2017",
+      "type": "Daily Routines",
+      "start": "09:00 AM",
+      "end": "09:24 AM",
+      "description": "Waking up and getting ready",
+      "elapsed": "00:24"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 2, 2017",
+      "type": "Leisure",
+      "start": "09:24 AM",
+      "end": "09:50 AM",
+      "description": "Waiting to walk over to Muir Woods",
+      "elapsed": "00:26"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 2, 2017",
+      "type": "Daily Routines",
+      "start": "09:50 AM",
+      "end": "10:00 AM",
+      "description": "Getting coffee from Muir Woods with Kat",
+      "elapsed": "00:10"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 2, 2017",
+      "type": "Work",
+      "start": "10:00 AM",
+      "end": "12:00 PM",
+      "description": "Studying for CSE 30 Quiz 2 at Muir Woods",
+      "elapsed": "02:00"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 2, 2017",
+      "type": "Transportation",
+      "start": "12:00 PM",
+      "end": "12:10 PM",
+      "description": "Walking to class",
+      "elapsed": "00:10"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 2, 2017",
+      "type": "Daily Routines",
+      "start": "12:10 PM",
+      "end": "12:25 PM",
+      "description": "Bathroom",
+      "elapsed": "00:15"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 2, 2017",
+      "type": "Work",
+      "start": "12:30 PM",
+      "end": "2:10 PM",
+      "description": "Lecture: CSE 30",
+      "elapsed": "01:40"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 2, 2017",
+      "type": "Transportation",
+      "start": "2:10 PM",
+      "end": "2:25 PM",
+      "description": "Walking to CSE building",
+      "elapsed": "00:15"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 2, 2017",
+      "type": "Work",
+      "start": "2:25 PM",
+      "end": "3:53 PM",
+      "description": "Resume edits and JavaFX Scene Builder installation",
+      "elapsed": "01:28"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 2, 2017",
+      "type": "Eating",
+      "start": "3:53 PM",
+      "end": "4:21 PM",
+      "description": "Getting Goody's",
+      "elapsed": "00:28"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 2, 2017",
+      "type": "Leisure",
+      "start": "4:21 PM",
+      "end": "5:45 PM",
+      "description": "Hanging out with Kat",
+      "elapsed": "01:24"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 2, 2017",
+      "type": "Transportation",
+      "start": "5:45 PM",
+      "end": "5:55 PM",
+      "description": "Walking to class",
+      "elapsed": "00:10"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 2, 2017",
+      "type": "Work",
+      "start": "5:55 PM",
+      "end": "6:45 PM",
+      "description": "Discussion: CSE 21",
+      "elapsed": "00:50"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 2, 2017",
+      "type": "Transportation",
+      "start": "6:45 PM",
+      "end": "7:00 PM",
+      "description": "Going to Northrop Grumman",
+      "elapsed": "00:15"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 2, 2017",
+      "type": "Work",
+      "start": "7:00 PM",
+      "end": "9:00 PM",
+      "description": "Northrop Grumman event",
+      "elapsed": "02:00"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 2, 2017",
+      "type": "Leisure",
+      "start": "9:00 PM",
+      "end": "9:30 PM",
+      "description": "Waiting for CSE 30 discussion",
+      "elapsed": "00:30"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 2, 2017",
+      "type": "Work",
+      "start": "9:30 PM",
+      "end": "10:20 PM",
+      "description": "Discussion: CSE 30",
+      "elapsed": "00:50"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 2, 2017",
+      "type": "Leisure",
+      "start": "10:20 PM",
+      "end": "10:30 PM",
+      "description": "Hanging out with friends before heading back",
+      "elapsed": "00:10"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 2, 2017",
+      "type": "Transportation",
+      "start": "10:30 PM",
+      "end": "10:53 PM",
+      "description": "Walking back to Muir and getting stuff from John's",
+      "elapsed": "00:23"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 3, 2017",
+      "type": "Daily Routines",
+      "start": "06:30 AM",
+      "end": "07:00 AM",
+      "description": "Getting ready",
+      "elapsed": "00:30"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 3, 2017",
+      "type": "Transportation",
+      "start": "07:05 AM",
+      "end": "07:15 AM",
+      "description": "Walking to RIMAC",
+      "elapsed": "00:10"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 3, 2017",
+      "type": "Exercise",
+      "start": "07:15 AM",
+      "end": "08:15 AM",
+      "description": "Working out with Will",
+      "elapsed": "01:00"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 3, 2017",
+      "type": "Transportation",
+      "start": "08:15 AM",
+      "end": "08:25 AM",
+      "description": "Walking back to Muir",
+      "elapsed": "00:10"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 3, 2017",
+      "type": "Sleep",
+      "start": "08:35 AM",
+      "end": "09:40 AM",
+      "description": "Went back to sleep for a bit",
+      "elapsed": "01:05"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 3, 2017",
+      "type": "Daily Routines",
+      "start": "09:40 AM",
+      "end": "10:03 AM",
+      "description": "Shower + getting ready",
+      "elapsed": "00:23"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 3, 2017",
+      "type": "Daily Routines",
+      "start": "10:15 AM",
+      "end": "10:40 AM",
+      "description": "Getting coffee from Muir Woods",
+      "elapsed": "00:25"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 3, 2017",
+      "type": "Work",
+      "start": "10:40 AM",
+      "end": "12:09 PM",
+      "description": "Working at Muir Woods",
+      "elapsed": "01:29"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 3, 2017",
+      "type": "Work",
+      "start": "12:09 PM",
+      "end": "12:20 PM",
+      "description": "Starting CSE 30 PA2",
+      "elapsed": "00:11"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 3, 2017",
+      "type": "Daily Routines",
+      "start": "12:20 PM",
+      "end": "12:37 PM",
+      "description": "Bathroom",
+      "elapsed": "00:17"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 3, 2017",
+      "type": "Work",
+      "start": "12:37 PM",
+      "end": "1:28 PM",
+      "description": "Working at Women's Center",
+      "elapsed": "00:51"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 3, 2017",
+      "type": "Eating",
+      "start": "1:28 PM",
+      "end": "2:47 PM",
+      "description": "Lunch at Foodworx",
+      "elapsed": "01:19"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 3, 2017",
+      "type": "Work",
+      "start": "2:47 PM",
+      "end": "3:08 PM",
+      "description": "Prepping for class",
+      "elapsed": "00:21"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 3, 2017",
+      "type": "Leisure",
+      "start": "3:08 PM",
+      "end": "3:55 PM",
+      "description": "Goofing off",
+      "elapsed": "00:47"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 3, 2017",
+      "type": "Transportation",
+      "start": "3:55 PM",
+      "end": "4:00 PM",
+      "description": "Walking to class",
+      "elapsed": "00:05"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 3, 2017",
+      "type": "Work",
+      "start": "4:00 PM",
+      "end": "4:50 PM",
+      "description": "Lecture: MATH 18",
+      "elapsed": "00:50"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 3, 2017",
+      "type": "Daily Routines",
+      "start": "4:50 PM",
+      "end": "5:10 PM",
+      "description": "Getting more coffee",
+      "elapsed": "00:20"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 3, 2017",
+      "type": "Work",
+      "start": "5:10 PM",
+      "end": "5:37 PM",
+      "description": "Responding to redditor ",
+      "elapsed": "00:27"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 3, 2017",
+      "type": "Work",
+      "start": "5:37 PM",
+      "end": "6:04 PM",
+      "description": "Studying CSE 21",
+      "elapsed": "00:27"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 3, 2017",
+      "type": "Leisure",
+      "start": "6:04 PM",
+      "end": "6:29 PM",
+      "description": "YouTube",
+      "elapsed": "00:25"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 3, 2017",
+      "type": "Daily Routines",
+      "start": "6:29 PM",
+      "end": "6:40 PM",
+      "description": "Bathroom",
+      "elapsed": "00:11"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 3, 2017",
+      "type": "Transportation",
+      "start": "6:41 PM",
+      "end": "6:53 PM",
+      "description": "Walking to class",
+      "elapsed": "00:12"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 3, 2017",
+      "type": "Work",
+      "start": "7:00 PM",
+      "end": "8:20 PM",
+      "description": "Problem Session: CSE 21",
+      "elapsed": "01:20"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 3, 2017",
+      "type": "Leisure",
+      "start": "8:20 PM",
+      "end": "11:45 PM",
+      "description": "Not doing work",
+      "elapsed": "03:25"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 4, 2017",
+      "type": "Daily Routines",
+      "start": "10:00 AM",
+      "end": "11:19 AM",
+      "description": "Waking up and getting ready",
+      "elapsed": "01:19"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 4, 2017",
+      "type": "Leisure",
+      "start": "11:19 AM",
+      "end": "2:35 PM",
+      "description": "Date",
+      "elapsed": "03:16"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 4, 2017",
+      "type": "Transportation",
+      "start": "2:35 PM",
+      "end": "3:35 PM",
+      "description": "Getting stuff from Black and going to Muir Woods",
+      "elapsed": "01:00"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 4, 2017",
+      "type": "Work",
+      "start": "3:35 PM",
+      "end": "6:35 PM",
+      "description": "Studying for CSE 21",
+      "elapsed": "03:00"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 4, 2017",
+      "type": "Daily Routines",
+      "start": "6:35 PM",
+      "end": "6:47 PM",
+      "description": "Getting ready ",
+      "elapsed": "00:12"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 4, 2017",
+      "type": "Leisure",
+      "start": "6:47 PM",
+      "end": "11:29 PM",
+      "description": "Chris's birthday celebration",
+      "elapsed": "04:42"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 5, 2017",
+      "type": "Daily Routines",
+      "start": "09:18 AM",
+      "end": "09:40 AM",
+      "description": "Getting ready ",
+      "elapsed": "00:22"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 5, 2017",
+      "type": "Daily Routines",
+      "start": "09:40 AM",
+      "end": "10:05 AM",
+      "description": "Getting coffee",
+      "elapsed": "00:25"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 5, 2017",
+      "type": "Work",
+      "start": "10:05 AM",
+      "end": "2:00 PM",
+      "description": "CSE 21 OH & Review session",
+      "elapsed": "03:55"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 5, 2017",
+      "type": "Work",
+      "start": "2:45 PM",
+      "end": "4:02 PM",
+      "description": "Attempted CSE 30 PA2",
+      "elapsed": "01:17"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 5, 2017",
+      "type": "Work",
+      "start": "4:02 PM",
+      "end": "5:49 PM",
+      "description": "Both CSE 21 studying and CSE 30 ",
+      "elapsed": "01:47"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 5, 2017",
+      "type": "Transportation",
+      "start": "5:49 PM",
+      "end": "6:03 PM",
+      "description": "Getting Coke for Kat and going to Muir",
+      "elapsed": "00:14"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 5, 2017",
+      "type": "Leisure",
+      "start": "6:03 PM",
+      "end": "6:57 PM",
+      "description": "Not doing work",
+      "elapsed": "00:54"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 5, 2017",
+      "type": "Work",
+      "start": "6:57 PM",
+      "end": "7:43 PM",
+      "description": "CSE 30: PA2",
+      "elapsed": "00:46"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 5, 2017",
+      "type": "Eating",
+      "start": "7:43 PM",
+      "end": "8:20 PM",
+      "description": "Dinner",
+      "elapsed": "00:37"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 5, 2017",
+      "type": "Transportation",
+      "start": "8:20 PM",
+      "end": "8:36 PM",
+      "description": "Walking to OH",
+      "elapsed": "00:16"
+    },
+    {
+      "year": "2017",
+      "month": "February",
+      "date": "February 5, 2017",
+      "type": "Work",
+      "start": "8:36 PM",
+      "end": "9:47 PM",
+      "description": "Professor Kahng's OH",
+      "elapsed": "01:11"
     }
   ]
 }
