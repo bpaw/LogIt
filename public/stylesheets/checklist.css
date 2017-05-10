@@ -57,7 +57,7 @@ body {
 .checklist-generator {
 	background-color: white;
 	border: .05em solid gray;
-	height: 20vh;
+	height: 25vh;
 	width: 100%;
 }
 
@@ -65,7 +65,7 @@ body {
 	width: 100%;
 	color: white;
 	border-top: .01em solid gray;;
-	height: 5vh;
+	height: 10vh;
 	margin-top: 1.5em;
 	padding: .75em 0;
 	text-align: center;
@@ -99,15 +99,17 @@ body {
 	color: gray;
 	display: inline-block;
 	height: 2.5em;
+	text-align: center;
 	width: 49%;
 }
 
 .checklist-generator-task {
 	color: gray;
 	display: inline-block;
-	height: 2.5em;
+	height: 12.5vh;
 	width: 49%;
 	vertical-align: top;
+	text-align: center;
 }
 
 .checklist-log {
@@ -133,14 +135,14 @@ body {
 .inner-page {
 	margin: 2em auto 2em auto;
 	padding: 0px 0px 0px 0px;
-	width: 75%;	
+	width: 75%;
 	height: 100%;
 	border-radius: .1em;
 }
 
 .input-checklist {
 	margin-left: auto;
-	margin-right: auto; 
+	margin-right: auto;
 	margin: 2.5em;
 }
 
@@ -210,4 +212,14 @@ li div {
 	cursor: pointer;
 	display: inline-block;
 	margin-left: 1em;
+}
+
+#input-month {
+	margin: 0;
+	padding: 0;
+}
+
+#input-year {
+	margin: 0;
+	padding: 0;
 }
