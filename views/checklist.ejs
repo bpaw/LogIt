@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="/stylesheets/checklist.css">
 	</head>
 	<body>
@@ -20,12 +20,12 @@
 			</div>
 		</div> <!-- banner -->
 
-		<div class="inner-page"> 
+		<div class="inner-page">
 
 			<div class="checklist-container">
 
 				<div class="checklist-generator">
-					
+
 					<div class="checklist-generator-date">
 						Month:
 						<select id="input-month" class="input-checklist">
@@ -43,7 +43,7 @@
 							<option> November </option>
 							<option> December </option>
 						</select>
-						Day: 
+						Day:
 						<select id="input-day" class="input-checklist">
 							<option> </option>
 							<% for (var i = 1; i <= 31; i++) { %>
@@ -68,7 +68,7 @@
 					</div> <!-- checklist generator task -->
 
 					<div class="checklist-generator-buttons">
-						
+
 						<p class="checklist-generator-button-cancel">
 							Cancel
 						</p>
@@ -81,10 +81,10 @@
 				</div> <!-- checklist generator -->
 
 				<div class="checklist-log">
-					
+
 					<div class="checklist-body">
 						<div class="checklist-header">
-							Your Checklist: 
+							Your Checklist:
 						</div>
 						<% var monthList = ["January", "February","March","April","May","June","July",
                  "August","September","October","November", "December"]; %>
@@ -99,8 +99,8 @@
 									</div>
 									<% for (var j = 0; j < curryear.current[i].length; j++) { %>
 										<% if ((curryear.current[i])[j].day != day) { %>
-											<% var day = (curryear.current[i])[j].day; %> 
-											
+											<% var day = (curryear.current[i])[j].day; %>
+
 											<div class="checklist-subheader">
 												<%= month + " " + day + " " + (Number(currYear)) %>
 											</div>
@@ -110,7 +110,7 @@
 												<% var complete_flag = false %>
 												<% if ((curryear.current[i])[j].completed == "true") { %>
 													<i class="fa fa-check-square-o" aria-hidden="true"></i>
-													<% complete_flag = true; %> 
+													<% complete_flag = true; %>
 												<% } %>
 												<% if ((curryear.current[i])[j].completed == "false") { %>
 													<i class="fa fa-square-o" aria-hidden="true"></i>
@@ -123,7 +123,7 @@
 													<div class="check-start">
 														<% var start = (curryear.current[i])[j].start %>
 														<% if (Number(start.substring(0,2)) >= 12) { %>
-															<% if (Number(start.substring(0,2)) == 12) { 
+															<% if (Number(start.substring(0,2)) == 12) {
 																%>
 																<% var startHour = 12 %>
 																<% var start = startHour + start.substring(2) + " PM" %>
@@ -152,7 +152,7 @@
 													<div class="check-start task-complete">
 														<% var start = (curryear.current[i])[j].start %>
 														<% if (Number(start.substring(0,2)) >= 12) { %>
-															<% if (Number(start.substring(0,2)) == 12) { 
+															<% if (Number(start.substring(0,2)) == 12) {
 																%>
 																<% var startHour = 12 %>
 																<% var start = startHour + start.substring(2) + " PM" %>

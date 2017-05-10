@@ -2,11 +2,11 @@
 
 <html>
 	<head>
-		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="/stylesheets/Log.css">
 
 	</head>
-	
+
 	<body>
 
 		<div id="banner">
@@ -25,22 +25,22 @@
 			</div>
 		</div>
 
-		<div class="inner-page"> 
-			
+		<div class="inner-page">
+
 			<div id="input-container">
-				
+
 				<div class='start-container'>
 					start: <input type="time" name="start-time" id="start-time" class="time-input"/>
 				</div> <!-- start container -->
-				
+
 				<div class='end-container'>
 					end: <input type="time" name="end-time" id="end-time"/>
 				</div> <!-- end container -->
-				
+
 				<div class='description-container'>
 					<input id="description-input" type="text" name="log-activity" placeholder="description of activity" class="log-description"/>
 				</div> <!-- description container -->
-				
+
 				<div class='type-selection-container'>
 					<select name="activity-type" id="type-selection">
 						<option> </option>
@@ -53,7 +53,7 @@
 						<option> Exercise </option>
 					</select>
 				</div> <!-- type selection container -->
-				
+
 				<div class="buttons">
 					<p class="cancel-button">
 						Cancel
@@ -62,26 +62,26 @@
 						Log
 					</p>
 				</div> <!-- post button -->
-				
+
 			</div> <!-- input container  -->
-		
+
 			<div class="view-container">
 
 				<div class="log-header-container">
-					<div class="log-header"> 
+					<div class="log-header">
 						Today's Log
 						<p class="log-subheader"> <%= app_data.date %> </p>
 					</div> <!-- log header  -->
-				
+
 
 				</div> <!-- log header container  -->
-			
+
 				<div class="log-list-container">
 					<ul id="log-list">
 						<% app_data.logs.forEach(function(item) { %>
 							<% if (app_data.date == item.date) { %>
 
-								<li class="log-list-style"> 
+								<li class="log-list-style">
 									<% if (item.type == "Work") { %>
 										<div class="type-rec" id="Work"> <%= item.elapsed %> </div>
 									<% } %>
@@ -105,9 +105,9 @@
 									<% } %>
 
 									<div class="li-time">
-										<%= item.start + " - " + item.end %> 
+										<%= item.start + " - " + item.end %>
 									</div> <!-- li time  -->
-									
+
 									<div class="li-description">
 										<%= item.description %>
 									</div> <!-- li description  -->
@@ -123,7 +123,7 @@
 									<div class="x-button">
 										<i class="x"></i>
 									</div>
-									
+
 									<div class="check-button">
 										<i class="check"></i>
 									</div>
